@@ -20,7 +20,7 @@ curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure
 az deployment sub create \
   --location eastus2 \
   --name imagine \
-  --subscription '5f96bde1-56b4-48b1-9ec1-ed3f21a70196' \
+  --subscription '<sub_id>' \
   --template-file imagine_template.bicep \
   --parameters @imagine_parameters.json
 ```
@@ -36,7 +36,18 @@ az deployment sub create \
 - Azure Network Security Groups
 
 ```bash
-https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/ceb8f59db06363a4731ce36323698cecdb6f8c28/architectures/fd-premium-app-w-pe/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
+# download bicep template file
+curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/df497b2e63ed1073eb98c597f1c93d496dcbba6b/main.bicep
+
+# download bicep parameters file
+curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/ceb8f59db06363a4731ce36323698cecdb6f8c28/architectures/fd-premium-app-w-pe/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name seek \
+  --subscription '<sub_id>' \
+  --template-file seek_template.bicep \
+  --parameters @seek_parameters.json
 ```
 
 ### Heal
@@ -51,5 +62,16 @@ https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/ceb8f5
 - Azure Network Security Groups
 
 ```bash
-https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/ceb8f59db06363a4731ce36323698cecdb6f8c28/architectures/fd-premium-app-w-pe/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
+# download bicep template file
+curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/df497b2e63ed1073eb98c597f1c93d496dcbba6b/main.bicep
+
+# download bicep parameters file
+curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/ceb8f59db06363a4731ce36323698cecdb6f8c28/architectures/fd-premium-app-w-pe/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name heal \
+  --subscription '<sub_id>' \
+  --template-file heal_template.bicep \
+  --parameters @heal_parameters.json
 ```
