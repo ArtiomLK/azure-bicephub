@@ -22,7 +22,7 @@ param apps array = []
 param fd object = {}
 
 module architecture 'br:bicephubdev.azurecr.io/bicep/modules/fd-premium-app-w-pe:ceb8f59db06363a4731ce36323698cecdb6f8c28' = {
-  name: 'dream-architecture'
+  name: take('dream-architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
     rgs: rgs
