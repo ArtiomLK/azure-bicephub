@@ -12,7 +12,7 @@ Public IaC architectures repository
 
 ```bash
 # download bicep template file
-curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/2f5eae2ad1311415d2778f3868466d6b5afca06d/main.bicep
+curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
 curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fd-plan-app.json
@@ -37,7 +37,7 @@ az deployment sub create \
 
 ```bash
 # download bicep template file
-curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/2f5eae2ad1311415d2778f3868466d6b5afca06d/main.bicep
+curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
 curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
@@ -63,7 +63,7 @@ az deployment sub create \
 
 ```bash
 # download bicep template file
-curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/2f5eae2ad1311415d2778f3868466d6b5afca06d/main.bicep
+curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
 curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
