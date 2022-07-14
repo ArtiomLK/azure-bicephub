@@ -6,6 +6,9 @@ Public IaC architectures repository
 
 ### Imagine
 
+
+[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
+
 - Azure Front Door
 - Azure App Service Plan
 - Azure App Services
