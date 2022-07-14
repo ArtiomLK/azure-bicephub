@@ -2,11 +2,12 @@ on:
   push:
     paths:
       - '.github/workflows/imagine.yml'
+      - 'main.bicep'
       - '!**.md'
 
 env:
-  DEPLOYMENT_TEMPLATE: https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/df497b2e63ed1073eb98c597f1c93d496dcbba6b/main.bicep
-  DEPLOYMENT_PARAMETERS: https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/ceb8f59db06363a4731ce36323698cecdb6f8c28/architectures/fd-premium-app-w-pe/parameters/fd-plan-app.json
+  DEPLOYMENT_TEMPLATE: main.bicep
+  DEPLOYMENT_PARAMETERS: https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fd-plan-app.json
   PROJECT_NAME: imagine
 
 name: deploy-architecture
@@ -15,9 +16,9 @@ jobs:
     environment: dev
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: get-files
         run: |
-          curl -o template.bicep ${{env.DEPLOYMENT_TEMPLATE}}
           curl -o parameters.bicep ${{env.DEPLOYMENT_PARAMETERS}}
 
       - name: login-to-az
@@ -32,6 +33,6 @@ jobs:
           subscriptionId: ${{ secrets.SUB_ID }}
           deploymentName: ${{env.PROJECT_NAME}}
           region: eastus2
-          template: template.bicep
+          template: ${{env.DEPLOYMENT_TEMPLATE}}
           parameters: parameters.bicep
           failOnStdErr: true
