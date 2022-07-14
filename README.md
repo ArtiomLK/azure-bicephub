@@ -6,7 +6,6 @@ Public IaC architectures repository
 
 ### Imagine
 
-
 [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
 
 - Azure Front Door
@@ -29,6 +28,8 @@ az deployment sub create \
 ```
 
 ### Seek
+
+[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -54,6 +55,8 @@ az deployment sub create \
 ```
 
 ### Heal
+
+[![Heal](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml)
 
 - Azure Front Door
   - Private Links to Origins
