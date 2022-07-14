@@ -10,7 +10,7 @@ env:
   DEPLOYMENT_PARAMETERS: https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
   PROJECT_NAME: seek
 
-name: deploy-architecture
+name: deploy-architecture-seek
 jobs:
   test_deploy_on_az:
     environment: dev

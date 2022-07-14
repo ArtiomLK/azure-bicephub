@@ -10,7 +10,7 @@ env:
   DEPLOYMENT_PARAMETERS: https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fd-plan-app.json
   PROJECT_NAME: imagine
 
-name: deploy-architecture
+name: deploy-architecture-imagine
 jobs:
   test_deploy_on_az:
     environment: dev

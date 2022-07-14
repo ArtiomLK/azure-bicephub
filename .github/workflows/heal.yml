@@ -10,7 +10,7 @@ env:
   DEPLOYMENT_PARAMETERS: https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
   PROJECT_NAME: heal
 
-name: deploy-architecture
+name: deploy-architecture-heal
 jobs:
   test_deploy_on_az:
     environment: dev
