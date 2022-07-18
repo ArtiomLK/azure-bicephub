@@ -27,6 +27,29 @@ az deployment sub create \
   --parameters @imagine_parameters.json
 ```
 
+### Envision
+
+[![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+- Azure App Services
+
+```bash
+# download bicep template file
+curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-reliability-architecture/main/architectures/fd-premium-app-w-pe/parameters/fd-plan-app.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name envision \
+  --subscription '<sub_id>' \
+  --template-file envision_template.bicep \
+  --parameters @envision_parameters.json
+```
+
 ### Seek
 
 [![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
