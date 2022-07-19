@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture" :"fd-plan-app",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-dream-dev-eastus2": {
+          "sub_id": "<sub_id>",
+          "location": "eastus2"
+        },
+        "rg-dream-dev-centralus": {
+          "sub_id": "<sub_id>",
+          "location": "centralus"
+        }
+      }
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-dream-dev-eastus2",
+          "name": "plan-dream-dev-eastus2",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-dream-dev-centralus",
+          "name": "plan-dream-dev-centralus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-dream-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-dream-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-dream-dev-eastus2",
+          "name": "app-a-dream-eastus2-dev"
+        },
+
+        {
+          "rg_n": "rg-dream-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-dream-dev-centralus/providers/Microsoft.Web/serverFarms/plan-dream-dev-centralus",
+          "name": "app-a-dream-centralus-dev"
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-dream-dev-eastus2",
+        "name": "fd-dream-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "dream-prod-route",
+        "origin_g_n": "dream-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}

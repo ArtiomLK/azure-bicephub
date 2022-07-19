@@ -1,0 +1,94 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture" :"fd-plan-apps",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-imagine-dev-ukwest": {
+          "sub_id": "<sub_id>",
+          "location": "ukwest"
+        },
+        "rg-imagine-dev-uksouth": {
+          "sub_id": "<sub_id>",
+          "location": "uksouth"
+        }
+      }
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-imagine-dev-ukwest",
+          "name": "plan-imagine-dev-ukwest",
+          "sku_code": "S2",
+          "sku_tier": "Standard",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-imagine-dev-uksouth",
+          "name": "plan-imagine-dev-uksouth",
+          "sku_code": "S2",
+          "sku_tier": "Standard",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-imagine-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-imagine-dev-ukwest",
+          "name": "app-a-imagine-ukwest-dev"
+        },
+        {
+          "rg_n": "rg-imagine-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-imagine-dev-ukwest",
+          "name": "app-b-imagine-ukwest-dev"
+        },
+        {
+          "rg_n": "rg-imagine-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-imagine-dev-ukwest",
+          "name": "app-c-imagine-ukwest-dev"
+        },
+
+        {
+          "rg_n": "rg-imagine-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-imagine-dev-uksouth",
+          "name": "app-a-imagine-uksouth-dev"
+        },
+        {
+          "rg_n": "rg-imagine-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-imagine-dev-uksouth",
+          "name": "app-b-imagine-uksouth-dev"
+        },
+        {
+          "rg_n": "rg-imagine-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-imagine-dev-uksouth",
+          "name": "app-c-imagine-uksouth-dev"
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-imagine-dev-ukwest",
+        "name": "fd-imagine-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "imagine-prod-route",
+        "origin_g_n": "imagine-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}
