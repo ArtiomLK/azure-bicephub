@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/heal.yml'
+      - 'parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json'
       - 'main.bicep'
       - '!**.md'
 

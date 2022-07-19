@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/imagine.yml'
+      - 'parameters/fd-plan-app.json'
       - 'main.bicep'
       - '!**.md'
 

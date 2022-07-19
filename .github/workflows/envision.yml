@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/envision.yml'
+      - 'parameters/fd-plan-app-appi.json'
       - 'main.bicep'
       - '!**.md'
 

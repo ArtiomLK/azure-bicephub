@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/seek.yml'
+      - 'parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json'
       - 'main.bicep'
       - '!**.md'
 
