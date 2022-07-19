@@ -1,0 +1,215 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture" :"fd-plan-apps",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-matrix-dev-ukwest": {
+          "sub_id": "<sub_id>",
+          "location": "ukwest"
+        },
+        "rg-matrix-dev-uksouth": {
+          "sub_id": "<sub_id>",
+          "location": "uksouth"
+        }
+      }
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "name": "plan-matrix-dev-ukwest",
+          "sku_code": "S2",
+          "sku_tier": "Standard",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "plan-matrix-dev-uksouth",
+          "sku_code": "S2",
+          "sku_tier": "Standard",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "logs":{
+      "value": [
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "name": "log-matrix-dev-ukwest"
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "log-matrix-dev-uksouth"
+        }
+      ]
+    },
+
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "name": "appi-matrix-ukwest-dev",
+          "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-ukwest/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-ukwest"
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "appi-matrix-uksouth-dev",
+          "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-uksouth/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-uksouth"
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-a-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-b-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-c-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-d-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-e-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-f-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-g-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-h-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-l-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-m-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-n-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-ukwest",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-ukwest/providers/Microsoft.Web/serverFarms/plan-matrix-dev-ukwest",
+          "name": "app-o-matrix-ukwest-dev",
+          "appi": {
+            "rg_n": "rg-matrix-dev-ukwest",
+            "name": "appi-matrix-ukwest-dev"
+          }
+        },
+
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-dev-uksouth",
+          "name": "app-a-matrix-uksouth-dev"
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-dev-uksouth",
+          "name": "app-b-matrix-uksouth-dev"
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-dev-uksouth",
+          "name": "app-c-matrix-uksouth-dev"
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-matrix-dev-ukwest",
+        "name": "fd-matrix-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "matrix-prod-route",
+        "origin_g_n": "matrix-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}

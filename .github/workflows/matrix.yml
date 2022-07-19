@@ -1,7 +1,7 @@
 on:
   push:
     paths:
-      - '.github/workflows/envision.yml'
+      - '.github/workflows/matrix.yml'
       - 'parameters/fd-plan-app-appi.json'
       - 'main.bicep'
       - '!**.md'
@@ -9,9 +9,9 @@ on:
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fd-plan-app-appi.json
-  PROJECT_NAME: envision
+  PROJECT_NAME: matrix
 
-name: deploy-architecture-envision
+name: deploy-architecture-matrix
 jobs:
   test_deploy_on_az:
     environment: dev
