@@ -4,29 +4,6 @@ Public IaC architectures repository
 
 ## Architectures
 
-### Imagine
-
-[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-- Azure App Services
-
-```bash
-# download bicep template file
-curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download bicep parameters file
-curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name imagine \
-  --subscription '<sub_id>' \
-  --template-file imagine_template.bicep \
-  --parameters @imagine_parameters.json
-```
-
 ### Envision
 
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
@@ -40,7 +17,7 @@ az deployment sub create \
 curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app.json
+curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app-appi.json
 
 az deployment sub create \
   --location eastus2 \
@@ -48,33 +25,6 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file envision_template.bicep \
   --parameters @envision_parameters.json
-```
-
-### Seek
-
-[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-- Azure App Services
-  - Virtual Network integration
-  - Private Endpoints
-- Azure Virtual Networks
-- Azure Network Security Groups
-
-```bash
-# download bicep template file
-curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download bicep parameters file
-curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name seek \
-  --subscription '<sub_id>' \
-  --template-file seek_template.bicep \
-  --parameters @seek_parameters.json
 ```
 
 ### Heal
@@ -103,4 +53,77 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file heal_template.bicep \
   --parameters @heal_parameters.json
+```
+
+### Imagine
+
+[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+- Azure App Services
+
+```bash
+# download bicep template file
+curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name imagine \
+  --subscription '<sub_id>' \
+  --template-file imagine_template.bicep \
+  --parameters @imagine_parameters.json
+```
+
+### Matrix
+
+[![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+- Azure App Services
+
+```bash
+# download bicep template file
+curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-apps-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name matrix \
+  --subscription '<sub_id>' \
+  --template-file matrix_template.bicep \
+  --parameters @matrix_parameters.json
+```
+
+### Seek
+
+[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+- Azure App Services
+  - Virtual Network integration
+  - Private Endpoints
+- Azure Virtual Networks
+- Azure Network Security Groups
+
+```bash
+# download bicep template file
+curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name seek \
+  --subscription '<sub_id>' \
+  --template-file seek_template.bicep \
+  --parameters @seek_parameters.json
 ```
