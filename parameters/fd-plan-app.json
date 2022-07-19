@@ -12,11 +12,11 @@
 
     "rgs": {
       "value": {
-        "rg-dream-dev-eastus2": {
+        "rg-imagine-dev-eastus2": {
           "sub_id": "<sub_id>",
           "location": "eastus2"
         },
-        "rg-dream-dev-centralus": {
+        "rg-imagine-dev-centralus": {
           "sub_id": "<sub_id>",
           "location": "centralus"
         }
@@ -26,16 +26,16 @@
     "plans": {
       "value": [
         {
-          "rg_n": "rg-dream-dev-eastus2",
-          "name": "plan-dream-dev-eastus2",
+          "rg_n": "rg-imagine-dev-eastus2",
+          "name": "plan-imagine-dev-eastus2",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-dream-dev-centralus",
-          "name": "plan-dream-dev-centralus",
+          "rg_n": "rg-imagine-dev-centralus",
+          "name": "plan-imagine-dev-centralus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -47,26 +47,26 @@
     "apps": {
       "value": [
         {
-          "rg_n": "rg-dream-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-dream-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-dream-dev-eastus2",
-          "name": "app-a-dream-eastus2-dev"
+          "rg_n": "rg-imagine-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-imagine-dev-eastus2",
+          "name": "app-a-imagine-eastus2-dev"
         },
 
         {
-          "rg_n": "rg-dream-dev-centralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-dream-dev-centralus/providers/Microsoft.Web/serverFarms/plan-dream-dev-centralus",
-          "name": "app-a-dream-centralus-dev"
+          "rg_n": "rg-imagine-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-centralus/providers/Microsoft.Web/serverFarms/plan-imagine-dev-centralus",
+          "name": "app-a-imagine-centralus-dev"
         }
       ]
     },
 
     "fd": {
       "value": {
-        "rg_n": "rg-dream-dev-eastus2",
-        "name": "fd-dream-dev",
+        "rg_n": "rg-imagine-dev-eastus2",
+        "name": "fd-imagine-dev",
         "sku": "Premium_AzureFrontDoor",
-        "route_n": "dream-prod-route",
-        "origin_g_n": "dream-prod-origin-group",
+        "route_n": "imagine-prod-route",
+        "origin_g_n": "imagine-prod-origin-group",
         "origin_g_health_probe_settings": "Https"
       }
     }
