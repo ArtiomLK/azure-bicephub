@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture" :"fdWpl-plan-appsWpeWvintegration-vnet-pdnsz",
+        "architecture": "fdWpl-plan-appsWpeWvintegration-vnet-pdnsz",
         "env": "dev"
       }
     },
@@ -28,31 +28,35 @@
           "rg_n": "rg-heal-dev-eastus",
           "name": "vnet-heal-dev-eastus",
           "addr": "192.167.0.0/24",
-          "snets": {
-            "pe": {
+          "snets": [
+            {
+              "type": "pe",
               "name": "snet-pe",
               "addr": "192.167.0.0/28"
             },
-            "vnet_integration": {
+            {
+              "type": "vnet_integration",
               "name": "snet-plan-vnet-integration",
               "addr": "192.167.0.64/26"
             }
-          }
+          ]
         },
         {
           "rg_n": "rg-heal-dev-canadacentral",
           "name": "vnet-heal-dev-canadacentral",
           "addr": "192.168.0.0/24",
-          "snets": {
-            "pe": {
+          "snets": [
+            {
+              "type": "pe",
               "name": "snet-pe",
               "addr": "192.168.0.0/28"
             },
-            "vnet_integration": {
+            {
+              "type": "vnet_integration",
               "name": "snet-plan-vnet-integration",
               "addr": "192.168.0.64/26"
             }
-          }
+          ]
         }
       ]
     },
