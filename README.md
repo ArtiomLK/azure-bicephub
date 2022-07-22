@@ -4,6 +4,29 @@ Public IaC architectures repository
 
 ## Architectures
 
+### Endeavor
+
+[![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+- Azure App Services
+
+```bash
+# download bicep template file
+curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name endeavor \
+  --subscription '<sub_id>' \
+  --template-file endeavor_template.bicep \
+  --parameters @endeavor_parameters.json
+```
+
 ### Envision
 
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
