@@ -2,7 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/matrix.yml'
-      - 'parameters/fd-plan-app-appi.json'
+      - 'parameters/fd-plan-apps-appi.json'
       - 'main.bicep'
       - '!**.md'
 
