@@ -1,0 +1,209 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "fd-plans-appsWvintegration-vnet",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-endeavor-dev-westus3": {
+          "sub_id": "<sub_id>",
+          "location": "westus3"
+        },
+        "rg-endeavor-dev-brazilsouth": {
+          "sub_id": "<sub_id>",
+          "location": "brazilsouth"
+        }
+      }
+    },
+
+    "vnets": {
+      "value": [
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "name": "vnet-endeavor-dev-westus3",
+          "addr": "192.167.0.0/24",
+          "snets": [
+            {
+              "type": "pe",
+              "name": "snet-pe",
+              "addr": "192.167.0.0/28"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.167.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
+              "addr": "192.167.0.192/26"
+            }
+          ]
+        },
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "name": "vnet-endeavor-dev-brazilsouth",
+          "addr": "192.168.0.0/24",
+          "snets": [
+            {
+              "type": "pe",
+              "name": "snet-pe",
+              "addr": "192.168.0.0/28"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.168.0.192/26"
+            }
+          ]
+        }
+      ]
+    },
+
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "name": "log-endeavor-dev-westus32"
+        },
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "name": "log-endeavor-dev-centralus"
+        }
+      ]
+    },
+
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "name": "appi-endeavor-westus32-dev",
+          "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-westus32"
+        },
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "name": "appi-endeavor-centralus-dev",
+          "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-brazilsouth/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-centralus"
+        }
+      ]
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "name": "plan-endeavor-web-dev-westus3",
+          "sku_code": "P1V3",
+          "sku_tier": "PremiumV3",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "name": "plan-endeavor-svc-dev-westus3",
+          "sku_code": "P1V3",
+          "sku_tier": "PremiumV3",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "name": "plan-endeavor-web-dev-brazilsouth",
+          "sku_code": "P1V3",
+          "sku_tier": "PremiumV3",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-westus3",
+          "name": "app-web-vnet-integration-endeavor-westus3-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-web-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus3",
+          "name": "app-svc-a-vnet-integration-endeavor-westus3-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus3",
+          "name": "app-svc-b-vnet-integration-endeavor-westus3-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus3",
+          "name": "app-svc-c-vnet-integration-endeavor-westus3-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
+          "name": "app-web-vnet-integration-endeavor-brazilsouth-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
+          "name": "app-svc-a-vnet-integration-endeavor-brazilsouth-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
+          "name": "app-svc-b-vnet-integration-endeavor-brazilsouth-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-brazilsouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
+          "name": "app-svc-c-vnet-integration-endeavor-brazilsouth-dev",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+          }
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-endeavor-dev-westus3",
+        "name": "fd-endeavor-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "endeavor-dev-route",
+        "origin_g_n": "endeavor-dev-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}
