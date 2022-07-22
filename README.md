@@ -15,7 +15,7 @@ Public IaC architectures repository
 - Azure App Insights
   - Azure Log Analytics Workspace
 - Azure Virtual Networks
-  - Azure Network Security Groups
+- Azure Network Security Groups
 
 ```bash
 # download bicep template file
@@ -35,12 +35,6 @@ az deployment sub create \
 ### Envision
 
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-  - Azure App Services
-- Azure Log Analytics Workspace
-- Azure Virtual Network
 
 - Azure Front Door
 - Azure App Service Plan
@@ -73,10 +67,11 @@ az deployment sub create \
   - Private Links to Origins
 - Azure App Service Plan
   - Azure App Services
-  - Virtual Network integration
-- Private Endpoints
+    - Virtual Network integration
+    - Private Endpoints
 - Azure Virtual Networks
 - Azure Network Security Groups
+- Azure Private DNS Zones
 
 ```bash
 # download bicep template file
@@ -147,11 +142,12 @@ az deployment sub create \
 
 - Azure Front Door
 - Azure App Service Plan
-- Azure App Services
-  - Virtual Network integration
-  - Private Endpoints
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
 - Azure Virtual Networks
 - Azure Network Security Groups
+- Azure Private DNS Zones
 
 ```bash
 # download bicep template file
