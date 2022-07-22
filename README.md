@@ -10,17 +10,19 @@ Public IaC architectures repository
 
 - Azure Front Door
 - Azure App Service Plan
-- Azure App Services
+  - Azure App Services
+    - Virtual Network integration
 - Azure App Insights
-- Azure Log Analytics Workspace
-- Azure Virtual Network
+  - Azure Log Analytics Workspace
+- Azure Virtual Networks
+  - Azure Network Security Groups
 
 ```bash
 # download bicep template file
 curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app-appi.json
+curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plans-appsWvintegration-vnet.json
 
 az deployment sub create \
   --location eastus2 \
@@ -36,9 +38,17 @@ az deployment sub create \
 
 - Azure Front Door
 - Azure App Service Plan
-- Azure App Services
+  - Azure App Services
 - Azure Log Analytics Workspace
 - Azure Virtual Network
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+- Azure App Insights
+  - Azure Log Analytics Workspace
+- Azure Virtual Networks
+- Azure Network Security Groups
 
 ```bash
 # download bicep template file
@@ -112,7 +122,9 @@ az deployment sub create \
 
 - Azure Front Door
 - Azure App Service Plan
-- Azure App Services
+  - Azure App Services
+- Azure App Insights
+  - Azure Log Analytics Workspace
 
 ```bash
 # download bicep template file
