@@ -11,6 +11,9 @@ Public IaC architectures repository
 - Azure Front Door
 - Azure App Service Plan
 - Azure App Services
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Virtual Network
 
 ```bash
 # download bicep template file
@@ -34,6 +37,8 @@ az deployment sub create \
 - Azure Front Door
 - Azure App Service Plan
 - Azure App Services
+- Azure Log Analytics Workspace
+- Azure Virtual Network
 
 ```bash
 # download bicep template file
