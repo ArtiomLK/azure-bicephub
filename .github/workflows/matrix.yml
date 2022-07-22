@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/matrix.yml'
-      - 'parameters/fd-plan-app-appi.json'
+      - 'parameters/fd-plan-apps-appi.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-plan-app-appi.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-plan-apps-appi.json
   PROJECT_NAME: matrix
 
 name: deploy-architecture-matrix
