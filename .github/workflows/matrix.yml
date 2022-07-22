@@ -8,7 +8,7 @@ on:
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-plan-app-appi.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-plan-apps-appi.json
   PROJECT_NAME: matrix
 
 name: deploy-architecture-matrix
