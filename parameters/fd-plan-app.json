@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture" :"fd-plan-app",
+        "architecture": "fd-plan-app",
         "env": "dev"
       }
     },

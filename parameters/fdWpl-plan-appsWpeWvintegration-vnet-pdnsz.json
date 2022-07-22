@@ -37,7 +37,7 @@
             {
               "type": "vnet_integration",
               "name": "snet-plan-vnet-integration",
-              "addr": "192.167.0.64/26"
+              "addr": "192.167.0.192/26"
             }
           ]
         },
@@ -54,7 +54,7 @@
             {
               "type": "vnet_integration",
               "name": "snet-plan-vnet-integration",
-              "addr": "192.168.0.64/26"
+              "addr": "192.168.0.192/26"
             }
           ]
         }
@@ -66,7 +66,7 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "name": "plan-heal-dev-eastus",
-          "sku_code": "P2V3",
+          "sku_code": "P1V3",
           "sku_tier": "PremiumV3",
           "os_kind": "windows",
           "enable_zone_redundancy": false
@@ -74,7 +74,7 @@
         {
           "rg_n": "rg-heal-dev-canadacentral",
           "name": "plan-heal-dev-canadacentral",
-          "sku_code": "P2V3",
+          "sku_code": "P1V3",
           "sku_tier": "PremiumV3",
           "os_kind": "windows",
           "enable_zone_redundancy": false
