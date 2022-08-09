@@ -9,6 +9,9 @@ param rgs object
 @description('Virtual Networks parameters')
 param vnets array = []
 
+@description('Key Vault Names')
+param kvs array = []
+
 @description('App Service Plans Names')
 param plans array = []
 
@@ -27,12 +30,13 @@ param apps array = []
 @description('Front Door parameters')
 param fd object = {}
 
-module architecture 'br:bicephubdev.azurecr.io/bicep/modules/fd-premium-app-w-pe:d4fe168f15e344f5b876f03ea783c18f3d5469ad' = {
+module architecture 'br:bicephubdev.azurecr.io/bicep/modules/fd-premium-app-w-pe:e7fe4da1e56c4ed5388f495cf26f91c796bf4272' = {
   name: take('dream-architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
     rgs: rgs
     vnets: vnets
+    kvs: kvs
     plans: plans
     pdnszs: pdnszs
     logs: logs
