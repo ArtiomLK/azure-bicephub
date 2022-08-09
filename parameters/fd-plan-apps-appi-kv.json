@@ -23,6 +23,23 @@
       }
     },
 
+    "kvs": {
+      "value": [
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "name": "kv-invent-eastus2-dev",
+          "enable_rbac": "true",
+          "sku": "standard"
+        },
+        {
+          "rg_n": "rg-invent-dev-centralus",
+          "name": "kv-invent-centralus-dev",
+          "enable_rbac": "true",
+          "sku": "standard"
+        }
+      ]
+    },
+
     "plans": {
       "value": [
         {
@@ -68,23 +85,6 @@
           "rg_n": "rg-invent-dev-centralus",
           "name": "appi-invent-centralus-dev",
           "log_id": "<sub_id>/resourcegroups/rg-invent-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-invent-dev-centralus"
-        }
-      ]
-    },
-
-    "kvs": {
-      "value": [
-        {
-          "rg_n": "rg-invent-dev-eastus2",
-          "name": "kv-invent-eastus2-dev",
-          "enable_rbac": "true",
-          "sku": "standard"
-        },
-        {
-          "rg_n": "rg-invent-dev-centralus",
-          "name": "kv-invent-centralus-dev",
-          "enable_rbac": "true",
-          "sku": "standard"
         }
       ]
     },
