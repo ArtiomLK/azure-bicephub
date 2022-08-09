@@ -116,6 +116,7 @@ az deployment sub create \
 [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/invent.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/invent.yml)
 
 - Azure Front Door
+- Azure Key Vault
 - Azure App Service Plan
 - Azure App Services
 
