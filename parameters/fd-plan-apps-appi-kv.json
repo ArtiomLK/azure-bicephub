@@ -1,0 +1,168 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "fd-plan-apps-appi-kv",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-invent-dev-eastus2": {
+          "sub_id": "<sub_id>",
+          "location": "eastus2"
+        },
+        "rg-invent-dev-centralus": {
+          "sub_id": "<sub_id>",
+          "location": "centralus"
+        }
+      }
+    },
+
+    "kvs": {
+      "value": [
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "name": "kv-invent-eastus2-dev",
+          "enable_rbac": "true",
+          "sku": "standard"
+        },
+        {
+          "rg_n": "rg-invent-dev-centralus",
+          "name": "kv-invent-centralus-dev",
+          "enable_rbac": "true",
+          "sku": "standard"
+        }
+      ]
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "name": "plan-invent-dev-eastus2",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-invent-dev-centralus",
+          "name": "plan-invent-dev-centralus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "name": "log-invent-dev-eastus2"
+        },
+        {
+          "rg_n": "rg-invent-dev-centralus",
+          "name": "log-invent-dev-centralus"
+        }
+      ]
+    },
+
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "name": "appi-invent-eastus2-dev",
+          "log_id": "<sub_id>/resourcegroups/rg-invent-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-invent-dev-eastus2"
+        },
+        {
+          "rg_n": "rg-invent-dev-centralus",
+          "name": "appi-invent-centralus-dev",
+          "log_id": "<sub_id>/resourcegroups/rg-invent-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-invent-dev-centralus"
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
+          "name": "app-a-invent-eastus2-dev",
+          "appi": {
+            "rg_n": "rg-invent-dev-eastus2",
+            "name": "appi-invent-eastus2-dev"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+        },
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
+          "name": "app-b-invent-eastus2-dev",
+          "appi": {
+            "rg_n": "rg-invent-dev-eastus2",
+            "name": "appi-invent-eastus2-dev"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+        },
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
+          "name": "app-c-invent-eastus2-dev",
+          "appi": {
+            "rg_n": "rg-invent-dev-eastus2",
+            "name": "appi-invent-eastus2-dev"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+        },
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
+          "name": "app-d-invent-eastus2-dev",
+          "appi": {
+            "rg_n": "rg-invent-dev-eastus2",
+            "name": "appi-invent-eastus2-dev"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+        },
+        {
+          "rg_n": "rg-invent-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
+          "name": "app-e-invent-eastus2-dev",
+          "appi": {
+            "rg_n": "rg-invent-dev-eastus2",
+            "name": "appi-invent-eastus2-dev"
+          }
+        },
+
+        {
+          "rg_n": "rg-invent-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-centralus/providers/Microsoft.Web/serverFarms/plan-invent-dev-centralus",
+          "name": "app-a-invent-centralus-dev",
+          "appi": {
+            "rg_n": "rg-invent-dev-centralus",
+            "name": "appi-invent-centralus-dev"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-centralus/providers/Microsoft.KeyVault/vaults/kv-invent-centralus-dev"
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-invent-dev-eastus2",
+        "name": "fd-invent-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "invent-prod-route",
+        "origin_g_n": "invent-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}

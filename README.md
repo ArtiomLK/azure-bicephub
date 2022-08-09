@@ -111,6 +111,30 @@ az deployment sub create \
   --parameters @imagine_parameters.json
 ```
 
+### Invent
+
+[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/invent.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/invent.yml)
+
+- Azure Front Door
+- Azure Key Vault
+- Azure App Service Plan
+- Azure App Services
+
+```bash
+# download bicep template file
+curl -o invent_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-apps-appi-kv.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name invent \
+  --subscription '<sub_id>' \
+  --template-file invent_template.bicep \
+  --parameters @invent_parameters.json
+```
+
 ### Matrix
 
 [![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
