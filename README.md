@@ -125,7 +125,7 @@ az deployment sub create \
 curl -o invent_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app.json
+curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-apps-appi-kv.json
 
 az deployment sub create \
   --location eastus2 \
