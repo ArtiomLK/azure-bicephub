@@ -1,0 +1,36 @@
+on:
+  push:
+    paths:
+      - '.github/workflows/design.yml'
+      - 'parameters/fdWpl-plan-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-vnet.json'
+      - 'main.bicep'
+      - '!**.md'
+
+env:
+  DEPLOYMENT_TEMPLATE: main.bicep
+  DEPLOYMENT_PARAMETERS: parameters/fdWpl-plan-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-vnet.json
+  PROJECT_NAME: design
+
+name: deploy-architecture-design
+jobs:
+  test_deploy_on_az:
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: login-to-az
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: deploy-architecture-to-az
+        uses: azure/arm-deploy@v1
+        with:
+          scope: subscription
+          subscriptionId: ${{ secrets.SUB_ID }}
+          deploymentName: ${{env.PROJECT_NAME}}
+          region: eastus2
+          template: ${{env.DEPLOYMENT_TEMPLATE}}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}}
+          failOnStdErr: true
