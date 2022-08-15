@@ -88,6 +88,37 @@ az deployment sub create \
   --parameters @heal_parameters.json
 ```
 
+### Design
+
+[![Design](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml)
+
+- Azure Front Door
+  - Private Links to Origins
+- Azure Key Vault
+  - Private Endpoints
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+```bash
+# download bicep template file
+curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name design \
+  --subscription '<sub_id>' \
+  --template-file design_template.bicep \
+  --parameters @design_parameters.json
+```
+
 ### Imagine
 
 [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
