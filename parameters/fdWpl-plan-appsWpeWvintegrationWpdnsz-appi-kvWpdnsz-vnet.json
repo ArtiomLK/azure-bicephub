@@ -107,7 +107,7 @@
           "name": "kv-design-dev-eastus",
           "enable_rbac": "true",
           "sku": "standard",
-          "kv_enable_public_access": "disabled",
+          "kv_enable_public_access": false,
           "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-pe",
           "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         },
@@ -116,7 +116,7 @@
           "name": "kv-design-dev-canadac",
           "enable_rbac": "true",
           "sku": "standard",
-          "kv_enable_public_access": "disabled",
+          "kv_enable_public_access": false,
           "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral/subnets/snet-pe",
           "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
