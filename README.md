@@ -109,7 +109,7 @@ az deployment sub create \
 curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
+curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-plan-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-vnet.json
 
 az deployment sub create \
   --location eastus2 \
