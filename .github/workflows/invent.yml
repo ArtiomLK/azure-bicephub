@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/invent.yml'
-      - 'parameters/fd-plan-apps-appi-kv.json'
+      - 'parameters/fd-apps-appi-kv.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-plan-apps-appi-kv.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi-kv.json
   PROJECT_NAME: invent
 
 name: deploy-architecture-invent

@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/imagine.yml'
-      - 'parameters/fd-plan-app.json'
+      - 'parameters/fd-app.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-plan-app.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-app.json
   PROJECT_NAME: imagine
 
 name: deploy-architecture-imagine

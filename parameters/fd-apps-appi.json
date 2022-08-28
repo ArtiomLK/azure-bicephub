@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-plan-apps-appi",
+        "architecture": "fd-apps-appi",
         "env": "dev"
       }
     },
@@ -61,12 +61,12 @@
       "value": [
         {
           "rg_n": "rg-matrix-dev-eastus2",
-          "name": "appi-matrix-eastus2-dev",
+          "name": "appi-matrix-dev-eastus2",
           "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-eastus2"
         },
         {
           "rg_n": "rg-matrix-dev-centralus",
-          "name": "appi-matrix-centralus-dev",
+          "name": "appi-matrix-dev-centralus",
           "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-centralus"
         }
       ]
@@ -77,53 +77,53 @@
         {
           "rg_n": "rg-matrix-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-matrix-dev-eastus2",
-          "name": "app-a-matrix-eastus2-dev",
+          "name": "app-a-matrix-dev-eastus2",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus2",
-            "name": "appi-matrix-eastus2-dev"
+            "name": "appi-matrix-dev-eastus2"
           }
         },
         {
           "rg_n": "rg-matrix-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-matrix-dev-eastus2",
-          "name": "app-b-matrix-eastus2-dev",
+          "name": "app-b-matrix-dev-eastus2",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus2",
-            "name": "appi-matrix-eastus2-dev"
+            "name": "appi-matrix-dev-eastus2"
           }
         },
         {
           "rg_n": "rg-matrix-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-matrix-dev-eastus2",
-          "name": "app-c-matrix-eastus2-dev",
+          "name": "app-c-matrix-dev-eastus2",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus2",
-            "name": "appi-matrix-eastus2-dev"
+            "name": "appi-matrix-dev-eastus2"
           }
         },
         {
           "rg_n": "rg-matrix-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-matrix-dev-eastus2",
-          "name": "app-d-matrix-eastus2-dev",
+          "name": "app-d-matrix-dev-eastus2",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus2",
-            "name": "appi-matrix-eastus2-dev"
+            "name": "appi-matrix-dev-eastus2"
           }
         },
         {
           "rg_n": "rg-matrix-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-matrix-dev-eastus2",
-          "name": "app-e-matrix-eastus2-dev",
+          "name": "app-e-matrix-dev-eastus2",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus2",
-            "name": "appi-matrix-eastus2-dev"
+            "name": "appi-matrix-dev-eastus2"
           }
         },
 
         {
           "rg_n": "rg-matrix-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-centralus/providers/Microsoft.Web/serverFarms/plan-matrix-dev-centralus",
-          "name": "app-a-matrix-centralus-dev"
+          "name": "app-a-matrix-dev-centralus"
         }
       ]
     },

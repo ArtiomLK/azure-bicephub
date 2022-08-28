@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-plan-app",
+        "architecture": "fd-app",
         "env": "dev"
       }
     },
@@ -49,13 +49,13 @@
         {
           "rg_n": "rg-imagine-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-imagine-dev-eastus2",
-          "name": "app-a-imagine-eastus2-dev"
+          "name": "app-a-imagine-dev-eastus2"
         },
 
         {
           "rg_n": "rg-imagine-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-centralus/providers/Microsoft.Web/serverFarms/plan-imagine-dev-centralus",
-          "name": "app-a-imagine-centralus-dev"
+          "name": "app-a-imagine-dev-centralus"
         }
       ]
     },

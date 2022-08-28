@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-plan-apps-appi-kv",
+        "architecture": "fd-apps-appi-kv",
         "env": "dev"
       }
     },
@@ -27,13 +27,13 @@
       "value": [
         {
           "rg_n": "rg-invent-dev-eastus2",
-          "name": "kv-invent-eastus2-dev",
+          "name": "kv-invent-dev-eastus2",
           "enable_rbac": "true",
           "sku": "standard"
         },
         {
           "rg_n": "rg-invent-dev-centralus",
-          "name": "kv-invent-centralus-dev",
+          "name": "kv-invent-dev-centralus",
           "enable_rbac": "true",
           "sku": "standard"
         }
@@ -78,12 +78,12 @@
       "value": [
         {
           "rg_n": "rg-invent-dev-eastus2",
-          "name": "appi-invent-eastus2-dev",
+          "name": "appi-invent-dev-eastus2",
           "log_id": "<sub_id>/resourcegroups/rg-invent-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-invent-dev-eastus2"
         },
         {
           "rg_n": "rg-invent-dev-centralus",
-          "name": "appi-invent-centralus-dev",
+          "name": "appi-invent-dev-centralus",
           "log_id": "<sub_id>/resourcegroups/rg-invent-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-invent-dev-centralus"
         }
       ]
@@ -94,62 +94,62 @@
         {
           "rg_n": "rg-invent-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
-          "name": "app-a-invent-eastus2-dev",
+          "name": "app-a-invent-dev-eastus2",
           "appi": {
             "rg_n": "rg-invent-dev-eastus2",
-            "name": "appi-invent-eastus2-dev"
+            "name": "appi-invent-dev-eastus2"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-dev-eastus2"
         },
         {
           "rg_n": "rg-invent-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
-          "name": "app-b-invent-eastus2-dev",
+          "name": "app-b-invent-dev-eastus2",
           "appi": {
             "rg_n": "rg-invent-dev-eastus2",
-            "name": "appi-invent-eastus2-dev"
+            "name": "appi-invent-dev-eastus2"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-dev-eastus2"
         },
         {
           "rg_n": "rg-invent-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
-          "name": "app-c-invent-eastus2-dev",
+          "name": "app-c-invent-dev-eastus2",
           "appi": {
             "rg_n": "rg-invent-dev-eastus2",
-            "name": "appi-invent-eastus2-dev"
+            "name": "appi-invent-dev-eastus2"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-dev-eastus2"
         },
         {
           "rg_n": "rg-invent-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
-          "name": "app-d-invent-eastus2-dev",
+          "name": "app-d-invent-dev-eastus2",
           "appi": {
             "rg_n": "rg-invent-dev-eastus2",
-            "name": "appi-invent-eastus2-dev"
+            "name": "appi-invent-dev-eastus2"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-eastus2-dev"
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-invent-dev-eastus2"
         },
         {
           "rg_n": "rg-invent-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-invent-dev-eastus2",
-          "name": "app-e-invent-eastus2-dev",
+          "name": "app-e-invent-dev-eastus2",
           "appi": {
             "rg_n": "rg-invent-dev-eastus2",
-            "name": "appi-invent-eastus2-dev"
+            "name": "appi-invent-dev-eastus2"
           }
         },
 
         {
           "rg_n": "rg-invent-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-invent-dev-centralus/providers/Microsoft.Web/serverFarms/plan-invent-dev-centralus",
-          "name": "app-a-invent-centralus-dev",
+          "name": "app-a-invent-dev-centralus",
           "appi": {
             "rg_n": "rg-invent-dev-centralus",
-            "name": "appi-invent-centralus-dev"
+            "name": "appi-invent-dev-centralus"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-centralus/providers/Microsoft.KeyVault/vaults/kv-invent-centralus-dev"
+          "kv_id": "<sub_id>/resourceGroups/rg-invent-dev-centralus/providers/Microsoft.KeyVault/vaults/kv-invent-dev-centralus"
         }
       ]
     },

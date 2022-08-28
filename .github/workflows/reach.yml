@@ -1,17 +1,17 @@
 on:
   push:
     paths:
-      - '.github/workflows/endeavor.yml'
-      - 'parameters/fd-appsWvintegration.json'
+      - '.github/workflows/reach.yml'
+      - 'parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-appsWvintegration.json
-  PROJECT_NAME: endeavor
+  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+  PROJECT_NAME: reach
 
-name: deploy-architecture-endeavor
+name: deploy-architecture-reach
 jobs:
   test_deploy_on_az:
     environment: dev

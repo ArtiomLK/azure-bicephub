@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/seek.yml'
-      - 'parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json'
+      - 'parameters/fd-appsWpeWvintegration-pdnsz.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-appsWpeWvintegration-pdnsz.json
   PROJECT_NAME: seek
 
 name: deploy-architecture-seek
