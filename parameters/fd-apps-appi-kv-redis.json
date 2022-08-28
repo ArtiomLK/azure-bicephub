@@ -1,0 +1,148 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "fd-apps-appi-kv-redis",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-discover-dev-northeurope": {
+          "sub_id": "<sub_id>",
+          "location": "northeurope"
+        },
+        "rg-discover-dev-westeurope": {
+          "sub_id": "<sub_id>",
+          "location": "westeurope"
+        }
+      }
+    },
+
+    "kvs": {
+      "value": [
+        {
+          "rg_n": "rg-discover-dev-northeurope",
+          "name": "kv-discover-dev-ne",
+          "enable_rbac": "true",
+          "sku": "standard"
+        },
+        {
+          "rg_n": "rg-discover-dev-westeurope",
+          "name": "kv-discover-dev-we",
+          "enable_rbac": "true",
+          "sku": "standard"
+        }
+      ]
+    },
+
+    "redis": {
+      "value": [
+        {
+          "rg_n": "rg-discover-dev-northeurope",
+          "name": "redis-discover-dev-northeurope",
+          "redis_sku_tier": "Standard",
+          "redis_sku_capacity": 0,
+          "enable_nonSSL_port": true
+        },
+        {
+          "rg_n": "rg-discover-dev-westeurope",
+          "name": "redis-discover-dev-westeurope",
+          "redis_sku_tier": "Standard",
+          "redis_sku_capacity": 1,
+          "enable_nonSSL_port": true
+        }
+      ]
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-discover-dev-northeurope",
+          "name": "plan-discover-dev-northeurope",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-discover-dev-westeurope",
+          "name": "plan-discover-dev-westeurope",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-discover-dev-northeurope",
+          "name": "log-discover-dev-northeurope"
+        },
+        {
+          "rg_n": "rg-discover-dev-westeurope",
+          "name": "log-discover-dev-westeurope"
+        }
+      ]
+    },
+
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-discover-dev-northeurope",
+          "name": "appi-discover-dev-northeurope",
+          "log_id": "<sub_id>/resourcegroups/rg-discover-dev-northeurope/providers/microsoft.operationalinsights/workspaces/log-discover-dev-northeurope"
+        },
+        {
+          "rg_n": "rg-discover-dev-westeurope",
+          "name": "appi-discover-dev-westeurope",
+          "log_id": "<sub_id>/resourcegroups/rg-discover-dev-westeurope/providers/microsoft.operationalinsights/workspaces/log-discover-dev-westeurope"
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-discover-dev-northeurope",
+          "plan_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.Web/serverFarms/plan-discover-dev-northeurope",
+          "name": "app-a-discover-dev-northeurope",
+          "appi": {
+            "rg_n": "rg-discover-dev-northeurope",
+            "name": "appi-discover-dev-northeurope"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.KeyVault/vaults/kv-discover-dev-ne"
+        },
+
+        {
+          "rg_n": "rg-discover-dev-westeurope",
+          "plan_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.Web/serverFarms/plan-discover-dev-westeurope",
+          "name": "app-a-discover-dev-westeurope",
+          "appi": {
+            "rg_n": "rg-discover-dev-westeurope",
+            "name": "appi-discover-dev-westeurope"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.KeyVault/vaults/kv-discover-dev-we"
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-discover-dev-northeurope",
+        "name": "fd-discover-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "discover-prod-route",
+        "origin_g_n": "discover-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}

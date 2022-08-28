@@ -22,7 +22,7 @@ Public IaC architectures repository
 curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plans-appsWvintegration-vnet.json
+curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration.json
 
 az deployment sub create \
   --location eastus2 \
@@ -49,7 +49,7 @@ az deployment sub create \
 curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app-appi.json
+curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-app-appi.json
 
 az deployment sub create \
   --location eastus2 \
@@ -78,7 +78,7 @@ az deployment sub create \
 curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
+curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegration-pdnsz.json
 
 az deployment sub create \
   --location eastus2 \
@@ -109,7 +109,7 @@ az deployment sub create \
 curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-plan-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-vnet.json
+curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
 
 az deployment sub create \
   --location eastus2 \
@@ -117,6 +117,38 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file design_template.bicep \
   --parameters @design_parameters.json
+```
+
+### Reach
+
+[![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
+
+- Azure Front Door
+  - Private Links to Origins
+- Azure Key Vault
+  - Private Endpoints
+- Azure Cache for Redis
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+```bash
+# download bicep template file
+curl -o reach_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o reach_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+
+az deployment sub create \
+  --location eastus \
+  --name reach \
+  --subscription '<sub_id>' \
+  --template-file reach_template.bicep \
+  --parameters @reach_parameters.json
 ```
 
 ### Imagine
@@ -132,7 +164,7 @@ az deployment sub create \
 curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-app.json
+curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-app.json
 
 az deployment sub create \
   --location eastus2 \
@@ -156,7 +188,7 @@ az deployment sub create \
 curl -o invent_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-apps-appi-kv.json
+curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv.json
 
 az deployment sub create \
   --location eastus2 \
@@ -181,7 +213,7 @@ az deployment sub create \
 curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-apps-appi.json
+curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
   --location eastus2 \
@@ -189,6 +221,32 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file matrix_template.bicep \
   --parameters @matrix_parameters.json
+```
+
+### Discover
+
+[![Discover](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/discover.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/discover.yml)
+
+- Azure Front Door
+- Azure Cache for Redis
+- Azure App Service Plan
+  - Azure App Services
+- Azure App Insights
+  - Azure Log Analytics Workspace
+
+```bash
+# download bicep template file
+curl -o discover_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o discover_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
+
+az deployment sub create \
+  --location eastus \
+  --name discover \
+  --subscription '<sub_id>' \
+  --template-file discover_template.bicep \
+  --parameters @discover_parameters.json
 ```
 
 ### Seek
@@ -209,7 +267,7 @@ az deployment sub create \
 curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download bicep parameters file
-curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-plan-appsWpeWvintegration-vnet-pdnsz.json
+curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegration-pdnsz.json
 
 az deployment sub create \
   --location eastus2 \

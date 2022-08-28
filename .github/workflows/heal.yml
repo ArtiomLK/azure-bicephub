@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/heal.yml'
-      - 'parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json'
+      - 'parameters/fdWpl-appsWpeWvintegration-pdnsz.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fdWpl-plan-appsWpeWvintegration-vnet-pdnsz.json
+  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegration-pdnsz.json
   PROJECT_NAME: heal
 
 name: deploy-architecture-heal

@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-plans-appsWvintegration-vnet",
+        "architecture": "fd-appsWvintegration",
         "env": "dev"
       }
     },
@@ -89,7 +89,7 @@
         },
         {
           "rg_n": "rg-endeavor-dev-brazilsouth",
-          "name": "appi-endeavor-centralus-dev",
+          "name": "appi-endeavor-dev-centralus",
           "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-brazilsouth/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-centralus"
         }
       ]

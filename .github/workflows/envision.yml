@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/envision.yml'
-      - 'parameters/fd-plan-app-appi.json'
+      - 'parameters/fd-app-appi.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-plan-app-appi.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-app-appi.json
   PROJECT_NAME: envision
 
 name: deploy-architecture-envision

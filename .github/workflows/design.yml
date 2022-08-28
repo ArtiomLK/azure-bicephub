@@ -2,13 +2,13 @@ on:
   push:
     paths:
       - '.github/workflows/design.yml'
-      - 'parameters/fdWpl-plan-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-vnet.json'
+      - 'parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json'
       - 'main.bicep'
       - '!**.md'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fdWpl-plan-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-vnet.json
+  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
   PROJECT_NAME: design
 
 name: deploy-architecture-design
