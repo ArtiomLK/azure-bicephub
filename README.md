@@ -128,6 +128,7 @@ az deployment sub create \
 - Azure Key Vault
   - Private Endpoints
 - Azure Cache for Redis
+  - Private Endpoints
 - Azure App Service Plan
   - Azure App Services
     - Virtual Network integration
