@@ -33,7 +33,7 @@
         },
         {
           "rg_n": "rg-discover-dev-westeurope",
-          "name": "kkv-discover-dev-we",
+          "name": "kv-discover-dev-we",
           "enable_rbac": "true",
           "sku": "standard"
         }
@@ -129,7 +129,7 @@
             "rg_n": "rg-discover-dev-westeurope",
             "name": "appi-discover-dev-westeurope"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.KeyVault/vaults/kkv-discover-dev-we"
+          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.KeyVault/vaults/kv-discover-dev-we"
         }
       ]
     },
