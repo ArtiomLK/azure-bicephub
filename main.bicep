@@ -9,7 +9,7 @@ param rgs object
 @description('Virtual Networks parameters')
 param vnets array = []
 
-@description('Key Vault parameters')
+@description('Key Vaults parameters')
 param kvs array = []
 
 @description('Azure Cache for Redis parameters')
