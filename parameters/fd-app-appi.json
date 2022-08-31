@@ -61,7 +61,7 @@
       "value": [
         {
           "rg_n": "rg-envision-dev-eastus2",
-          "name": "appi-envision-eastus2-dev",
+          "name": "appi-envision-dev-eastus2",
           "log_id": "<sub_id>/resourcegroups/rg-envision-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-envision-dev-eastus2"
         },
         {
@@ -77,26 +77,26 @@
         {
           "rg_n": "rg-envision-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus2",
-          "name": "app-a-envision-eastus2-dev",
+          "name": "app-a-envision-dev-eastus2",
           "tz": "Central America Standard Time",
           "appi": {
             "rg_n": "rg-envision-dev-eastus2",
-            "name": "appi-envision-eastus2-dev"
+            "name": "appi-envision-dev-eastus2"
           }
         },
         {
           "rg_n": "rg-envision-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus2",
-          "name": "app-b-envision-eastus2-dev",
+          "name": "app-b-envision-dev-eastus2",
           "tz": "Atlantic Standard Time",
           "appi": {
-            "name": "appi-envision-eastus2-dev"
+            "name": "appi-envision-dev-eastus2"
           }
         },
         {
           "rg_n": "rg-envision-dev-eastus2",
           "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus2",
-          "name": "app-c-envision-eastus2-dev",
+          "name": "app-c-envision-dev-eastus2",
           "tz": "W. Europe Standard Time"
         },
 

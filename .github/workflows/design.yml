@@ -31,7 +31,7 @@ jobs:
           scope: subscription
           subscriptionId: ${{ secrets.SUB_ID }}
           deploymentName: ${{env.PROJECT_NAME}}
-          region: ${{env.DEPLOYMENT_TEMPLATE}}
+          region: ${{ env.DEPLOYMENT_REGION }}
           template: ${{env.DEPLOYMENT_TEMPLATE}}
           parameters: ${{env.DEPLOYMENT_PARAMETERS}}
           failOnStdErr: true
