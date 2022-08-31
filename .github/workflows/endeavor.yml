@@ -8,7 +8,7 @@ on:
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: northeurope.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-appsWvintegration.json
   PROJECT_NAME: endeavor
   DEPLOYMENT_REGION: westus3
 
