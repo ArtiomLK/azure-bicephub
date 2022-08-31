@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
   PROJECT_NAME: reach
+  DEPLOYMENT_REGION: uksouth
 
 name: deploy-architecture-reach
 jobs:

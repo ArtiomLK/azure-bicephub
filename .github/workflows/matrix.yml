@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi.json
   PROJECT_NAME: matrix
+  DEPLOYMENT_REGION: eastus2
 
 name: deploy-architecture-matrix
 jobs:

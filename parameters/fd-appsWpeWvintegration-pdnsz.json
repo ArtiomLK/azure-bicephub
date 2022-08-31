@@ -5,10 +5,11 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-appsWpeWvintegration-pdnsz",
+        "architecture" :"fd-appsWpeWvintegration-pdnsz",
         "env": "dev"
       }
     },
+
     "rgs": {
       "value": {
         "rg-seek-dev-eastus": {
@@ -116,12 +117,12 @@
         {
           "rg_n": "rg-seek-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Web/serverFarms/plan-seek-dev-eastus",
-          "name": "app-a-seek-dev-eastus"
+          "name": "app-a-seek-eastus-dev"
         },
         {
           "rg_n": "rg-seek-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Web/serverFarms/plan-seek-dev-eastus",
-          "name": "app-b-pe-seek-dev-eastus",
+          "name": "app-b-pe-seek-eastus-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-pe",
@@ -131,7 +132,7 @@
         {
           "rg_n": "rg-seek-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Web/serverFarms/plan-seek-dev-eastus",
-          "name": "app-n-pe-vnet-integration-seek-dev-eastus",
+          "name": "app-n-pe-vnet-integration-seek-eastus-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-pe",
@@ -145,13 +146,12 @@
         {
           "rg_n": "rg-seek-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-seek-dev-canadacentral",
-          "name": "app-a-seek-dev-canadacentral",
-          "enable_vnet_integration": false
+          "name": "app-a-seek-canadacentral-dev"
         },
         {
           "rg_n": "rg-seek-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-seek-dev-canadacentral",
-          "name": "app-b-pe-seek-dev-canadacentral",
+          "name": "app-b-pe-seek-canadacentral-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-canadacentral/subnets/snet-pe",
@@ -161,7 +161,7 @@
         {
           "rg_n": "rg-seek-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-seek-dev-canadacentral",
-          "name": "app-n-pe-vnet-integration-seek-dev-canadacentral",
+          "name": "app-n-pe-vnet-integration-seek-canadacentral-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-canadacentral/subnets/snet-pe",

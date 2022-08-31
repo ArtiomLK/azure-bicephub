@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegration-pdnsz.json
   PROJECT_NAME: heal
+  DEPLOYMENT_REGION: eastus
 
 name: deploy-architecture-heal
 jobs:

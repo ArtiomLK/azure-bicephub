@@ -108,13 +108,13 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/serverFarms/plan-heal-dev-eastus",
-          "name": "app-a-heal-dev-eastus",
+          "name": "app-a-heal-eastus-dev",
           "fd-pe": true
         },
         {
           "rg_n": "rg-heal-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/serverFarms/plan-heal-dev-eastus",
-          "name": "app-b-pe-heal-dev-eastus",
+          "name": "app-b-pe-heal-eastus-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-eastus/subnets/snet-pe",
@@ -124,7 +124,7 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/serverFarms/plan-heal-dev-eastus",
-          "name": "app-n-pe-vnet-integration-heal-dev-eastus",
+          "name": "app-n-pe-vnet-integration-heal-eastus-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-eastus/subnets/snet-pe",
@@ -138,13 +138,12 @@
         {
           "rg_n": "rg-heal-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-heal-dev-canadacentral",
-          "name": "app-a-heal-dev-canadacentral",
-          "enable_vnet_integration": false
+          "name": "app-a-heal-canadacentral-dev"
         },
         {
           "rg_n": "rg-heal-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-heal-dev-canadacentral",
-          "name": "app-b-pe-heal-dev-canadacentral",
+          "name": "app-b-pe-heal-canadacentral-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-heal-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-canadacentral/subnets/snet-pe",
@@ -154,7 +153,7 @@
         {
           "rg_n": "rg-heal-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-heal-dev-canadacentral",
-          "name": "app-n-pe-vnet-integration-heal-dev-canadacentral",
+          "name": "app-n-pe-vnet-integration-heal-canadacentral-dev",
           "pe": {
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-heal-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-canadacentral/subnets/snet-pe",

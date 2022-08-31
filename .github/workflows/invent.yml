@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi-kv.json
   PROJECT_NAME: invent
+  DEPLOYMENT_REGION: eastus2
 
 name: deploy-architecture-invent
 jobs:

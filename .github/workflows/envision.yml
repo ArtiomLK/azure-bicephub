@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fd-app-appi.json
   PROJECT_NAME: envision
+  DEPLOYMENT_REGION: eastus2
 
 name: deploy-architecture-envision
 jobs:

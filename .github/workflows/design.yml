@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
   PROJECT_NAME: design
+  DEPLOYMENT_REGION: eastus
 
 name: deploy-architecture-design
 jobs:
@@ -30,7 +31,7 @@ jobs:
           scope: subscription
           subscriptionId: ${{ secrets.SUB_ID }}
           deploymentName: ${{env.PROJECT_NAME}}
-          region: eastus2
+          region: ${{env.DEPLOYMENT_TEMPLATE}}
           template: ${{env.DEPLOYMENT_TEMPLATE}}
           parameters: ${{env.DEPLOYMENT_PARAMETERS}}
           failOnStdErr: true
