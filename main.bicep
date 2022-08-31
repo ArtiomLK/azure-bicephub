@@ -9,23 +9,23 @@ param rgs object
 @description('Virtual Networks parameters')
 param vnets array = []
 
+@description('Private DNS Zones parameters')
+param pdnszs array = []
+
 @description('Key Vaults parameters')
 param kvs array = []
 
 @description('Azure Cache for Redis parameters')
 param redis array = []
 
-@description('App Service Plans parameters')
-param plans array = []
-
-@description('Private DNS Zones parameters')
-param pdnszs array = []
-
 @description('Log Analytics Workspaces parameters')
 param logs array = []
 
 @description('App Insights parameters')
 param appis array = []
+
+@description('App Service Plans parameters')
+param plans array = []
 
 @description('App Services parameters')
 param apps array = []
