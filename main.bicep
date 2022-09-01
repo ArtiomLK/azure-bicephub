@@ -9,7 +9,7 @@ param rgs object
 @description('Virtual Networks parameters')
 param vnets array = []
 
-@description('Private DNS Zones parameters')
+@description('Private Domain Name System Zones parameters')
 param pdnszs array = []
 
 @description('Key Vaults parameters')
