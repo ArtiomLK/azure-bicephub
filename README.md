@@ -39,6 +39,7 @@ az deployment sub create \
 - Azure Front Door
 - Azure App Service Plan
   - Azure App Services
+  - Time Zone App Settings
 - Azure App Insights
   - Azure Log Analytics Workspace
 - Azure Virtual Networks
@@ -133,6 +134,7 @@ az deployment sub create \
   - Azure App Services
     - Virtual Network integration
     - Private Endpoints
+    - Time Zone App Setting
 - Azure Virtual Networks
 - Azure Network Security Groups
 - Azure Private DNS Zones

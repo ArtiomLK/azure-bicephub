@@ -10,6 +10,7 @@ env:
   DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi-kv-redis.json
   PROJECT_NAME: discover
+  DEPLOYMENT_REGION: northeurope
 
 name: deploy-architecture-discover
 jobs:
@@ -30,7 +31,7 @@ jobs:
           scope: subscription
           subscriptionId: ${{ secrets.SUB_ID }}
           deploymentName: ${{env.PROJECT_NAME}}
-          region: eastus2
+          region: ${{ env.DEPLOYMENT_REGION }}
           template: ${{env.DEPLOYMENT_TEMPLATE}}
           parameters: ${{env.DEPLOYMENT_PARAMETERS}}
           failOnStdErr: true

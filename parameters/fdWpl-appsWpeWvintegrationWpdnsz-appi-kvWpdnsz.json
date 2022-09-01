@@ -222,7 +222,6 @@
           "rg_n": "rg-design-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
           "name": "app-a-design-dev-canadacentral",
-          "enable_vnet_integration": false,
           "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/kv-design-dev-canadac",
           "appi": {
             "rg_n": "rg-design-dev-canadacentral",

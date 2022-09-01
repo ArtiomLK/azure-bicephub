@@ -9,6 +9,7 @@
         "env": "dev"
       }
     },
+
     "rgs": {
       "value": {
         "rg-seek-dev-eastus": {
@@ -145,8 +146,7 @@
         {
           "rg_n": "rg-seek-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-seek-dev-canadacentral",
-          "name": "app-a-seek-dev-canadacentral",
-          "enable_vnet_integration": false
+          "name": "app-a-seek-dev-canadacentral"
         },
         {
           "rg_n": "rg-seek-dev-canadacentral",

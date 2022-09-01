@@ -138,8 +138,7 @@
         {
           "rg_n": "rg-heal-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-heal-dev-canadacentral",
-          "name": "app-a-heal-dev-canadacentral",
-          "enable_vnet_integration": false
+          "name": "app-a-heal-dev-canadacentral"
         },
         {
           "rg_n": "rg-heal-dev-canadacentral",
