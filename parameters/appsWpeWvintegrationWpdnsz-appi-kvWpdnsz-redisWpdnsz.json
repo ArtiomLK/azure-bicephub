@@ -2,6 +2,7 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+
     "tags": {
       "value": {
         "project": "bicephub",
@@ -97,7 +98,7 @@
           "rg_n": "rg-sight-dev-northcentralus",
           "name": "redis-sight-dev-northcentralus",
           "redis_sku_tier": "Standard",
-          "redis_sku_capacity": 1,
+          "redis_sku_capacity": 0,
           "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
           "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe"
         }
@@ -188,7 +189,7 @@
         {
           "rg_n": "rg-sight-dev-northcentralus",
           "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-svc-dev-northcentralus",
+          "name": "app-sight-svc1-dev-northcentralus",
           "tz": "Central America Standard Time",
           "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/kv-sight-northcentralus",
           "appi": {
@@ -207,7 +208,7 @@
         {
           "rg_n": "rg-sight-dev-northcentralus",
           "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-svcmon-dev-northcentralus",
+          "name": "app-sight-svc2-dev-northcentralus",
           "tz": "Central America Standard Time",
           "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/kv-sight-northcentralus",
           "appi": {
@@ -226,7 +227,7 @@
         {
           "rg_n": "rg-sight-dev-northcentralus",
           "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-svcsix-dev-northcentralus",
+          "name": "app-sight-svc3-dev-northcentralus",
           "tz": "Central America Standard Time",
           "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/kv-sight-northcentralus",
           "appi": {

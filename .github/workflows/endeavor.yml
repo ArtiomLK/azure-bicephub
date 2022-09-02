@@ -2,14 +2,14 @@ on:
   push:
     paths:
       - '.github/workflows/endeavor.yml'
-      - 'parameters/fd-appsWvintegration.json'
+      - 'parameters/fd-appsWvintegration-appi.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fd-appsWvintegration.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-appsWvintegration-appi.json
   PROJECT_NAME: endeavor
   DEPLOYMENT_REGION: westus3
 
