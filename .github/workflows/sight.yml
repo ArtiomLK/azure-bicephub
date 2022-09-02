@@ -1,19 +1,19 @@
 on:
   push:
     paths:
-      - '.github/workflows/reach.yml'
-      - 'parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json'
+      - '.github/workflows/sight.yml'
+      - 'parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
-  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
-  PROJECT_NAME: reach
-  DEPLOYMENT_REGION: uksouth
+  DEPLOYMENT_PARAMETERS: parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+  PROJECT_NAME: sight
+  DEPLOYMENT_REGION: northcentralus
 
-name: deploy-architecture-reach
+name: deploy-architecture-sight
 jobs:
   test_deploy_on_az:
     environment: dev
