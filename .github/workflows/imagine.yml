@@ -5,6 +5,7 @@ on:
       - 'parameters/fd-app.json'
       - 'main.bicep'
       - '!**.md'
+      - '!.gitignore'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
