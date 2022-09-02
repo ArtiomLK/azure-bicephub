@@ -279,3 +279,35 @@ az deployment sub create \
   --template-file seek_template.bicep \
   --parameters @seek_parameters.json
 ```
+
+### Sight
+
+[![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
+
+- Azure Key Vault
+  - Private Endpoints
+- Azure Cache for Redis
+  - Private Endpoints
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
+    - Time Zone App Setting
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+```bash
+# download bicep template file
+curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download bicep parameters file
+curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+
+az deployment sub create \
+  --location northcentralus \
+  --name sight \
+  --subscription '<sub_id>' \
+  --template-file sight_template.bicep \
+  --parameters @sight_parameters.json
+```

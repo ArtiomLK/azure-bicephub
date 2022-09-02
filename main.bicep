@@ -33,7 +33,7 @@ param apps array = []
 @description('Front Door parameters')
 param fd object = {}
 
-module architecture 'br:bicephubdev.azurecr.io/bicep/modules/architectures:4d9781ef1718f95c8f315fa428741f286937a067' = {
+module architecture 'br:bicephubdev.azurecr.io/bicep/modules/architectures:d554e1078213dcf2c5c53f09fe878e93aad4ba01' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags

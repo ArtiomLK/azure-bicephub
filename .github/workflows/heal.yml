@@ -5,6 +5,7 @@ on:
       - 'parameters/fdWpl-appsWpeWvintegration-pdnsz.json'
       - 'main.bicep'
       - '!**.md'
+      - '!.gitignore'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
