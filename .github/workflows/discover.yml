@@ -5,6 +5,7 @@ on:
       - 'parameters/fd-apps-appi-kv-redis.json'
       - 'main.bicep'
       - '!**.md'
+      - '!.gitignore'
 
 env:
   DEPLOYMENT_TEMPLATE: main.bicep
