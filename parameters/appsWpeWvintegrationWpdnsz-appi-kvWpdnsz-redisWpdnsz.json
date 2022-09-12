@@ -204,7 +204,7 @@
         {
           "rg_n": "rg-sight-dev-northcentralus",
           "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-svc-b-dev-northcentralus",
+          "name": "app-sight-b-dev-northcentralus",
           "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/kv-sight-northcentralus",
           "appi": {
             "rg_n": "rg-sight-dev-northcentralus",
@@ -222,7 +222,7 @@
         {
           "rg_n": "rg-sight-dev-northcentralus",
           "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-svc-c-dev-northcentralus",
+          "name": "app-sight-c-dev-northcentralus",
           "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/kv-sight-northcentralus",
           "appi": {
             "rg_n": "rg-sight-dev-northcentralus",
