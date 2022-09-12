@@ -45,15 +45,15 @@
         {
           "rg_n": "rg-discover-dev-northeurope",
           "name": "redis-discover-dev-northeurope",
-          "redis_sku_tier": "Standard",
+          "redis_sku_tier": "Basic",
           "redis_sku_capacity": 0,
           "enable_nonSSL_port": true
         },
         {
           "rg_n": "rg-discover-dev-westeurope",
           "name": "redis-discover-dev-westeurope",
-          "redis_sku_tier": "Standard",
-          "redis_sku_capacity": 1,
+          "redis_sku_tier": "Basic",
+          "redis_sku_capacity": 0,
           "enable_nonSSL_port": true
         }
       ]

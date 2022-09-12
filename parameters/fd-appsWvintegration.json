@@ -16,9 +16,9 @@
           "sub_id": "<sub_id>",
           "location": "westus3"
         },
-        "rg-endeavor-dev-brazilsouth": {
+        "rg-endeavor-dev-australiaeast": {
           "sub_id": "<sub_id>",
-          "location": "brazilsouth"
+          "location": "australiaeast"
         }
       }
     },
@@ -48,8 +48,8 @@
           ]
         },
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "name": "vnet-endeavor-dev-brazilsouth",
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "name": "vnet-endeavor-dev-australiaeast",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -60,6 +60,11 @@
             {
               "type": "vnet_integration",
               "name": "snet-plan-web-vnet-integration",
+              "addr": "192.168.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
               "addr": "192.168.0.192/26"
             }
           ]
@@ -74,8 +79,8 @@
           "name": "log-endeavor-dev-westus3"
         },
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "name": "log-endeavor-dev-centralus"
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "name": "log-endeavor-dev-australiaeast"
         }
       ]
     },
@@ -88,9 +93,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-westus3"
         },
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "name": "appi-endeavor-dev-centralus",
-          "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-brazilsouth/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-centralus"
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "name": "appi-endeavor-dev-australiaeast",
+          "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-australiaeast/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-australiaeast"
         }
       ]
     },
@@ -115,8 +120,16 @@
         },
 
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "name": "plan-endeavor-web-dev-brazilsouth",
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "name": "plan-endeavor-web-dev-australiaeast",
+          "sku_code": "P1V3",
+          "sku_tier": "PremiumV3",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "name": "plan-endeavor-svc-dev-australiaeast",
           "sku_code": "P1V3",
           "sku_tier": "PremiumV3",
           "os_kind": "windows",
@@ -134,6 +147,11 @@
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-web-vnet-integration"
           }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-westus3",
+          "name": "app-web-endeavor-dev-westus3"
         },
         {
           "rg_n": "rg-endeavor-dev-westus3",
@@ -159,37 +177,58 @@
             "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-svc-vnet-integration"
           }
         },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus3",
+          "name": "app-svc-d-vnet-integration-endeavor-dev-westus3",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus3",
+          "name": "app-svc-e-vnet-integration-endeavor-dev-westus3",
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-endeavor-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus3/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus3",
+          "name": "app-svc-a-endeavor-dev-westus3"
+        },
 
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
-          "name": "app-web-vnet-integration-endeavor-dev-brazilsouth",
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-australiaeast",
+          "name": "app-web-vnet-integration-endeavor-dev-australiaeast",
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-australiaeast/subnets/snet-plan-web-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
-          "name": "app-svc-a-vnet-integration-endeavor-dev-brazilsouth",
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-australiaeast",
+          "name": "app-svc-a-vnet-integration-endeavor-dev-australiaeast",
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-australiaeast/subnets/snet-plan-svc-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
-          "name": "app-svc-b-vnet-integration-endeavor-dev-brazilsouth",
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-australiaeast",
+          "name": "app-svc-b-vnet-integration-endeavor-dev-australiaeast",
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-australiaeast/subnets/snet-plan-svc-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-endeavor-dev-brazilsouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-brazilsouth",
-          "name": "app-svc-c-vnet-integration-endeavor-dev-brazilsouth",
+          "rg_n": "rg-endeavor-dev-australiaeast",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-australiaeast",
+          "name": "app-svc-c-vnet-integration-endeavor-dev-australiaeast",
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-brazilsouth/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-brazilsouth/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-australiaeast/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-australiaeast/subnets/snet-plan-svc-vnet-integration"
           }
         }
       ]
