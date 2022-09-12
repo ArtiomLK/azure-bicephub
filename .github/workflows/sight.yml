@@ -1,0 +1,38 @@
+on:
+  push:
+    paths:
+      - '.github/workflows/sight.yml'
+      - 'parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json'
+      - 'main.bicep'
+      - '!**.md'
+      - '!.gitignore'
+
+env:
+  DEPLOYMENT_TEMPLATE: main.bicep
+  DEPLOYMENT_PARAMETERS: parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+  PROJECT_NAME: sight
+  DEPLOYMENT_REGION: northcentralus
+
+name: deploy-architecture-sight
+jobs:
+  test_deploy_on_az:
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: login-to-az
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: deploy-architecture-to-az
+        uses: azure/arm-deploy@v1
+        with:
+          scope: subscription
+          subscriptionId: ${{ secrets.SUB_ID }}
+          deploymentName: ${{env.PROJECT_NAME}}
+          region: ${{ env.DEPLOYMENT_REGION }}
+          template: ${{env.DEPLOYMENT_TEMPLATE}}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}}
+          failOnStdErr: true
