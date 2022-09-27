@@ -4,6 +4,8 @@ Public IaC architectures repository
 
 ## Architectures
 
+![Architectures](./assets/architectures.png)
+
 ### Endeavor
 
 [![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
