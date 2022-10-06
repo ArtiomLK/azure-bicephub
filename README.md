@@ -324,9 +324,11 @@ az deployment sub create \
 # download bicep template file
 curl -o alz_pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/alz-pdnsz.bicep
 
+tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'
+
 az deployment group create \
   --name 'alz-pdnsz-deployment' \
   --resource-group 'rg-dns' \
   --template-file alz_pdnsz.bicep \
-  --parameters vnet_id="/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>"
+  --parameters vnet_id="/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>" tags="$tags"
 ```
