@@ -1,0 +1,39 @@
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - '.github/workflows/alz-pdnsz.yml'
+      - 'alz-pdnsz.bicep'
+      - '!**.md'
+      - '!.gitignore'
+      - '!assets/**'
+
+env:
+  DEPLOYMENT_TEMPLATE: alz-pdnsz.bicep
+  PROJECT_NAME: alz-pdnsz
+  DEPLOYMENT_REGION: eastus2
+  RG_N: rg-alz-pdnsz
+  TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
+
+name: deploy-alz-pdnsz
+jobs:
+  test_deploy_on_az:
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: login-to-az
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.30.0
+          inlineScript: |
+            az group create \
+            --name ${{ env.RG_N }} \
+            --location ${{ env.DEPLOYMENT_REGION }} \
+            --tags  ${{ env.TAGS }}
