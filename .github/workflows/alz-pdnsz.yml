@@ -14,7 +14,7 @@ env:
   DEPLOYMENT_REGION: eastus2
   RG_N: rg-alz-pdnsz
   VNET_N: vnet-alz-pdnsz
-  TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
+  TAGS: '{"env":"dev","project":"bicephub","architecture":"alz-pdnsz"}'
 
 name: deploy-alz-pdnsz
 jobs:
