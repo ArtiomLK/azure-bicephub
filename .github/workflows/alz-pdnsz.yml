@@ -14,6 +14,7 @@ env:
   DEPLOYMENT_REGION: eastus2
   RG_N: rg-alz-pdnsz
   TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
+  VN_N: vnet-alz-pdnsz
 
 name: deploy-alz-pdnsz
 jobs:
@@ -37,3 +38,8 @@ jobs:
             --name ${{ env.RG_N }} \
             --location ${{ env.DEPLOYMENT_REGION }} \
             --tags  ${{ env.TAGS }}
+
+            az network vnet create \
+            --name ${{ env.VNET_N }} \
+            --resource-group ${{ env.RG_N }} \
+            --subnet-name default
