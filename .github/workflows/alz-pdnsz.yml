@@ -14,7 +14,7 @@ env:
   DEPLOYMENT_REGION: eastus2
   RG_N: rg-alz-pdnsz
   TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
-  VN_N: vnet-alz-pdnsz
+  VNET_N: vnet-alz-pdnsz
 
 name: deploy-alz-pdnsz
 jobs:
@@ -41,5 +41,10 @@ jobs:
 
             az network vnet create \
             --name ${{ env.VNET_N }} \
+            --resource-group ${{ env.RG_N }}
+
+            az deployment group create \
+            --name ${{ env.PROJECT_NAME }} \
             --resource-group ${{ env.RG_N }} \
-            --subnet-name default
+            --template-file ${{ env.DEPLOYMENT_TEMPLATE }} \
+            --parameters vnet_id="/subscriptions/${{ secrets.SUB_ID }}/resourceGroups/${{ env.RG_N }}/providers/Microsoft.Network/virtualNetworks/${{ env.VNET_N }}"
