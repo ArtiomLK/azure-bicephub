@@ -15,7 +15,7 @@ env:
   RG_N: rg-alz-pdnsz
   VNET_N: vnet-alz-pdnsz
   TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
-  TAGS_PARAMS: '{"env":"dev","project":"bicephub","architecture":"alz-pdnsz"}'
+  TAGS_PARAMS: '{\"env\":\"dev\",\"project\":\"bicephub\",\"architecture\":\"alz-pdnsz\"}'
 
 name: deploy-alz-pdnsz
 jobs:
@@ -49,4 +49,4 @@ jobs:
             --name ${{ env.PROJECT_NAME }} \
             --resource-group ${{ env.RG_N }} \
             --template-file ${{ env.DEPLOYMENT_TEMPLATE }} \
-            --parameters vnet_id="/subscriptions/${{ secrets.SUB_ID }}/resourceGroups/${{ env.RG_N }}/providers/Microsoft.Network/virtualNetworks/${{ env.VNET_N }}" tags=${{ env.TAGS_PARAMS }}
+            --parameters vnet_id="/subscriptions/${{ secrets.SUB_ID }}/resourceGroups/${{ env.RG_N }}/providers/Microsoft.Network/virtualNetworks/${{ env.VNET_N }}" tags="${{ env.TAGS_PARAMS }}"
