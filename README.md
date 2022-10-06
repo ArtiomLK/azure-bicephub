@@ -313,3 +313,22 @@ az deployment sub create \
   --template-file sight_template.bicep \
   --parameters @sight_parameters.json
 ```
+
+### Azure Landing Zones PDNSZ
+
+[![Azure Landing Zones PDNSZ](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
+
+- Azure Private DNS Zones
+
+```bash
+# download bicep template file
+curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/alz-pdnsz.bicep
+
+tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
+
+az deployment group create \
+  --name 'alz-pdnsz-deployment' \
+  --resource-group 'rg-dns' \
+  --template-file alz-pdnsz.bicep \
+  --parameters vnet_id="/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>" tags="$tags"
+```
