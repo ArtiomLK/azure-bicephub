@@ -14,6 +14,7 @@ env:
   DEPLOYMENT_PARAMETERS: modules/vwan/vwan_parameters.json
   PROJECT_NAME: vwan-demo
   DEPLOYMENT_REGION: eastus2
+  TAGS: "env=dev project=bicephub"
 
 name: deploy-architecture-sight
 jobs:
@@ -29,7 +30,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - run: |
-          az group create --name ${{env.RG_N}} --location ${{env.DEPLOYMENT_REGION}} --subscription ${{ secrets.SUB_ID }}
+          az group create --name ${{env.RG_N}} --location ${{env.DEPLOYMENT_REGION}} --subscription ${{ secrets.SUB_ID }} --tags ${{ env.TAGS }}
 
       - name: deploy-architecture-to-az
         uses: azure/arm-deploy@v1
