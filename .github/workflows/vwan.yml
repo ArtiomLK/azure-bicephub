@@ -38,4 +38,5 @@ jobs:
           resourceGroupName: ${{ env.RG_N }}
           deploymentMode: Incremental
           template: ${{ env.DEPLOYMENT_TEMPLATE }}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}}
           failOnStdErr: true
