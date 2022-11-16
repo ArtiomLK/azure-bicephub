@@ -11,7 +11,7 @@ on:
 env:
   RG_N: rg-azure-bicep-virtual-wan-demo
   DEPLOYMENT_TEMPLATE: modules/vwan/vwan.bicep
-  DEPLOYMENT_PARAMETERS: modules/vwan/vwan_parameters.bicep
+  DEPLOYMENT_PARAMETERS: modules/vwan/vwan_parameters.json
   PROJECT_NAME: vwan-demo
   DEPLOYMENT_REGION: eastus2
 
