@@ -15,11 +15,11 @@
     },
 
     "vpng_enabled": {
-      "value": [false, false, false, false]
+      "value": [true, true, true, true]
     },
 
     "bas_enabled": {
-      "value": [false, false, false, false]
+      "value": [true, true, true, true]
     }
   }
 }
