@@ -15,7 +15,7 @@ param vpng_enabled array = [false, false, false, false]
 @description('Deploy Bastions on each region topology. 4 length bool array. false, false, false, false')
 param bas_enabled array = [false, false, false, false]
 
-module architecture 'br:bicephubdev.azurecr.io/bicep/modules/vwan-demo:2f45938428caff0ee9e224acd9b1d449f334747c' = {
+module architecture 'br:bicephubdev.azurecr.io/bicep/modules/vwan-demo:d0cd1b2c1cc15d1fb97916a780b9839b3f84d0a5' = {
   name: take('architecture-${guid(subscription().id, resourceGroup().id)}', 64)
   params: {
     project_n: project_n
