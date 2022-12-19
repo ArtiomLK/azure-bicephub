@@ -354,8 +354,8 @@ tags='{"env":"dev", "project":"bicephub", "architecture":"vwan-demo"}'; echo $ta
 
 az deployment group create \
   --name 'vwan-deployment' \
+  --subscription '<sub_id>' \
   --resource-group 'rg-azure-bicep-virtual-wan-demo' \
   --template-file vwan_demo.bicep \
-  --parameters @vwan_parameters.json \
-  tags="$tags"
+  --parameters @vwan_parameters.json
 ```
