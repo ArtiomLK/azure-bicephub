@@ -350,12 +350,21 @@ curl -o vwan_demo.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephu
 # download json parameters file
 curl -o vwan_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan-parameters.json
 
-tags='{"env":"dev", "project":"bicephub", "architecture":"vwan-demo"}'; echo $tags
+tags="env=dev project=bicephub architecture=vwan-demo";                     echo $tags
+rg_n='rg-azure-bicep-virtual-wan-demo2';                                    echo $rg_n
+sub_id='<sub_id>';                                                          echo $sub_id
+
+az group create \
+--name $rg_n \
+--subscription $sub_id \
+--location 'eastus' \
+--tags $tags
+
 
 az deployment group create \
   --name 'vwan-deployment' \
-  --subscription '<sub_id>' \
-  --resource-group 'rg-azure-bicep-virtual-wan-demo' \
+  --subscription $sub_id \
+  --resource-group $rg_n \
   --template-file vwan_demo.bicep \
   --parameters @vwan_parameters.json
 ```
