@@ -23,7 +23,7 @@ Public IaC architectures repository
 # download bicep template file
 curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration.json
 
 az deployment sub create \
@@ -51,7 +51,7 @@ az deployment sub create \
 # download bicep template file
 curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-app-appi.json
 
 az deployment sub create \
@@ -80,7 +80,7 @@ az deployment sub create \
 # download bicep template file
 curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegration-pdnsz.json
 
 az deployment sub create \
@@ -111,7 +111,7 @@ az deployment sub create \
 # download bicep template file
 curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
 
 az deployment sub create \
@@ -145,7 +145,7 @@ az deployment sub create \
 # download bicep template file
 curl -o reach_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o reach_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
 
 az deployment sub create \
@@ -168,7 +168,7 @@ az deployment sub create \
 # download bicep template file
 curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-app.json
 
 az deployment sub create \
@@ -192,7 +192,7 @@ az deployment sub create \
 # download bicep template file
 curl -o invent_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv.json
 
 az deployment sub create \
@@ -217,7 +217,7 @@ az deployment sub create \
 # download bicep template file
 curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
@@ -243,7 +243,7 @@ az deployment sub create \
 # download bicep template file
 curl -o discover_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o discover_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
 
 az deployment sub create \
@@ -271,7 +271,7 @@ az deployment sub create \
 # download bicep template file
 curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegration-pdnsz.json
 
 az deployment sub create \
@@ -303,7 +303,7 @@ az deployment sub create \
 # download bicep template file
 curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download bicep parameters file
+# download json parameters file
 curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
 
 az deployment sub create \
@@ -318,7 +318,7 @@ az deployment sub create \
 
 [![Azure Landing Zones PDNSZ](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
 
-- Azure Private DNS Zones
+- Deploy all Azure Private DNS Zones
 
 ```bash
 # download bicep template file
@@ -331,4 +331,31 @@ az deployment group create \
   --resource-group 'rg-dns' \
   --template-file alz-pdnsz.bicep \
   --parameters vnet_id="/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>" tags="$tags"
+```
+
+### Virtual WAN
+
+[![Virtual WAN](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/vwan.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/vwan.yml)
+
+- Deploy a Virtual Wan demo on 4 set regions
+  - Central US
+  - East US
+  - East US 2
+  - West US 3
+
+```bash
+# download bicep template file
+curl -o vwan_demo.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan_demo.bicep
+
+# download json parameters file
+curl -o vwan_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan_parameters.json
+
+tags='{"env":"dev", "project":"bicephub", "architecture":"vwan-demo"}'; echo $tags
+
+az deployment group create \
+  --name 'vwan-deployment' \
+  --resource-group 'rg-azure-bicep-virtual-wan-demo' \
+  --template-file vwan_demo.bicep \
+  --parameters @sight_parameters.json \
+  tags="$tags"
 ```

@@ -1,0 +1,43 @@
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - '.github/workflows/vwan.yml'
+      - 'modules/vwan/**'
+      - '!**.md'
+      - '!.gitignore'
+      - '!assets/**'
+
+env:
+  RG_N: rg-azure-bicep-virtual-wan-demo
+  DEPLOYMENT_TEMPLATE: modules/vwan/vwan.bicep
+  DEPLOYMENT_PARAMETERS: modules/vwan/vwan_parameters.json
+  PROJECT_NAME: vwan-demo
+  DEPLOYMENT_REGION: eastus2
+  TAGS: "env=dev project=bicephub"
+
+name: deploy-architecture-sight
+jobs:
+  test_deploy_on_az:
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: login-to-az
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - run: |
+          az group create --name ${{env.RG_N}} --location ${{env.DEPLOYMENT_REGION}} --subscription ${{ secrets.SUB_ID }} --tags ${{ env.TAGS }}
+
+      - name: deploy-architecture-to-az
+        uses: azure/arm-deploy@v1
+        with:
+          scope: resourcegroup
+          resourceGroupName: ${{ env.RG_N }}
+          deploymentMode: Incremental
+          template: ${{ env.DEPLOYMENT_TEMPLATE }}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}}
+          failOnStdErr: true
