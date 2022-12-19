@@ -16,7 +16,7 @@ env:
   DEPLOYMENT_REGION: eastus2
   TAGS: "env=dev project=bicephub"
 
-name: deploy-vwan-architecture
+name: deploy-architecture-vwan-demo
 jobs:
   test_deploy_on_az:
     environment: dev
