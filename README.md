@@ -345,7 +345,7 @@ az deployment group create \
 
 ```bash
 # download bicep template file
-curl -o vwan_demo.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan_demo.bicep
+curl -o vwan_demo.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan.bicep
 
 # download json parameters file
 curl -o vwan_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan_parameters.json
