@@ -345,17 +345,17 @@ az deployment group create \
 
 ```bash
 # download bicep template file
-curl -o vwan_demo.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan_demo.bicep
+curl -o vwan-demo.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan-demo.bicep
 
 # download json parameters file
-curl -o vwan_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan_parameters.json
+curl -o vwan-parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/modules/vwan/vwan-parameters.json
 
 tags='{"env":"dev", "project":"bicephub", "architecture":"vwan-demo"}'; echo $tags
 
 az deployment group create \
   --name 'vwan-deployment' \
   --resource-group 'rg-azure-bicep-virtual-wan-demo' \
-  --template-file vwan_demo.bicep \
+  --template-file vwan-demo.bicep \
   --parameters @sight_parameters.json \
   tags="$tags"
 ```
