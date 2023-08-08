@@ -121,7 +121,7 @@
       "value": [
         {
           "rg_n": "rg-reach-dev-uksouth",
-          "name": "kv-reach-dev-uksouth",
+          "name": "reach-dev-uksouth",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
@@ -130,7 +130,7 @@
         },
         {
           "rg_n": "rg-reach-dev-koreacentral",
-          "name": "kv-reach-dev-canadac",
+          "name": "reach-dev-koreac",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
@@ -221,9 +221,9 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-dev-uksouth",
-          "name": "app-a-reach-dev-uksouth",
+          "name": "app-a-reach-dev-uksouth-alk",
           "fd-pe": true,
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/kv-reach-dev-uksouth",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/reach-dev-uksouth",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
             "name": "appi-reach-dev-uksouth"
@@ -232,7 +232,7 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-dev-uksouth",
-          "name": "app-b-pe-reach-dev-uksouth",
+          "name": "app-b-pe-reach-dev-uksouth-alk",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
             "name": "appi-reach-dev-uksouth"
@@ -246,8 +246,8 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-dev-uksouth",
-          "name": "app-n-pe-vnet-integration-reach-dev-uksouth",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/kv-reach-dev-uksouth",
+          "name": "app-n-pe-vnet-integration-reach-dev-uksouth-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/reach-dev-uksouth",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
             "name": "appi-reach-dev-uksouth"
@@ -265,8 +265,8 @@
         {
           "rg_n": "rg-reach-dev-koreacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Web/serverFarms/plan-reach-dev-koreacentral",
-          "name": "app-a-reach-dev-koreacentral",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.KeyVault/vaults/kv-reach-dev-canadac",
+          "name": "app-a-reach-dev-koreacentral-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.KeyVault/vaults/reach-dev-koreac",
           "appi": {
             "rg_n": "rg-reach-dev-koreacentral",
             "name": "appi-reach-dev-koreacentral"
@@ -275,7 +275,7 @@
         {
           "rg_n": "rg-reach-dev-koreacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Web/serverFarms/plan-reach-dev-koreacentral",
-          "name": "app-b-pe-reach-dev-koreacentral",
+          "name": "app-b-pe-reach-dev-koreacentral-alk",
           "appi": {
             "rg_n": "rg-reach-dev-koreacentral",
             "name": "appi-reach-dev-koreacentral"
@@ -289,8 +289,8 @@
         {
           "rg_n": "rg-reach-dev-koreacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Web/serverFarms/plan-reach-dev-koreacentral",
-          "name": "app-n-pe-vnet-integration-reach-dev-koreacentral",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.KeyVault/vaults/kv-reach-dev-canadac",
+          "name": "app-n-pe-vnet-integration-reach-dev-koreacentral-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.KeyVault/vaults/reach-dev-koreac",
           "appi": {
             "rg_n": "rg-reach-dev-koreacentral",
             "name": "appi-reach-dev-koreacentral"

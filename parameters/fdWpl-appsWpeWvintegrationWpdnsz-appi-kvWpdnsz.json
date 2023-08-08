@@ -104,7 +104,7 @@
       "value": [
         {
           "rg_n": "rg-design-dev-eastus",
-          "name": "kv-design-dev-eastus",
+          "name": "design-dev-eastus",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
@@ -113,7 +113,7 @@
         },
         {
           "rg_n": "rg-design-dev-canadacentral",
-          "name": "kv-design-dev-canadac",
+          "name": "design-dev-canadac",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
@@ -177,9 +177,9 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
-          "name": "app-t1-design-dev-eastus",
+          "name": "app-t1-design-dev-eastus-alk",
           "fd-pe": true,
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/kv-design-dev-eastus",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/design-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
             "name": "appi-design-dev-eastus"
@@ -188,7 +188,7 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
-          "name": "app-t2-pe-design-dev-eastus",
+          "name": "app-t2-pe-design-dev-eastus-alk",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
             "name": "appi-design-dev-eastus"
@@ -202,8 +202,8 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
-          "name": "app-tn-pe-vnet-integration-design-dev-eastus",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/kv-design-dev-eastus",
+          "name": "app-tn-pe-vnet-integration-design-dev-eastus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/design-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
             "name": "appi-design-dev-eastus"
@@ -221,8 +221,8 @@
         {
           "rg_n": "rg-design-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
-          "name": "app-t1-design-dev-canadacentral",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/kv-design-dev-canadac",
+          "name": "app-t1-design-dev-canadacentral-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/design-dev-canadac",
           "appi": {
             "rg_n": "rg-design-dev-canadacentral",
             "name": "appi-design-dev-canadacentral"
@@ -231,7 +231,7 @@
         {
           "rg_n": "rg-design-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
-          "name": "app-t2-pe-design-dev-canadacentral",
+          "name": "app-t2-pe-design-dev-canadacentral-alk",
           "appi": {
             "rg_n": "rg-design-dev-canadacentral",
             "name": "appi-design-dev-canadacentral"
@@ -245,8 +245,8 @@
         {
           "rg_n": "rg-design-dev-canadacentral",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
-          "name": "app-tn-pe-vnet-integration-design-dev-canadacentral",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/kv-design-dev-canadac",
+          "name": "app-tn-pe-vnet-integration-design-dev-canadacentral-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/design-dev-canadac",
           "appi": {
             "rg_n": "rg-design-dev-canadacentral",
             "name": "appi-design-dev-canadacentral"

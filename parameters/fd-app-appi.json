@@ -12,13 +12,13 @@
 
     "rgs": {
       "value": {
-        "rg-envision-dev-eastus2": {
+        "rg-envision-dev-eastus": {
           "sub_id": "<sub_id>",
-          "location": "eastus2"
+          "location": "eastus"
         },
-        "rg-envision-dev-centralus": {
+        "rg-envision-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "centralus"
+          "location": "westus3"
         }
       }
     },
@@ -26,16 +26,16 @@
     "plans": {
       "value": [
         {
-          "rg_n": "rg-envision-dev-eastus2",
-          "name": "plan-envision-dev-eastus2",
+          "rg_n": "rg-envision-dev-eastus",
+          "name": "plan-envision-dev-eastus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-envision-dev-centralus",
-          "name": "plan-envision-dev-centralus",
+          "rg_n": "rg-envision-dev-westus3",
+          "name": "plan-envision-dev-westus3",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -47,12 +47,12 @@
     "logs": {
       "value": [
         {
-          "rg_n": "rg-envision-dev-eastus2",
-          "name": "log-envision-dev-eastus2"
+          "rg_n": "rg-envision-dev-eastus",
+          "name": "log-envision-dev-eastus"
         },
         {
-          "rg_n": "rg-envision-dev-centralus",
-          "name": "log-envision-dev-centralus"
+          "rg_n": "rg-envision-dev-westus3",
+          "name": "log-envision-dev-westus3"
         }
       ]
     },
@@ -60,14 +60,14 @@
     "appis": {
       "value": [
         {
-          "rg_n": "rg-envision-dev-eastus2",
-          "name": "appi-envision-dev-eastus2",
-          "log_id": "<sub_id>/resourcegroups/rg-envision-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-envision-dev-eastus2"
+          "rg_n": "rg-envision-dev-eastus",
+          "name": "appi-envision-dev-eastus",
+          "log_id": "<sub_id>/resourcegroups/rg-envision-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-envision-dev-eastus"
         },
         {
-          "rg_n": "rg-envision-dev-centralus",
-          "name": "appi-envision-dev-centralus",
-          "log_id": "<sub_id>/resourcegroups/rg-envision-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-envision-dev-centralus"
+          "rg_n": "rg-envision-dev-westus3",
+          "name": "appi-envision-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-envision-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-envision-dev-westus3"
         }
       ]
     },
@@ -75,35 +75,35 @@
     "apps": {
       "value": [
         {
-          "rg_n": "rg-envision-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus2",
-          "name": "app-a-envision-dev-eastus2",
+          "rg_n": "rg-envision-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus",
+          "name": "app-a-envision-dev-eastus-alk",
           "appi": {
-            "rg_n": "rg-envision-dev-eastus2",
-            "name": "appi-envision-dev-eastus2"
+            "rg_n": "rg-envision-dev-eastus",
+            "name": "appi-envision-dev-eastus"
           }
         },
         {
-          "rg_n": "rg-envision-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus2",
-          "name": "app-b-envision-dev-eastus2",
+          "rg_n": "rg-envision-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus",
+          "name": "app-b-envision-dev-eastus-alk",
           "appi": {
-            "name": "appi-envision-dev-eastus2"
+            "name": "appi-envision-dev-eastus"
           }
         },
         {
-          "rg_n": "rg-envision-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus2",
-          "name": "app-c-envision-dev-eastus2"
+          "rg_n": "rg-envision-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus/providers/Microsoft.Web/serverFarms/plan-envision-dev-eastus",
+          "name": "app-c-envision-dev-eastus"
         },
 
         {
-          "rg_n": "rg-envision-dev-centralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-centralus/providers/Microsoft.Web/serverFarms/plan-envision-dev-centralus",
-          "name": "app-a-envision-dev-centralus",
+          "rg_n": "rg-envision-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-westus3/providers/Microsoft.Web/serverFarms/plan-envision-dev-westus3",
+          "name": "app-a-envision-dev-westus3-alk",
           "appi": {
-            "rg_n": "rg-envision-dev-centralus",
-            "name": "appi-envision-dev-centralus"
+            "rg_n": "rg-envision-dev-westus3",
+            "name": "appi-envision-dev-westus3"
           }
         }
       ]
@@ -111,7 +111,7 @@
 
     "fd": {
       "value": {
-        "rg_n": "rg-envision-dev-eastus2",
+        "rg_n": "rg-envision-dev-eastus",
         "name": "fd-envision-dev",
         "sku": "Premium_AzureFrontDoor",
         "route_n": "envision-prod-route",
