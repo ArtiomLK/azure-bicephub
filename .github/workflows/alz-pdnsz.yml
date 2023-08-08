@@ -20,10 +20,10 @@ env:
 name: deploy-alz-pdnsz
 jobs:
   test_deploy_on_az:
-    environment: dev
-    runs-on: ubuntu-latest
+    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    runs-on: ${{ vars.GH_RUNNER_OS }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: login-to-az
         uses: azure/login@v1
