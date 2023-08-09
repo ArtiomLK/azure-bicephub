@@ -178,12 +178,12 @@
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
           "name": "app-t1-design-dev-eastus-alk",
-          "fd-pe": true,
           "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/design-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
             "name": "appi-design-dev-eastus"
-          }
+          },
+          "fd-pe": true
         },
         {
           "rg_n": "rg-design-dev-eastus",
@@ -197,7 +197,8 @@
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-pe",
             "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          }
+          },
+          "fd-pe": true
         },
         {
           "rg_n": "rg-design-dev-eastus",
@@ -215,7 +216,8 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-plan-vnet-integration"
-          }
+          },
+          "fd-pe": true
         },
 
         {
@@ -226,7 +228,8 @@
           "appi": {
             "rg_n": "rg-design-dev-canadacentral",
             "name": "appi-design-dev-canadacentral"
-          }
+          },
+          "fd-pe": true
         },
         {
           "rg_n": "rg-design-dev-canadacentral",
@@ -240,7 +243,8 @@
             "enable_pe": true,
             "snet_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral/subnets/snet-pe",
             "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          }
+          },
+          "fd-pe": true
         },
         {
           "rg_n": "rg-design-dev-canadacentral",
