@@ -27,13 +27,13 @@
       "value": [
         {
           "rg_n": "rg-discover-dev-northeurope",
-          "name": "kv-discover-dev-ne",
+          "name": "discover-dev-ne",
           "enable_rbac": "true",
           "sku": "standard"
         },
         {
           "rg_n": "rg-discover-dev-westeurope",
-          "name": "kv-discover-dev-we",
+          "name": "discover-dev-westeurope",
           "enable_rbac": "true",
           "sku": "standard"
         }
@@ -113,23 +113,23 @@
         {
           "rg_n": "rg-discover-dev-northeurope",
           "plan_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.Web/serverFarms/plan-discover-dev-northeurope",
-          "name": "app-a-discover-dev-northeurope",
+          "name": "app-a-discover-dev-northeurope-alk",
           "appi": {
             "rg_n": "rg-discover-dev-northeurope",
             "name": "appi-discover-dev-northeurope"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.KeyVault/vaults/kv-discover-dev-ne"
+          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.KeyVault/vaults/discover-dev-ne"
         },
 
         {
           "rg_n": "rg-discover-dev-westeurope",
           "plan_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.Web/serverFarms/plan-discover-dev-westeurope",
-          "name": "app-a-discover-dev-westeurope",
+          "name": "app-a-discover-dev-westeurope-alk",
           "appi": {
             "rg_n": "rg-discover-dev-westeurope",
             "name": "appi-discover-dev-westeurope"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.KeyVault/vaults/kv-discover-dev-we"
+          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.KeyVault/vaults/discover-dev-westeurope"
         }
       ]
     },

@@ -11,7 +11,7 @@ on:
 env:
   DEPLOYMENT_TEMPLATE: alz-pdnsz.bicep
   PROJECT_NAME: alz-pdnsz
-  DEPLOYMENT_REGION: eastus2
+  DEPLOYMENT_REGION: eastus
   RG_N: rg-alz-pdnsz
   VNET_N: vnet-alz-pdnsz
   TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
@@ -20,10 +20,10 @@ env:
 name: deploy-alz-pdnsz
 jobs:
   test_deploy_on_az:
-    environment: dev
-    runs-on: ubuntu-latest
+    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    runs-on: ${{ vars.GH_RUNNER_OS }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: login-to-az
         uses: azure/login@v1
@@ -33,7 +33,7 @@ jobs:
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.30.0
+          azcliversion: 2.51.0
           inlineScript: |
             az group create \
             --name ${{ env.RG_N }} \

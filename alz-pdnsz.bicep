@@ -6,10 +6,10 @@ param tags object = {}
 @description('Virtual Network ID')
 param vnet_id string
 
-module pdnsz 'br:bicephubdev.azurecr.io/bicep/modules/pdnsz:0dd09d7ef416f3d4db1839b904b3ad63eae84a8f' = {
+module pdnsz 'br:bicephub.azurecr.io/bicep/modules/pdnsz:408a3ed81979bd65d6d880e5b4194baa367c940e' = {
   name: 'pdnsz-deployment'
   params: {
-    vnet_id: vnet_id
+    vnet_ids: array(vnet_id)
     tags: tags
   }
 }

@@ -12,13 +12,13 @@
 
     "rgs": {
       "value": {
-        "rg-imagine-dev-eastus2": {
+        "rg-imagine-dev-eastus": {
           "sub_id": "<sub_id>",
-          "location": "eastus2"
+          "location": "eastus"
         },
-        "rg-imagine-dev-centralus": {
+        "rg-imagine-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "centralus"
+          "location": "westus3"
         }
       }
     },
@@ -26,16 +26,16 @@
     "plans": {
       "value": [
         {
-          "rg_n": "rg-imagine-dev-eastus2",
-          "name": "plan-imagine-dev-eastus2",
+          "rg_n": "rg-imagine-dev-eastus",
+          "name": "plan-imagine-dev-eastus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-imagine-dev-centralus",
-          "name": "plan-imagine-dev-centralus",
+          "rg_n": "rg-imagine-dev-westus3",
+          "name": "plan-imagine-dev-westus3",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -47,22 +47,22 @@
     "apps": {
       "value": [
         {
-          "rg_n": "rg-imagine-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-imagine-dev-eastus2",
-          "name": "app-a-imagine-dev-eastus2"
+          "rg_n": "rg-imagine-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus/providers/Microsoft.Web/serverFarms/plan-imagine-dev-eastus",
+          "name": "app-a-imagine-dev-eastus-alk"
         },
 
         {
-          "rg_n": "rg-imagine-dev-centralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-centralus/providers/Microsoft.Web/serverFarms/plan-imagine-dev-centralus",
-          "name": "app-a-imagine-dev-centralus"
+          "rg_n": "rg-imagine-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-westus3/providers/Microsoft.Web/serverFarms/plan-imagine-dev-westus3",
+          "name": "app-a-imagine-dev-westus3-alk"
         }
       ]
     },
 
     "fd": {
       "value": {
-        "rg_n": "rg-imagine-dev-eastus2",
+        "rg_n": "rg-imagine-dev-eastus",
         "name": "fd-imagine-dev",
         "sku": "Premium_AzureFrontDoor",
         "route_n": "imagine-prod-route",

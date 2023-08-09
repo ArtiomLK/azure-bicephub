@@ -10,7 +10,6 @@ on:
       - '!assets/**'
 
 env:
-  DEPLOYMENT_TEMPLATE: main.bicep
   DEPLOYMENT_PARAMETERS: parameters/fd-appsWpeWvintegration-pdnsz.json
   PROJECT_NAME: seek
   DEPLOYMENT_REGION: eastus
@@ -18,10 +17,10 @@ env:
 name: deploy-architecture-seek
 jobs:
   test_deploy_on_az:
-    environment: dev
-    runs-on: ubuntu-latest
+    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    runs-on: ${{ vars.GH_RUNNER_OS }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: login-to-az
         uses: azure/login@v1
@@ -35,6 +34,6 @@ jobs:
           subscriptionId: ${{ secrets.SUB_ID }}
           deploymentName: ${{env.PROJECT_NAME}}
           region: ${{ env.DEPLOYMENT_REGION }}
-          template: ${{env.DEPLOYMENT_TEMPLATE}}
+          template: ${{ vars.MAIN_BICEP_FILE_PATH }}
           parameters: ${{env.DEPLOYMENT_PARAMETERS}}
           failOnStdErr: true
