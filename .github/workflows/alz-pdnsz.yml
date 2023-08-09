@@ -11,7 +11,7 @@ on:
 env:
   DEPLOYMENT_TEMPLATE: alz-pdnsz.bicep
   PROJECT_NAME: alz-pdnsz
-  DEPLOYMENT_REGION: eastus2
+  DEPLOYMENT_REGION: eastus
   RG_N: rg-alz-pdnsz
   VNET_N: vnet-alz-pdnsz
   TAGS: "env=dev project=bicephub architecture=alz-pdnsz"
