@@ -16,9 +16,9 @@
           "sub_id": "<sub_id>",
           "location": "uksouth"
         },
-        "rg-reach-dev-koreacentral": {
+        "rg-reach-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "koreacentral"
+          "location": "westus3"
         }
       }
     },
@@ -37,14 +37,19 @@
             },
             {
               "type": "vnet_integration",
-              "name": "snet-plan-vnet-integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.167.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
               "addr": "192.167.0.192/26"
             }
           ]
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "name": "vnet-reach-dev-koreacentral",
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "vnet-reach-dev-westus3",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -54,7 +59,12 @@
             },
             {
               "type": "vnet_integration",
-              "name": "snet-plan-vnet-integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.168.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
               "addr": "192.168.0.192/26"
             }
           ]
@@ -73,10 +83,10 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
+          "rg_n": "rg-reach-dev-westus3",
           "name": "privatelink.azurewebsites.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral",
+            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3",
             "auto_registration": false
           }
         },
@@ -90,10 +100,10 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
+          "rg_n": "rg-reach-dev-westus3",
           "name": "privatelink.vaultcore.azure.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral",
+            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3",
             "auto_registration": false
           }
         },
@@ -107,10 +117,10 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
+          "rg_n": "rg-reach-dev-westus3",
           "name": "privatelink.redis.cache.windows.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral",
+            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3",
             "auto_registration": false
           }
         }
@@ -129,13 +139,13 @@
           "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "name": "reach-dev-koreac",
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "reach-dev-westus3",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
       ]
     },
@@ -154,13 +164,13 @@
           "zones": ["1", "2", "3"]
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "name": "redis-reach-dev-koreacentral",
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "redis-reach-dev-westus3",
           "redis_sku_tier": "Premium",
           "redis_sku_capacity": 1,
           "enable_nonSSL_port": true,
-          "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
-          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral/subnets/snet-pe",
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
+          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-pe",
           "redis_replicas": 3,
           "zones": ["1", "2", "3"]
         }
@@ -174,8 +184,8 @@
           "name": "log-reach-dev-uksouth"
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "name": "log-reach-dev-koreacentral"
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "log-reach-dev-westus3"
         }
       ]
     },
@@ -188,9 +198,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-reach-dev-uksouth/providers/microsoft.operationalinsights/workspaces/log-reach-dev-uksouth"
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "name": "appi-reach-dev-koreacentral",
-          "log_id": "<sub_id>/resourcegroups/rg-reach-dev-koreacentral/providers/microsoft.operationalinsights/workspaces/log-reach-dev-koreacentral"
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "appi-reach-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-reach-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-reach-dev-westus3"
         }
       ]
     },
@@ -199,17 +209,34 @@
       "value": [
         {
           "rg_n": "rg-reach-dev-uksouth",
-          "name": "plan-reach-dev-uksouth",
-          "sku_code": "P1V2",
-          "sku_tier": "PremiumV2",
+          "name": "plan-reach-web-dev-uksouth",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "name": "plan-reach-dev-koreacentral",
-          "sku_code": "P1V2",
-          "sku_tier": "PremiumV2",
+          "rg_n": "rg-reach-dev-uksouth",
+          "name": "plan-reach-svc-dev-uksouth",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "plan-reach-web-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-reach-dev-westus3",
+          "name": "plan-reach-svc-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         }
@@ -220,33 +247,8 @@
       "value": [
         {
           "rg_n": "rg-reach-dev-uksouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-dev-uksouth",
-          "name": "app-a-reach-dev-uksouth-alk",
-          "fd-pe": true,
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/reach-dev-uksouth",
-          "appi": {
-            "rg_n": "rg-reach-dev-uksouth",
-            "name": "appi-reach-dev-uksouth"
-          }
-        },
-        {
-          "rg_n": "rg-reach-dev-uksouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-dev-uksouth",
-          "name": "app-b-pe-reach-dev-uksouth-alk",
-          "appi": {
-            "rg_n": "rg-reach-dev-uksouth",
-            "name": "appi-reach-dev-uksouth"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          }
-        },
-        {
-          "rg_n": "rg-reach-dev-uksouth",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-dev-uksouth",
-          "name": "app-n-pe-vnet-integration-reach-dev-uksouth-alk",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-web-dev-uksouth",
+          "name": "app-reach-web-dev-uksouth-alk",
           "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/reach-dev-uksouth",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
@@ -258,52 +260,98 @@
             "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-plan-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-plan-web-vnet-integration"
+          },
+          "fd-pe": true
+        },
+        {
+          "rg_n": "rg-reach-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-uksouth",
+          "name": "app-reach-svc-1-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-reach-dev-uksouth",
+            "name": "appi-reach-dev-uksouth"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-reach-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-uksouth",
+          "name": "app-reach-svc-2-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-reach-dev-uksouth",
+            "name": "appi-reach-dev-uksouth"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-plan-svc-vnet-integration"
           }
         },
 
         {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Web/serverFarms/plan-reach-dev-koreacentral",
-          "name": "app-a-reach-dev-koreacentral-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.KeyVault/vaults/reach-dev-koreac",
+          "rg_n": "rg-reach-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Web/serverFarms/plan-reach-web-dev-westus3",
+          "name": "app-reach-web-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.KeyVault/vaults/reach-dev-westus3",
           "appi": {
-            "rg_n": "rg-reach-dev-koreacentral",
-            "name": "appi-reach-dev-koreacentral"
-          }
-        },
-        {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Web/serverFarms/plan-reach-dev-koreacentral",
-          "name": "app-b-pe-reach-dev-koreacentral-alk",
-          "appi": {
-            "rg_n": "rg-reach-dev-koreacentral",
-            "name": "appi-reach-dev-koreacentral"
+            "rg_n": "rg-reach-dev-westus3",
+            "name": "appi-reach-dev-westus3"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          }
-        },
-        {
-          "rg_n": "rg-reach-dev-koreacentral",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Web/serverFarms/plan-reach-dev-koreacentral",
-          "name": "app-n-pe-vnet-integration-reach-dev-koreacentral-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.KeyVault/vaults/reach-dev-koreac",
-          "appi": {
-            "rg_n": "rg-reach-dev-koreacentral",
-            "name": "appi-reach-dev-koreacentral"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-koreacentral/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-koreacentral/subnets/snet-plan-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-plan-web-vnet-integration"
           },
           "fd-pe": true
+        },
+        {
+          "rg_n": "rg-reach-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-westus3",
+          "name": "app-reach-svc-1-dev-westus3-alk",
+          "appi": {
+            "rg_n": "rg-reach-dev-westus3",
+            "name": "appi-reach-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-reach-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-westus3",
+          "name": "app-reach-svc-2-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.KeyVault/vaults/reach-dev-westus3",
+          "appi": {
+            "rg_n": "rg-reach-dev-westus3",
+            "name": "appi-reach-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
         }
       ]
     },

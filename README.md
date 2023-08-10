@@ -141,6 +141,8 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
+![Reach Architecture](./assets/architectures/reach.png)
+
 ```bash
 # download bicep template file
 curl -o reach_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
