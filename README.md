@@ -76,6 +76,8 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
+![Heal Architecture](./assets/architectures/heal.png)
+
 ```bash
 # download bicep template file
 curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
