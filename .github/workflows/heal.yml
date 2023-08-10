@@ -3,14 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/heal.yml'
-      - 'parameters/fdWpl-appsWpeWvintegration-pdnsz.json'
+      - 'parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
 
 env:
-  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegration-pdnsz.json
+  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi.json
   PROJECT_NAME: heal
   DEPLOYMENT_REGION: eastus
 
