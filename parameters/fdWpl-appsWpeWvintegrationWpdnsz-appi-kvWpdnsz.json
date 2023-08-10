@@ -16,9 +16,9 @@
           "sub_id": "<sub_id>",
           "location": "eastus"
         },
-        "rg-design-dev-canadacentral": {
+        "rg-design-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "canadacentral"
+          "location": "westus3"
         }
       }
     },
@@ -37,14 +37,19 @@
             },
             {
               "type": "vnet_integration",
-              "name": "snet-plan-vnet-integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.167.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
               "addr": "192.167.0.192/26"
             }
           ]
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
-          "name": "vnet-design-dev-canadacentral",
+          "rg_n": "rg-design-dev-westus3",
+          "name": "vnet-design-dev-westus3",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -54,7 +59,12 @@
             },
             {
               "type": "vnet_integration",
-              "name": "snet-plan-vnet-integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.168.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
               "addr": "192.168.0.192/26"
             }
           ]
@@ -73,10 +83,10 @@
           }
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
+          "rg_n": "rg-design-dev-westus3",
           "name": "privatelink.azurewebsites.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral",
+            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3",
             "auto_registration": false
           }
         },
@@ -90,10 +100,10 @@
           }
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
+          "rg_n": "rg-design-dev-westus3",
           "name": "privatelink.vaultcore.azure.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral",
+            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3",
             "auto_registration": false
           }
         }
@@ -112,13 +122,13 @@
           "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
-          "name": "design-dev-canadac",
+          "rg_n": "rg-design-dev-westus3",
+          "name": "design-dev-westus3",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
       ]
     },
@@ -130,8 +140,8 @@
           "name": "log-design-dev-eastus"
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
-          "name": "log-design-dev-canadacentral"
+          "rg_n": "rg-design-dev-westus3",
+          "name": "log-design-dev-westus3"
         }
       ]
     },
@@ -144,9 +154,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-design-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-design-dev-eastus"
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
-          "name": "appi-design-dev-canadacentral",
-          "log_id": "<sub_id>/resourcegroups/rg-design-dev-canadacentral/providers/microsoft.operationalinsights/workspaces/log-design-dev-canadacentral"
+          "rg_n": "rg-design-dev-westus3",
+          "name": "appi-design-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-design-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-design-dev-westus3"
         }
       ]
     },
@@ -155,17 +165,34 @@
       "value": [
         {
           "rg_n": "rg-design-dev-eastus",
-          "name": "plan-design-dev-eastus",
-          "sku_code": "P1V3",
-          "sku_tier": "PremiumV3",
+          "name": "plan-design-web-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-design-dev-canadacentral",
-          "name": "plan-design-dev-canadacentral",
-          "sku_code": "P1V3",
-          "sku_tier": "PremiumV3",
+          "rg_n": "rg-design-dev-eastus",
+          "name": "plan-design-svc-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-design-dev-westus3",
+          "name": "plan-design-web-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-design-dev-westus3",
+          "name": "plan-design-svc-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         }
@@ -176,34 +203,8 @@
       "value": [
         {
           "rg_n": "rg-design-dev-eastus",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
-          "name": "app-t1-design-dev-eastus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/design-dev-eastus",
-          "appi": {
-            "rg_n": "rg-design-dev-eastus",
-            "name": "appi-design-dev-eastus"
-          },
-          "fd-pe": true
-        },
-        {
-          "rg_n": "rg-design-dev-eastus",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
-          "name": "app-t2-pe-design-dev-eastus-alk",
-          "appi": {
-            "rg_n": "rg-design-dev-eastus",
-            "name": "appi-design-dev-eastus"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          },
-          "fd-pe": true
-        },
-        {
-          "rg_n": "rg-design-dev-eastus",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-dev-eastus",
-          "name": "app-tn-pe-vnet-integration-design-dev-eastus-alk",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-web-dev-eastus",
+          "name": "app-design-web-dev-eastus-alk",
           "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/design-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
@@ -215,55 +216,98 @@
             "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-plan-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-plan-web-vnet-integration"
           },
           "fd-pe": true
+        },
+        {
+          "rg_n": "rg-design-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-eastus",
+          "name": "app-design-svc-1-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-design-dev-eastus",
+            "name": "appi-design-dev-eastus"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-design-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-eastus",
+          "name": "app-design-svc-2-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-design-dev-eastus",
+            "name": "appi-design-dev-eastus"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-plan-svc-vnet-integration"
+          }
         },
 
         {
-          "rg_n": "rg-design-dev-canadacentral",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
-          "name": "app-t1-design-dev-canadacentral-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/design-dev-canadac",
+          "rg_n": "rg-design-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Web/serverFarms/plan-design-web-dev-westus3",
+          "name": "app-design-web-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.KeyVault/vaults/design-dev-westus3",
           "appi": {
-            "rg_n": "rg-design-dev-canadacentral",
-            "name": "appi-design-dev-canadacentral"
-          },
-          "fd-pe": true
-        },
-        {
-          "rg_n": "rg-design-dev-canadacentral",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
-          "name": "app-t2-pe-design-dev-canadacentral-alk",
-          "appi": {
-            "rg_n": "rg-design-dev-canadacentral",
-            "name": "appi-design-dev-canadacentral"
+            "rg_n": "rg-design-dev-westus3",
+            "name": "appi-design-dev-westus3"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          },
-          "fd-pe": true
-        },
-        {
-          "rg_n": "rg-design-dev-canadacentral",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Web/serverFarms/plan-design-dev-canadacentral",
-          "name": "app-tn-pe-vnet-integration-design-dev-canadacentral-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.KeyVault/vaults/design-dev-canadac",
-          "appi": {
-            "rg_n": "rg-design-dev-canadacentral",
-            "name": "appi-design-dev-canadacentral"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-canadacentral/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-canadacentral/subnets/snet-plan-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-plan-web-vnet-integration"
           },
           "fd-pe": true
+        },
+        {
+          "rg_n": "rg-design-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-westus3",
+          "name": "app-design-svc-1-dev-westus3-alk",
+          "appi": {
+            "rg_n": "rg-design-dev-westus3",
+            "name": "appi-design-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-design-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-westus3",
+          "name": "app-design-svc-2-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.KeyVault/vaults/design-dev-westus3",
+          "appi": {
+            "rg_n": "rg-design-dev-westus3",
+            "name": "appi-design-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
         }
       ]
     },
@@ -273,8 +317,8 @@
         "rg_n": "rg-design-dev-eastus",
         "name": "fd-design-dev",
         "sku": "Premium_AzureFrontDoor",
-        "route_n": "design-prod-route",
-        "origin_g_n": "design-prod-origin-group",
+        "route_n": "design-dev-route",
+        "origin_g_n": "design-dev-origin-group",
         "origin_g_health_probe_settings": "Https"
       }
     }
