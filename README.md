@@ -107,6 +107,8 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
+![Design Architecture](./assets/architectures/design.png)
+
 ```bash
 # download bicep template file
 curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
