@@ -122,7 +122,9 @@ az deployment sub create \
   --parameters @design_parameters.json
 ```
 
-### Reach [![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
+### Reach
+
+ [![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
 
 - Azure Front Door
   - Private Links to Origins
