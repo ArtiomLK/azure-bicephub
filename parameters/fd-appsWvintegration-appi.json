@@ -31,11 +31,6 @@
           "addr": "192.167.0.0/24",
           "snets": [
             {
-              "type": "pe",
-              "name": "snet-pe",
-              "addr": "192.167.0.0/28"
-            },
-            {
               "type": "vnet_integration",
               "name": "snet-plan-web-vnet-integration",
               "addr": "192.167.0.128/26"
@@ -52,11 +47,6 @@
           "name": "vnet-endeavor-dev-westus3",
           "addr": "192.168.0.0/24",
           "snets": [
-            {
-              "type": "pe",
-              "name": "snet-pe",
-              "addr": "192.168.0.0/28"
-            },
             {
               "type": "vnet_integration",
               "name": "snet-plan-web-vnet-integration",
