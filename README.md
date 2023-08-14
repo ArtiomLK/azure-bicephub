@@ -15,16 +15,18 @@ Public IaC architectures repository
   - Azure App Services
     - Virtual Network integration
 - Azure App Insights
-  - Azure Log Analytics Workspace
+- Azure Log Analytics Workspace
 - Azure Virtual Networks
 - Azure Network Security Groups
+
+![Endeavor Architecture](./assets/architectures/endeavor/endeavor.png)
 
 ```bash
 # download bicep template file
 curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration.json
+curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration-appi.json
 
 az deployment sub create \
   --location eastus2 \
@@ -43,7 +45,7 @@ az deployment sub create \
   - Azure App Services
   - Time Zone App Settings
 - Azure App Insights
-  - Azure Log Analytics Workspace
+- Azure Log Analytics Workspace
 - Azure Virtual Networks
 - Azure Network Security Groups
 
@@ -217,7 +219,7 @@ az deployment sub create \
 - Azure App Service Plan
   - Azure App Services
 - Azure App Insights
-  - Azure Log Analytics Workspace
+- Azure Log Analytics Workspace
 
 ```bash
 # download bicep template file
@@ -243,7 +245,7 @@ az deployment sub create \
 - Azure App Service Plan
   - Azure App Services
 - Azure App Insights
-  - Azure Log Analytics Workspace
+- Azure Log Analytics Workspace
 
 ```bash
 # download bicep template file
