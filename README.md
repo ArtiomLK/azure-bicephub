@@ -76,7 +76,7 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
-![Heal Architecture](./assets/architectures/heal.png)
+![Heal Architecture](./assets/architectures/heal/heal.png)
 
 ```bash
 # download bicep template file
@@ -109,7 +109,7 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
-![Design Architecture](./assets/architectures/design.png)
+![Design Architecture](./assets/architectures/design/design.png)
 
 ```bash
 # download bicep template file
@@ -145,7 +145,7 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
-![Reach Architecture](./assets/architectures/reach.png)
+![Reach Architecture](./assets/architectures/reach/reach.png)
 
 ```bash
 # download bicep template file
@@ -274,6 +274,8 @@ az deployment sub create \
 - Azure Virtual Networks
 - Azure Network Security Groups
 - Azure Private DNS Zones
+
+![Seek Architecture](./assets/architectures/seek/seek.png)
 
 ```bash
 # download bicep template file
