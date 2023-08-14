@@ -269,6 +269,8 @@ az deployment sub create \
   - Azure App Services
     - Virtual Network integration
     - Private Endpoints
+- Azure App Insights
+- Azure Log Analytics Workspace
 - Azure Virtual Networks
 - Azure Network Security Groups
 - Azure Private DNS Zones
