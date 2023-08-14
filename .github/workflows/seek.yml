@@ -3,14 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/seek.yml'
-      - 'parameters/fd-appsWpeWvintegration-pdnsz.json'
+      - 'parameters/fd-appsWpeWvintegrationWpdnsz-appi.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
 
 env:
-  DEPLOYMENT_PARAMETERS: parameters/fd-appsWpeWvintegration-pdnsz.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
   PROJECT_NAME: seek
   DEPLOYMENT_REGION: eastus
 

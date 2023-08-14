@@ -76,7 +76,7 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
-![Heal Architecture](./assets/architectures/heal.png)
+![Heal Architecture](./assets/architectures/heal/heal.png)
 
 ```bash
 # download bicep template file
@@ -109,7 +109,7 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
-![Design Architecture](./assets/architectures/design.png)
+![Design Architecture](./assets/architectures/design/design.png)
 
 ```bash
 # download bicep template file
@@ -145,7 +145,7 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
-![Reach Architecture](./assets/architectures/reach.png)
+![Reach Architecture](./assets/architectures/reach/reach.png)
 
 ```bash
 # download bicep template file
@@ -269,16 +269,20 @@ az deployment sub create \
   - Azure App Services
     - Virtual Network integration
     - Private Endpoints
+- Azure App Insights
+- Azure Log Analytics Workspace
 - Azure Virtual Networks
 - Azure Network Security Groups
 - Azure Private DNS Zones
+
+![Seek Architecture](./assets/architectures/seek/seek.png)
 
 ```bash
 # download bicep template file
 curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegration-pdnsz.json
+curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
 
 az deployment sub create \
   --location eastus2 \

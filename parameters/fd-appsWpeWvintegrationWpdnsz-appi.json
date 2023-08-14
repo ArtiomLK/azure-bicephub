@@ -1,0 +1,281 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "fdWpl-appsWpeWvintegrationWpdnsz-appi",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-seek-dev-eastus": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
+        },
+        "rg-seek-dev-westus3": {
+          "sub_id": "<sub_id>",
+          "location": "westus3"
+        }
+      }
+    },
+
+    "vnets": {
+      "value": [
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "name": "vnet-seek-dev-eastus",
+          "addr": "192.167.0.0/24",
+          "snets": [
+            {
+              "type": "pe",
+              "name": "snet-pe",
+              "addr": "192.167.0.0/28"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.167.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
+              "addr": "192.167.0.192/26"
+            }
+          ]
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "name": "vnet-seek-dev-westus3",
+          "addr": "192.168.0.0/24",
+          "snets": [
+            {
+              "type": "pe",
+              "name": "snet-pe",
+              "addr": "192.168.0.0/28"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.168.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
+              "addr": "192.168.0.192/26"
+            }
+          ]
+        }
+      ]
+    },
+
+    "pdnszs": {
+      "value": [
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "name": "privatelink.azurewebsites.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus",
+            "auto_registration": false
+          }
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "name": "privatelink.azurewebsites.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3",
+            "auto_registration": false
+          }
+        }
+      ]
+    },
+
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "name": "log-seek-dev-eastus"
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "name": "log-seek-dev-westus3"
+        }
+      ]
+    },
+
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "name": "appi-seek-dev-eastus",
+          "log_id": "<sub_id>/resourcegroups/rg-seek-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-seek-dev-eastus"
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "name": "appi-seek-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-seek-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-seek-dev-westus3"
+        }
+      ]
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "name": "plan-seek-web-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "name": "plan-seek-svc-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "name": "plan-seek-web-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "name": "plan-seek-svc-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Web/serverFarms/plan-seek-web-dev-eastus",
+          "name": "app-seek-web-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-seek-dev-eastus",
+            "name": "appi-seek-dev-eastus"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-plan-web-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Web/serverFarms/plan-seek-svc-dev-eastus",
+          "name": "app-seek-svc-1-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-seek-dev-eastus",
+            "name": "appi-seek-dev-eastus"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-seek-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Web/serverFarms/plan-seek-svc-dev-eastus",
+          "name": "app-seek-svc-2-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-seek-dev-eastus",
+            "name": "appi-seek-dev-eastus"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-eastus/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Web/serverFarms/plan-seek-web-dev-westus3",
+          "name": "app-seek-web-dev-westus3-alk",
+          "appi": {
+            "rg_n": "rg-seek-dev-westus3",
+            "name": "appi-seek-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3/subnets/snet-plan-web-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Web/serverFarms/plan-seek-svc-dev-westus3",
+          "name": "app-seek-svc-1-dev-westus3-alk",
+          "appi": {
+            "rg_n": "rg-seek-dev-westus3",
+            "name": "appi-seek-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        },
+        {
+          "rg_n": "rg-seek-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Web/serverFarms/plan-seek-svc-dev-westus3",
+          "name": "app-seek-svc-2-dev-westus3-alk",
+          "appi": {
+            "rg_n": "rg-seek-dev-westus3",
+            "name": "appi-seek-dev-westus3"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          },
+          "vnet_integration": {
+            "snet_id": "<sub_id>/resourceGroups/rg-seek-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-seek-dev-westus3/subnets/snet-plan-svc-vnet-integration"
+          }
+        }
+      ]
+    },
+
+    "fd": {
+      "value": {
+        "rg_n": "rg-seek-dev-eastus",
+        "name": "fd-seek-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "seek-dev-route",
+        "origin_g_n": "seek-dev-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}
