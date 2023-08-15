@@ -3,14 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/matrix.yml'
-      - 'parameters/fd-apps-appi.json'
+      - 'parameters/fd-apps-appi-kv-redis.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
 
 env:
-  DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi-kv-redis.json
   PROJECT_NAME: matrix
   DEPLOYMENT_REGION: eastus2
 
