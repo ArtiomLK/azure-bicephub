@@ -187,30 +187,6 @@ az deployment sub create \
   --parameters @imagine_parameters.json
 ```
 
-### Invent
-
-[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/invent.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/invent.yml)
-
-- Azure Front Door
-- Azure Key Vault
-- Azure App Service Plan
-- Azure App Services
-
-```bash
-# download bicep template file
-curl -o invent_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o invent_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name invent \
-  --subscription '<sub_id>' \
-  --template-file invent_template.bicep \
-  --parameters @invent_parameters.json
-```
-
 ### Matrix
 
 [![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
@@ -220,13 +196,17 @@ az deployment sub create \
   - Azure App Services
 - Azure App Insights
 - Azure Log Analytics Workspace
+- Azure Key Vault
+- Azure Cache for Redis
+- Azure Virtual Networks
+- Azure Network Security Groups
 
 ```bash
 # download bicep template file
 curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
 
 az deployment sub create \
   --location eastus2 \
@@ -234,32 +214,6 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file matrix_template.bicep \
   --parameters @matrix_parameters.json
-```
-
-### Discover
-
-[![Discover](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/discover.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/discover.yml)
-
-- Azure Front Door
-- Azure Cache for Redis
-- Azure App Service Plan
-  - Azure App Services
-- Azure App Insights
-- Azure Log Analytics Workspace
-
-```bash
-# download bicep template file
-curl -o discover_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o discover_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
-
-az deployment sub create \
-  --location eastus \
-  --name discover \
-  --subscription '<sub_id>' \
-  --template-file discover_template.bicep \
-  --parameters @discover_parameters.json
 ```
 
 ### Seek

@@ -5,37 +5,82 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-apps-appi-kv-redis",
+        "architecture": "fd-apps-appi-kv-redis-kv-redis",
         "env": "dev"
       }
     },
 
     "rgs": {
       "value": {
-        "rg-discover-dev-northeurope": {
+        "rg-matrix-dev-uksouth": {
           "sub_id": "<sub_id>",
-          "location": "northeurope"
+          "location": "uksouth"
         },
-        "rg-discover-dev-westeurope": {
+        "rg-matrix-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "westeurope"
+          "location": "westus3"
         }
       }
+    },
+
+    "vnets": {
+      "value": [
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "vnet-matrix-dev-uksouth",
+          "addr": "192.167.0.0/24",
+          "snets": [
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.167.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
+              "addr": "192.167.0.192/26"
+            }
+          ]
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "vnet-matrix-dev-westus3",
+          "addr": "192.168.0.0/24",
+          "snets": [
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-web-vnet-integration",
+              "addr": "192.168.0.128/26"
+            },
+            {
+              "type": "vnet_integration",
+              "name": "snet-plan-svc-vnet-integration",
+              "addr": "192.168.0.192/26"
+            }
+          ]
+        }
+      ]
     },
 
     "kvs": {
       "value": [
         {
-          "rg_n": "rg-discover-dev-northeurope",
-          "name": "discover-dev-ne",
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "matrix-dev-uksouth",
           "enable_rbac": "true",
-          "sku": "standard"
+          "sku": "standard",
+          "kv_enable_public_access": false,
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-uksouth/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         },
         {
-          "rg_n": "rg-discover-dev-westeurope",
-          "name": "discover-dev-westeurope",
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "matrix-dev-westus3",
           "enable_rbac": "true",
-          "sku": "standard"
+          "sku": "standard",
+          "kv_enable_public_access": false,
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-westus3/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
       ]
     },
@@ -43,39 +88,26 @@
     "redis": {
       "value": [
         {
-          "rg_n": "rg-discover-dev-northeurope",
-          "name": "redis-discover-dev-northeurope",
-          "redis_sku_tier": "Basic",
-          "redis_sku_capacity": 0,
-          "enable_nonSSL_port": true
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "redis-matrix-dev-uksouth",
+          "redis_sku_tier": "Premium",
+          "redis_sku_capacity": 1,
+          "enable_nonSSL_port": true,
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
+          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-uksouth/subnets/snet-pe",
+          "redis_replicas": 3,
+          "zones": ["1", "2", "3"]
         },
         {
-          "rg_n": "rg-discover-dev-westeurope",
-          "name": "redis-discover-dev-westeurope",
-          "redis_sku_tier": "Basic",
-          "redis_sku_capacity": 0,
-          "enable_nonSSL_port": true
-        }
-      ]
-    },
-
-    "plans": {
-      "value": [
-        {
-          "rg_n": "rg-discover-dev-northeurope",
-          "name": "plan-discover-dev-northeurope",
-          "sku_code": "B1",
-          "sku_tier": "Basic",
-          "os_kind": "windows",
-          "enable_zone_redundancy": false
-        },
-        {
-          "rg_n": "rg-discover-dev-westeurope",
-          "name": "plan-discover-dev-westeurope",
-          "sku_code": "B1",
-          "sku_tier": "Basic",
-          "os_kind": "windows",
-          "enable_zone_redundancy": false
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "redis-matrix-dev-westus3",
+          "redis_sku_tier": "Premium",
+          "redis_sku_capacity": 1,
+          "enable_nonSSL_port": true,
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
+          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-westus3/subnets/snet-pe",
+          "redis_replicas": 3,
+          "zones": ["1", "2", "3"]
         }
       ]
     },
@@ -83,12 +115,12 @@
     "logs": {
       "value": [
         {
-          "rg_n": "rg-discover-dev-northeurope",
-          "name": "log-discover-dev-northeurope"
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "log-matrix-dev-uksouth"
         },
         {
-          "rg_n": "rg-discover-dev-westeurope",
-          "name": "log-discover-dev-westeurope"
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "log-matrix-dev-westus3"
         }
       ]
     },
@@ -96,14 +128,52 @@
     "appis": {
       "value": [
         {
-          "rg_n": "rg-discover-dev-northeurope",
-          "name": "appi-discover-dev-northeurope",
-          "log_id": "<sub_id>/resourcegroups/rg-discover-dev-northeurope/providers/microsoft.operationalinsights/workspaces/log-discover-dev-northeurope"
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "appi-matrix-dev-uksouth",
+          "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-uksouth/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-uksouth"
         },
         {
-          "rg_n": "rg-discover-dev-westeurope",
-          "name": "appi-discover-dev-westeurope",
-          "log_id": "<sub_id>/resourcegroups/rg-discover-dev-westeurope/providers/microsoft.operationalinsights/workspaces/log-discover-dev-westeurope"
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "appi-matrix-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-westus3"
+        }
+      ]
+    },
+
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "plan-matrix-web-dev-uksouth",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "name": "plan-matrix-svc-dev-uksouth",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "plan-matrix-web-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "name": "plan-matrix-svc-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
         }
       ]
     },
@@ -111,36 +181,130 @@
     "apps": {
       "value": [
         {
-          "rg_n": "rg-discover-dev-northeurope",
-          "plan_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.Web/serverFarms/plan-discover-dev-northeurope",
-          "name": "app-a-discover-dev-northeurope-alk",
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-web-dev-uksouth",
+          "name": "app-matrix-web-dev-uksouth-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.KeyVault/vaults/matrix-dev-uksouth",
           "appi": {
-            "rg_n": "rg-discover-dev-northeurope",
-            "name": "appi-discover-dev-northeurope"
-          },
-          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-northeurope/providers/Microsoft.KeyVault/vaults/discover-dev-ne"
+            "rg_n": "rg-matrix-dev-uksouth",
+            "name": "appi-matrix-dev-uksouth"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
+          "name": "app-matrix-svc-1-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-matrix-dev-uksouth",
+            "name": "appi-matrix-dev-uksouth"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
+          "name": "app-matrix-svc-2-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-matrix-dev-uksouth",
+            "name": "appi-matrix-dev-uksouth"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
+          "name": "app-matrix-svc-3-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-matrix-dev-uksouth",
+            "name": "appi-matrix-dev-uksouth"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
+          "name": "app-matrix-svc-4-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-matrix-dev-uksouth",
+            "name": "appi-matrix-dev-uksouth"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-uksouth",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
+          "name": "app-matrix-svc-n-dev-uksouth-alk",
+          "appi": {
+            "rg_n": "rg-matrix-dev-uksouth",
+            "name": "appi-matrix-dev-uksouth"
+          }
         },
 
         {
-          "rg_n": "rg-discover-dev-westeurope",
-          "plan_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.Web/serverFarms/plan-discover-dev-westeurope",
-          "name": "app-a-discover-dev-westeurope-alk",
+          "rg_n": "rg-matrix-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Web/serverFarms/plan-matrix-web-dev-westus3",
+          "name": "app-matrix-web-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.KeyVault/vaults/matrix-dev-westus3",
           "appi": {
-            "rg_n": "rg-discover-dev-westeurope",
-            "name": "appi-discover-dev-westeurope"
-          },
-          "kv_id": "<sub_id>/resourceGroups/rg-discover-dev-westeurope/providers/Microsoft.KeyVault/vaults/discover-dev-westeurope"
+            "rg_n": "rg-matrix-dev-westus3",
+            "name": "appi-matrix-dev-westus3"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus3",
+          "name": "app-matrix-svc-1-dev-westus3-alk",
+          "appi": {
+            "rg_n": "rg-matrix-dev-westus3",
+            "name": "appi-matrix-dev-westus3"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus3",
+          "name": "app-matrix-svc-2-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.KeyVault/vaults/matrix-dev-westus3",
+          "appi": {
+            "rg_n": "rg-matrix-dev-westus3",
+            "name": "appi-matrix-dev-westus3"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus3",
+          "name": "app-matrix-svc-3-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.KeyVault/vaults/matrix-dev-westus3",
+          "appi": {
+            "rg_n": "rg-matrix-dev-westus3",
+            "name": "appi-matrix-dev-westus3"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus3",
+          "name": "app-matrix-svc-4-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.KeyVault/vaults/matrix-dev-westus3",
+          "appi": {
+            "rg_n": "rg-matrix-dev-westus3",
+            "name": "appi-matrix-dev-westus3"
+          }
+        },
+        {
+          "rg_n": "rg-matrix-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus3",
+          "name": "app-matrix-svc-n-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.KeyVault/vaults/matrix-dev-westus3",
+          "appi": {
+            "rg_n": "rg-matrix-dev-westus3",
+            "name": "appi-matrix-dev-westus3"
+          }
         }
       ]
     },
 
     "fd": {
       "value": {
-        "rg_n": "rg-discover-dev-northeurope",
-        "name": "fd-discover-dev",
+        "rg_n": "rg-matrix-dev-uksouth",
+        "name": "fd-matrix-dev",
         "sku": "Premium_AzureFrontDoor",
-        "route_n": "discover-prod-route",
-        "origin_g_n": "discover-prod-origin-group",
+        "route_n": "matrix-prod-route",
+        "origin_g_n": "matrix-prod-origin-group",
         "origin_g_health_probe_settings": "Https"
       }
     }
