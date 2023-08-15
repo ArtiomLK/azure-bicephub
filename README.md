@@ -201,6 +201,8 @@ az deployment sub create \
 - Azure Virtual Networks
 - Azure Network Security Groups
 
+![Matrix Architecture](./assets/architectures/matrix/matrix.png)
+
 ```bash
 # download bicep template file
 curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
