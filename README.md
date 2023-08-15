@@ -141,7 +141,6 @@ az deployment sub create \
   - Azure App Services
     - Virtual Network integration
     - Private Endpoints
-    - Time Zone App Setting
 - Azure Virtual Networks
 - Azure Network Security Groups
 - Azure Private DNS Zones
@@ -263,10 +262,11 @@ az deployment sub create \
   - Azure App Services
     - Virtual Network integration
     - Private Endpoints
-    - Time Zone App Setting
 - Azure Virtual Networks
 - Azure Network Security Groups
 - Azure Private DNS Zones
+
+![Sight Architecture](./assets/architectures/sight/sight.png)
 
 ```bash
 # download bicep template file
