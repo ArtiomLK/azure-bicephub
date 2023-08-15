@@ -43,11 +43,10 @@ az deployment sub create \
 - Azure Front Door
 - Azure App Service Plan
   - Azure App Services
-  - Time Zone App Settings
 - Azure App Insights
 - Azure Log Analytics Workspace
-- Azure Virtual Networks
-- Azure Network Security Groups
+
+![Envision Architecture](./assets/architectures/envision/envision.png)
 
 ```bash
 # download bicep template file
@@ -171,6 +170,8 @@ az deployment sub create \
 - Azure Front Door
 - Azure App Service Plan
 - Azure App Services
+
+![Imagine Architecture](./assets/architectures/imagine/imagine.png)
 
 ```bash
 # download bicep template file
