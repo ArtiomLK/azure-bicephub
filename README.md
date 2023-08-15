@@ -43,18 +43,17 @@ az deployment sub create \
 - Azure Front Door
 - Azure App Service Plan
   - Azure App Services
-  - Time Zone App Settings
 - Azure App Insights
 - Azure Log Analytics Workspace
-- Azure Virtual Networks
-- Azure Network Security Groups
+
+![Envision Architecture](./assets/architectures/envision/envision.png)
 
 ```bash
 # download bicep template file
 curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-app-appi.json
+curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
   --location eastus2 \
@@ -172,12 +171,14 @@ az deployment sub create \
 - Azure App Service Plan
 - Azure App Services
 
+![Imagine Architecture](./assets/architectures/imagine/imagine.png)
+
 ```bash
 # download bicep template file
 curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-app.json
+curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
 
 az deployment sub create \
   --location eastus2 \

@@ -5,7 +5,7 @@
     "tags": {
       "value": {
         "project": "bicephub",
-        "architecture": "fd-app",
+        "architecture": "fd-apps",
         "env": "dev"
       }
     },
@@ -27,15 +27,16 @@
       "value": [
         {
           "rg_n": "rg-imagine-dev-eastus",
-          "name": "plan-imagine-dev-eastus",
+          "name": "plan-imagine-web-dev-eastus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
+
         {
           "rg_n": "rg-imagine-dev-westus3",
-          "name": "plan-imagine-dev-westus3",
+          "name": "plan-imagine-web-dev-westus3",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -48,14 +49,14 @@
       "value": [
         {
           "rg_n": "rg-imagine-dev-eastus",
-          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus/providers/Microsoft.Web/serverFarms/plan-imagine-dev-eastus",
-          "name": "app-a-imagine-dev-eastus-alk"
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus/providers/Microsoft.Web/serverFarms/plan-imagine-web-dev-eastus",
+          "name": "app-imagine-web-dev-eastus-alk"
         },
 
         {
           "rg_n": "rg-imagine-dev-westus3",
-          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-westus3/providers/Microsoft.Web/serverFarms/plan-imagine-dev-westus3",
-          "name": "app-a-imagine-dev-westus3-alk"
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-westus3/providers/Microsoft.Web/serverFarms/plan-imagine-web-dev-westus3",
+          "name": "app-imagine-web-dev-westus3-alk"
         }
       ]
     },
@@ -65,8 +66,8 @@
         "rg_n": "rg-imagine-dev-eastus",
         "name": "fd-imagine-dev",
         "sku": "Premium_AzureFrontDoor",
-        "route_n": "imagine-prod-route",
-        "origin_g_n": "imagine-prod-origin-group",
+        "route_n": "imagine-dev-route",
+        "origin_g_n": "imagine-dev-origin-group",
         "origin_g_health_probe_settings": "Https"
       }
     }

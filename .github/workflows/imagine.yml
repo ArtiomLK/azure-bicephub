@@ -3,14 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/imagine.yml'
-      - 'parameters/fd-app.json'
+      - 'parameters/fd-apps.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
 
 env:
-  DEPLOYMENT_PARAMETERS: parameters/fd-app.json
+  DEPLOYMENT_PARAMETERS: parameters/fd-apps.json
   PROJECT_NAME: imagine
   DEPLOYMENT_REGION: eastus2
 
