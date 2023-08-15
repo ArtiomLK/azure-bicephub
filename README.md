@@ -266,6 +266,8 @@ az deployment sub create \
 - Azure Network Security Groups
 - Azure Private DNS Zones
 
+![Sight Architecture](./assets/architectures/sight/sight.png)
+
 ```bash
 # download bicep template file
 curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
