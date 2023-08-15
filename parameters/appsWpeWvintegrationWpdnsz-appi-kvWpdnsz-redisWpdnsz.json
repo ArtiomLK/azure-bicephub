@@ -12,9 +12,9 @@
 
     "rgs": {
       "value": {
-        "rg-sight-dev-northcentralus": {
+        "rg-sight-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "northcentralus"
+          "location": "westus3"
         }
       }
     },
@@ -22,8 +22,8 @@
     "vnets": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "vnet-sight-dev-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "vnet-sight-dev-westus3",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -33,12 +33,12 @@
             },
             {
               "type": "vnet_integration",
-              "name": "snet-plan-svc-vnet-integration",
+              "name": "snet-plan-web-vnet-integration",
               "addr": "192.168.0.128/26"
             },
             {
               "type": "vnet_integration",
-              "name": "snet-plan-web-vnet-integration",
+              "name": "snet-plan-svc-vnet-integration",
               "addr": "192.168.0.192/26"
             }
           ]
@@ -49,28 +49,28 @@
     "pdnszs": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
           "name": "privatelink.azurewebsites.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus",
+            "vnet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3",
             "auto_registration": false
           }
         },
 
         {
-          "rg_n": "rg-sight-dev-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
           "name": "privatelink.vaultcore.azure.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus",
+            "vnet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3",
             "auto_registration": false
           }
         },
 
         {
-          "rg_n": "rg-sight-dev-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
           "name": "privatelink.redis.cache.windows.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus",
+            "vnet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3",
             "auto_registration": false
           }
         }
@@ -80,13 +80,13 @@
     "kvs": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "sight-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "sight-dev-westus3",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
       ]
     },
@@ -94,12 +94,15 @@
     "redis": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "redis-sight-dev-northcentralus",
-          "redis_sku_tier": "Standard",
-          "redis_sku_capacity": 1,
-          "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
-          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe"
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "redis-sight-dev-westus3",
+          "redis_sku_tier": "Premium",
+          "redis_sku_capacity": 2,
+          "enable_nonSSL_port": true,
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
+          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-pe",
+          "redis_replicas": 3,
+          "zones": ["1", "2", "3"]
         }
       ]
     },
@@ -107,8 +110,8 @@
     "logs": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "log-sight-dev-northcentralus"
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "log-sight-dev-westus3"
         }
       ]
     },
@@ -116,9 +119,9 @@
     "appis": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "appi-sight-dev-northcentralus",
-          "log_id": "<sub_id>/resourcegroups/rg-sight-dev-northcentralus/providers/microsoft.operationalinsights/workspaces/log-sight-dev-northcentralus"
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "appi-sight-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-sight-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-sight-dev-westus3"
         }
       ]
     },
@@ -126,18 +129,18 @@
     "plans": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "plan-sight-web-dev-northcentralus",
-          "sku_code": "P1V2",
-          "sku_tier": "PremiumV2",
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "plan-sight-web-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "name": "plan-sight-svc-dev-northcentralus",
-          "sku_code": "P1V2",
-          "sku_tier": "PremiumV2",
+          "rg_n": "rg-sight-dev-westus3",
+          "name": "plan-sight-svc-dev-westus3",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         }
@@ -147,94 +150,51 @@
     "apps": {
       "value": [
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-web-dev-northcentralus",
-          "name": "app-sight-web-pub-dev-northcentralus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/sight-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Web/serverFarms/plan-sight-web-dev-westus3",
+          "name": "app-sight-web-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.KeyVault/vaults/sight-dev-westus3",
           "appi": {
-            "rg_n": "rg-sight-dev-northcentralus",
-            "name": "appi-sight-dev-northcentralus"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "rg_n": "rg-sight-dev-westus3",
+            "name": "appi-sight-dev-westus3"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-plan-web-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-web-dev-northcentralus",
-          "name": "app-sight-web-priv-dev-northcentralus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/sight-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-westus3",
+          "name": "app-sight-svc-1-dev-westus3-alk",
           "appi": {
-            "rg_n": "rg-sight-dev-northcentralus",
-            "name": "appi-sight-dev-northcentralus"
+            "rg_n": "rg-sight-dev-westus3",
+            "name": "appi-sight-dev-westus3"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-plan-web-vnet-integration"
-          }
-        },
-
-        {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-svc-a-dev-northcentralus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/sight-northcentralus",
-          "appi": {
-            "rg_n": "rg-sight-dev-northcentralus",
-            "name": "appi-sight-dev-northcentralus"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          },
-          "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-plan-svc-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-b-dev-northcentralus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/sight-northcentralus",
+          "rg_n": "rg-sight-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-westus3",
+          "name": "app-sight-svc-2-dev-westus3-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.KeyVault/vaults/sight-dev-westus3",
           "appi": {
-            "rg_n": "rg-sight-dev-northcentralus",
-            "name": "appi-sight-dev-northcentralus"
+            "rg_n": "rg-sight-dev-westus3",
+            "name": "appi-sight-dev-westus3"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-plan-svc-vnet-integration"
-          }
-        },
-        {
-          "rg_n": "rg-sight-dev-northcentralus",
-          "plan_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Web/serverFarms/plan-sight-svc-dev-northcentralus",
-          "name": "app-sight-c-dev-northcentralus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.KeyVault/vaults/sight-northcentralus",
-          "appi": {
-            "rg_n": "rg-sight-dev-northcentralus",
-            "name": "appi-sight-dev-northcentralus"
-          },
-          "pe": {
-            "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
-          },
-          "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-northcentralus/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-northcentralus/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-sight-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-sight-dev-westus3/subnets/snet-plan-svc-vnet-integration"
           }
         }
       ]
