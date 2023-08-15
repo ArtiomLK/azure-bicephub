@@ -69,18 +69,14 @@
           "name": "matrix-dev-uksouth",
           "enable_rbac": "true",
           "sku": "standard",
-          "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-uksouth/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "kv_enable_public_access": true
         },
         {
           "rg_n": "rg-matrix-dev-westus3",
           "name": "matrix-dev-westus3",
           "enable_rbac": "true",
           "sku": "standard",
-          "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-westus3/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "kv_enable_public_access": true
         }
       ]
     },
@@ -93,8 +89,6 @@
           "redis_sku_tier": "Premium",
           "redis_sku_capacity": 1,
           "enable_nonSSL_port": true,
-          "pdnsz_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
-          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-uksouth/subnets/snet-pe",
           "redis_replicas": 3,
           "zones": ["1", "2", "3"]
         },
@@ -104,8 +98,6 @@
           "redis_sku_tier": "Premium",
           "redis_sku_capacity": 1,
           "enable_nonSSL_port": true,
-          "pdnsz_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
-          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-matrix-dev-westus3/subnets/snet-pe",
           "redis_replicas": 3,
           "zones": ["1", "2", "3"]
         }
