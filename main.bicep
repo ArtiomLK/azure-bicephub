@@ -30,10 +30,13 @@ param plans array = []
 @description('App Services parameters')
 param apps array = []
 
+@description('Internal Load Balancer parameters')
+param ilb array = []
+
 @description('Front Door parameters')
 param fd object = {}
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:6c9ea1e2eab8035116ece9ce3c747c32b575b0b6' = {
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:526bf56b666131967f5d8ef31d4229dd0678e175' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
@@ -46,6 +49,7 @@ module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:6c9ea1e2e
     logs: logs
     appis: appis
     apps: apps
+    ilb: ilb
     fd: fd
   }
 }
