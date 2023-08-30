@@ -187,6 +187,28 @@ az deployment sub create \
   --parameters @imagine_parameters.json
 ```
 
+### Innermost
+
+[![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
+
+- Azure Front Door
+- Internal Load Balancer
+
+```bash
+# download bicep template file
+curl -o innermost_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o innermost_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name innermost \
+  --subscription '<sub_id>' \
+  --template-file innermost_template.bicep \
+  --parameters @innermost_parameters.json
+```
+
 ### Matrix
 
 [![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
