@@ -36,7 +36,7 @@ param lbi array = []
 @description('Front Door parameters')
 param fd object = {}
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:a7b7d13ef9dda13f02abd55fd184bd271fb900fb' = {
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:bbcc2771108ea5a92102d22d3250fcc5a4f609a8' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
