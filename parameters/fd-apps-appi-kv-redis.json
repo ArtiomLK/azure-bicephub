@@ -297,7 +297,11 @@
         "sku": "Premium_AzureFrontDoor",
         "route_n": "matrix-prod-route",
         "origin_g_n": "matrix-prod-origin-group",
-        "origin_g_health_probe_settings": "Https"
+        "origin_g_health_probe_settings": "Https",
+        "origin_host_names": [
+          "app-matrix-web-dev-uksouth-alk.azurewebsites.net",
+          "app-matrix-web-dev-westus3-alk.azurewebsites.net"
+        ]
       }
     }
   }

@@ -276,7 +276,11 @@
         "sku": "Premium_AzureFrontDoor",
         "route_n": "heal-dev-route",
         "origin_g_n": "heal-dev-origin-group",
-        "origin_g_health_probe_settings": "Https"
+        "origin_g_health_probe_settings": "Https",
+        "origin_host_names": [
+          "app-heal-web-dev-eastus-alk.azurewebsites.net",
+          "app-heal-web-dev-westus3-alk.azurewebsites.net"
+        ]
       }
     }
   }

@@ -274,7 +274,11 @@
         "sku": "Premium_AzureFrontDoor",
         "route_n": "seek-dev-route",
         "origin_g_n": "seek-dev-origin-group",
-        "origin_g_health_probe_settings": "Https"
+        "origin_g_health_probe_settings": "Https",
+        "origin_host_names": [
+          "app-seek-web-dev-eastus-alk.azurewebsites.net",
+          "app-seek-web-dev-westus3-alk.azurewebsites.net"
+        ]
       }
     }
   }
