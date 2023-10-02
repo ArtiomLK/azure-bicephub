@@ -1,0 +1,40 @@
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - '.github/workflows/connectivity.yml'
+      - 'parameters/vwan-vhub-vpng.json'
+      - 'topology.bicep'
+      - '!**.md'
+      - '!.gitignore'
+      - '!assets/**'
+
+env:
+  DEPLOYMENT_PARAMETERS: parameters/vwan-vhub-vpng.json
+  PROJECT_NAME: connectivity
+  DEPLOYMENT_REGION: eastus
+  MAIN_BICEP_FILE_PATH: topology.bicep
+
+name: deploy-architecture-connectivity
+jobs:
+  test_deploy_on_az:
+    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    runs-on: ${{ vars.GH_RUNNER_OS }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: login-to-az
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: deploy-architecture-to-az
+        uses: azure/arm-deploy@v1
+        with:
+          scope: subscription
+          subscriptionId: ${{ secrets.SUB_ID }}
+          deploymentName: ${{env.PROJECT_NAME}}
+          region: ${{ env.DEPLOYMENT_REGION }}
+          template: ${{ env.MAIN_BICEP_FILE_PATH }}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}}
+          failOnStdErr: true
