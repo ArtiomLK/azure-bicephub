@@ -59,8 +59,6 @@
     "vhubs": {
       "value": [
         {
-          "rg_n": "rg-connectivity",
-          "vwan_n": "vwan-connectivity",
           "name": "vhub-connectivity-eastus",
           "vnet_address_prefix": "10.100.0.0/23",
           "location": "eastus",
@@ -71,8 +69,6 @@
           }
         },
         {
-          "rg_n": "rg-connectivity",
-          "vwan_n": "vwan-connectivity",
           "name": "vhub-connectivity-westus3",
           "vnet_address_prefix": "10.102.0.0/23",
           "location": "westus3",
@@ -83,15 +79,11 @@
           }
         },
         {
-          "rg_n": "rg-connectivity",
-          "vwan_n": "vwan-connectivity",
           "name": "vhub-connectivity-uksouth",
           "vnet_address_prefix": "10.106.0.0/23",
           "location": "uksouth"
         },
         {
-          "rg_n": "rg-connectivity",
-          "vwan_n": "vwan-connectivity",
           "name": "vhub-connectivity-japaneast",
           "vnet_address_prefix": "10.104.0.0/23",
           "location": "japaneast",

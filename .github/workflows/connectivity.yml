@@ -15,7 +15,7 @@ env:
   DEPLOYMENT_REGION: eastus
   MAIN_BICEP_FILE_PATH: topology.bicep
 
-name: deploy-architecture-connectivity
+name: Demo Secured Hub & Spoke
 jobs:
   test_deploy_on_az:
     environment: ${{ vars.ENVIRONMENT_STAGE }}
