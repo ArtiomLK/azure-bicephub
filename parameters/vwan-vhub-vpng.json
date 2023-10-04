@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "connectivity",
+        "env": "dev"
+      }
+    },
+
+    "rgs": {
+      "value": {
+        "rg-connectivity": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
+        },
+
+        "rg-connectivity-dns": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
+        },
+        "rg-connectivity-pdnsz": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
+        },
+
+
+        "rg-connectivity-spokes-eastus": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
+        },
+        "rg-connectivity-spokes-westus3": {
+          "sub_id": "<sub_id>",
+          "location": "westus3"
+        },
+        "rg-connectivity-spokes-uksouth": {
+          "sub_id": "<sub_id>",
+          "location": "uksouth"
+        },
+        "rg-connectivity-spokes-japaneast": {
+          "sub_id": "<sub_id>",
+          "location": "japaneast"
+        }
+      }
+    },
+
+    "vwan": {
+      "value": {
+        "rg_n": "rg-connectivity",
+        "name": "vwan-connectivity",
+        "sub_id": "<sub_id>",
+        "location": "eastus",
+        "sku": "Standard"
+      }
+    },
+
+    "vhubs": {
+      "value": [
+        {
+          "name": "vhub-connectivity-eastus",
+          "vnet_address_prefix": "10.100.0.0/23",
+          "location": "eastus",
+          "min_capacity": "2",
+          "s2s": {
+            "scale_units": 1,
+            "routing_pref": "internet"
+          }
+        },
+        {
+          "name": "vhub-connectivity-westus3",
+          "vnet_address_prefix": "10.102.0.0/23",
+          "location": "westus3",
+          "min_capacity": "3",
+          "s2s": {
+            "scale_units": 2,
+            "routing_pref": "ms"
+          }
+        },
+        {
+          "name": "vhub-connectivity-uksouth",
+          "vnet_address_prefix": "10.106.0.0/23",
+          "location": "uksouth"
+        },
+        {
+          "name": "vhub-connectivity-japaneast",
+          "vnet_address_prefix": "10.104.0.0/23",
+          "location": "japaneast",
+          "s2s": {}
+        }
+      ]
+    }
+
+  }
+}
