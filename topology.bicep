@@ -12,12 +12,16 @@ param vwan object
 @description('Virtual WAN Hubs parameters')
 param vhubs array = []
 
-module topology 'br:bicephub.azurecr.io/bicep/modules/topology:2a6ffaa21900fc8d67b61e46d078dbda2549bc11' = {
+@description('Azure Firealls parameters')
+param afws array = []
+
+module topology 'br:bicephub.azurecr.io/bicep/modules/topology:36f873c20b200ba1cb85acb3330c23b4ec192eee' = {
   name: take('topology-${guid(subscription().id, string(rgs))}', 64)
   params: {
     rgs: rgs
     vwan: vwan
     vhubs: vhubs
+    afws: afws
     tags: tags
   }
 }
