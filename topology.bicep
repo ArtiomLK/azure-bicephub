@@ -12,7 +12,7 @@ param vwan object
 @description('Virtual WAN Hubs parameters')
 param vhubs array = []
 
-@description('Azure Firealls parameters')
+@description('Azure Firewalls parameters')
 param afws array = []
 
 module topology 'br:bicephub.azurecr.io/bicep/modules/topology:36f873c20b200ba1cb85acb3330c23b4ec192eee' = {
