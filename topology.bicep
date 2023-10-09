@@ -18,7 +18,7 @@ param afws array = []
 @description('Azure Firewalls parameters')
 param dnsprs array = []
 
-module topology 'br:bicephub.azurecr.io/bicep/modules/topology:02eb8e1d35f60f618b459bdcc02bea273f6ca3b8' = {
+module topology 'br:bicephub.azurecr.io/bicep/modules/topology:2bb4db4c37e807262dd89a64b7123098b1237b68' = {
   name: take('topology-${guid(subscription().id, string(rgs))}', 64)
   params: {
     rgs: rgs
