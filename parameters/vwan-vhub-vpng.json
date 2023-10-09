@@ -109,9 +109,9 @@
         {
           "rg_n": "rg-connectivity-eastus",
           "vhub_n": "vhub-connectivity-eastus",
-          "name": "afw-vhub-bicephub-eastus",
+          "name": "afw-vhub-connectivity-eastus",
           "location": "eastus",
-          "afwp_name": "afwp-vhub-bicephub-eastus",
+          "afwp_name": "afwp-vhub-connectivity-eastus",
           "tier": "Premium",
           "pip_count": 2,
           "zones": [1,2,3]
@@ -119,18 +119,43 @@
         {
           "rg_n": "rg-connectivity-westus3",
           "vhub_n": "vhub-connectivity-westus3",
-          "name": "afw-vhub-bicephub-westus3",
+          "name": "afw-vhub-connectivity-westus3",
           "location": "westus3",
-          "afwp_name": "afwp-vhub-bicephub-westus3",
+          "afwp_name": "afwp-vhub-connectivity-westus3",
           "tier": "Premium",
           "zones": [1]
         },
         {
           "rg_n": "rg-connectivity-japaneast",
           "vhub_n": "vhub-connectivity-japaneast",
-          "name": "afw-vhub-bicephub-japaneast",
+          "name": "afw-vhub-connectivity-japaneast",
           "location": "japaneast",
-          "afwp_name": "afwp-vhub-bicephub-japaneast"
+          "afwp_name": "afwp-vhub-connectivity-japaneast"
+        }
+      ]
+    },
+
+    "dnsprs": {
+      "value": [
+        {
+          "rg_n": "rg-connectivity-eastus",
+          "name": "dnspr-connectivity-eastus",
+          "vnet_name": "vnet-dnspr-connectivity-eastus",
+          "vnet_addr": "10.100.2.0/23",
+          "snet_inbound_name": "snet-dnspr-inbound",
+          "snet_inbound_addr": "10.100.2.0/24",
+          "snet_inbound_ip": "10.100.2.4",
+          "location": "eastus"
+        },
+        {
+          "rg_n": "rg-connectivity-westus3",
+          "name": "dnspr-connectivity-westus3",
+          "vnet_name": "vnet-dnspr-connectivity-westus3",
+          "vnet_addr": "10.102.2.0/23",
+          "snet_inbound_name": "snet-dnspr-inbound",
+          "snet_inbound_addr": "10.102.2.0/24",
+          "snet_inbound_ip": "10.102.2.4",
+          "location": "westus3"
         }
       ]
     }
