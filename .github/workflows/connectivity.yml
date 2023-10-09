@@ -32,7 +32,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           scope: subscription
-          subscriptionId: ${{ secrets.SUB_ID }}
+          subscriptionId: ${{ secrets.SUB_ID_2 }}
           deploymentName: ${{env.PROJECT_NAME}}
           region: ${{ env.DEPLOYMENT_REGION }}
           template: ${{ env.MAIN_BICEP_FILE_PATH }}

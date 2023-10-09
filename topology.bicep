@@ -15,13 +15,17 @@ param vhubs array = []
 @description('Azure Firewalls parameters')
 param afws array = []
 
-module topology 'br:bicephub.azurecr.io/bicep/modules/topology:36f873c20b200ba1cb85acb3330c23b4ec192eee' = {
+@description('Azure Firewalls parameters')
+param dnsprs array = []
+
+module topology 'br:bicephub.azurecr.io/bicep/modules/topology:02eb8e1d35f60f618b459bdcc02bea273f6ca3b8' = {
   name: take('topology-${guid(subscription().id, string(rgs))}', 64)
   params: {
     rgs: rgs
     vwan: vwan
     vhubs: vhubs
     afws: afws
+    dnsprs: dnsprs
     tags: tags
   }
 }
