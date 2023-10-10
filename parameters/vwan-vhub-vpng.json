@@ -58,6 +58,19 @@
       }
     },
 
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-connectivity-eastus",
+          "name": "log-connectivity-eastus"
+        },
+        {
+          "rg_n": "rg-connectivity-westus3",
+          "name": "log-connectivity-westus3"
+        }
+      ]
+    },
+
     "vwan": {
       "value": {
         "rg_n": "rg-connectivity-eastus",
@@ -114,7 +127,8 @@
           "afwp_name": "afwp-vhub-connectivity-eastus",
           "tier": "Premium",
           "pip_count": 2,
-          "zones": [1,2,3]
+          "zones": [1,2,3],
+          "log_id": "<sub_id>/resourcegroups/rg-connectivity-eastus/providers/microsoft.operationalinsights/workspaces/log-connectivity-eastus"
         },
         {
           "rg_n": "rg-connectivity-westus3",
@@ -123,7 +137,8 @@
           "location": "westus3",
           "afwp_name": "afwp-vhub-connectivity-westus3",
           "tier": "Premium",
-          "zones": [1]
+          "zones": [1],
+          "log_id": "<sub_id>/resourcegroups/rg-connectivity-westus3/providers/microsoft.operationalinsights/workspaces/log-connectivity-westus3"
         },
         {
           "rg_n": "rg-connectivity-japaneast",
@@ -158,6 +173,19 @@
           "location": "westus3"
         }
       ]
+    },
+
+    "pdnszs": {
+      "value": [
+        {
+          "rg_n": "rg-connectivity-pdnsz",
+          "vnet_ids": [
+            "<sub_id>/resourceGroups/rg-connectivity-eastus/providers/Microsoft.Network/virtualNetworks/vnet-dnspr-connectivity-eastus",
+            "<sub_id>/resourceGroups/rg-connectivity-westus3/providers/Microsoft.Network/virtualNetworks/vnet-dnspr-connectivity-westus3"
+          ]
+        }
+      ]
     }
+
   }
 }
