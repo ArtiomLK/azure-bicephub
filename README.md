@@ -192,6 +192,7 @@ az deployment sub create \
 [![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
 
 - Azure Front Door
+- Virtual Networks
 - Internal Load Balancer
 
 ![Innermost Architecture](./assets/architectures/innermost/innermost.png)
