@@ -194,6 +194,8 @@ az deployment sub create \
 - Azure Front Door
 - Internal Load Balancer
 
+![Innermost Architecture](./assets/architectures/innermost/innermost.png)
+
 ```bash
 # download bicep template file
 curl -o innermost_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
