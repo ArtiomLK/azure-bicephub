@@ -195,7 +195,7 @@ az deployment sub create \
 - Virtual Networks
 - Internal Load Balancer
 
-![Innermost Architecture](./assets/architectures/innermost/innermost.png)
+![Innermost Architecture](./assets/architectures/innermost/innermost.jpg)
 
 ```bash
 # download bicep template file
