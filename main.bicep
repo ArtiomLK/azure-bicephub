@@ -34,7 +34,7 @@ param lbi array = []
 param fd object = {}
 
 @description('Virtual WAN parameters')
-param vwan object
+param vwan object = {}
 
 @description('Virtual WAN Hubs parameters')
 param vhubs array = []
@@ -47,6 +47,9 @@ param dnsprs array = []
 
 @description('Private Domain Name System Zones parameters')
 param pdnszs array = []
+
+@description('All Private Domain Name System Zones parameters')
+param allpdnszs array = []
 
 module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:89a2c1a6823732ca370e5b5ac0128416d928c064' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
@@ -68,5 +71,6 @@ module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:89a2c1a68
     afws: afws
     dnsprs: dnsprs
     pdnszs: pdnszs
+    allpdnszs: allpdnszs
   }
 }
