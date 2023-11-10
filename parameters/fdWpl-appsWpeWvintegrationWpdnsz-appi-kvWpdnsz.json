@@ -217,8 +217,7 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus/subnets/snet-plan-web-vnet-integration"
-          },
-          "fd-pe": true
+          }
         },
         {
           "rg_n": "rg-design-dev-eastus",
@@ -271,8 +270,7 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus3/subnets/snet-plan-web-vnet-integration"
-          },
-          "fd-pe": true
+          }
         },
         {
           "rg_n": "rg-design-dev-westus3",
@@ -323,6 +321,18 @@
         "origin_host_names": [
           "app-design-web-dev-eastus-alk.azurewebsites.net",
           "app-design-web-dev-westus3-alk.azurewebsites.net"
+        ],
+        "pl_origins_res_ids": [
+          "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/sites/app-design-web-dev-eastus-alk",
+          "<sub_id>/resourceGroups/rg-design-dev-westus3/providers/Microsoft.Web/sites/app-design-web-dev-westus3-alk"
+        ],
+        "pl_res_types": [
+          "sites",
+          "sites"
+        ],
+        "pl_l": [
+          "eastus",
+          "westus3"
         ]
       }
     }

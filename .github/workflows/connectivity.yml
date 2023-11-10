@@ -4,7 +4,7 @@ on:
     paths:
       - '.github/workflows/connectivity.yml'
       - 'parameters/vwan-vhub-vpng.json'
-      - 'topology.bicep'
+      - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
@@ -13,7 +13,6 @@ env:
   DEPLOYMENT_PARAMETERS: parameters/vwan-vhub-vpng.json
   PROJECT_NAME: connectivity
   DEPLOYMENT_REGION: eastus
-  MAIN_BICEP_FILE_PATH: topology.bicep
 
 name: Connectivity
 jobs:
@@ -32,9 +31,9 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           scope: subscription
-          subscriptionId: ${{ secrets.SUB_ID_2 }}
+          subscriptionId: ${{ secrets.SUB_ID }}
           deploymentName: ${{env.PROJECT_NAME}}
           region: ${{ env.DEPLOYMENT_REGION }}
-          template: ${{ env.MAIN_BICEP_FILE_PATH }}
+          template: ${{ vars.MAIN_BICEP_FILE_PATH }}
           parameters: ${{env.DEPLOYMENT_PARAMETERS}}
           failOnStdErr: true
