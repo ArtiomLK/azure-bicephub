@@ -176,8 +176,7 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-eastus/subnets/snet-plan-web-vnet-integration"
-          },
-          "fd-pe": true
+          }
         },
         {
           "rg_n": "rg-heal-dev-eastus",
@@ -229,8 +228,7 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-heal-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-westus3/subnets/snet-plan-web-vnet-integration"
-          },
-          "fd-pe": true
+          }
         },
         {
           "rg_n": "rg-heal-dev-westus3",
@@ -280,6 +278,18 @@
         "origin_host_names": [
           "app-heal-web-dev-eastus-alk.azurewebsites.net",
           "app-heal-web-dev-westus3-alk.azurewebsites.net"
+        ],
+        "pl_origins_res_ids": [
+          "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/sites/app-heal-web-dev-eastus-alk",
+          "<sub_id>/resourceGroups/rg-heal-dev-westus3/providers/Microsoft.Web/sites/app-heal-web-dev-westus3-alk"
+        ],
+        "pl_res_types": [
+          "sites",
+          "sites"
+        ],
+        "pl_l": [
+          "eastus",
+          "westus3"
         ]
       }
     }

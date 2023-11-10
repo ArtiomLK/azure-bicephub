@@ -261,8 +261,7 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth/subnets/snet-plan-web-vnet-integration"
-          },
-          "fd-pe": true
+          }
         },
         {
           "rg_n": "rg-reach-dev-uksouth",
@@ -315,8 +314,7 @@
           },
           "vnet_integration": {
             "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus3/subnets/snet-plan-web-vnet-integration"
-          },
-          "fd-pe": true
+          }
         },
         {
           "rg_n": "rg-reach-dev-westus3",
@@ -367,6 +365,18 @@
         "origin_host_names": [
           "app-reach-web-dev-uksouth-alk.azurewebsites.net",
           "app-reach-web-dev-westus3-alk.azurewebsites.net"
+        ],
+        "pl_origins_res_ids": [
+          "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/sites/app-reach-web-dev-uksouth-alk",
+          "<sub_id>/resourceGroups/rg-reach-dev-westus3/providers/Microsoft.Web/sites/app-reach-web-dev-westus3-alk"
+        ],
+        "pl_res_types": [
+          "sites",
+          "sites"
+        ],
+        "pl_l": [
+          "uksouth",
+          "westus3"
         ]
       }
     }

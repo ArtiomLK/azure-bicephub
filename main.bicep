@@ -9,9 +9,6 @@ param rgs object
 @description('Virtual Networks parameters')
 param vnets array = []
 
-@description('Private Domain Name System Zones parameters')
-param pdnszs array = []
-
 @description('Key Vaults parameters')
 param kvs array = []
 
@@ -36,7 +33,25 @@ param lbi array = []
 @description('Front Door parameters')
 param fd object = {}
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:bbcc2771108ea5a92102d22d3250fcc5a4f609a8' = {
+@description('Virtual WAN parameters')
+param vwan object = {}
+
+@description('Virtual WAN Hubs parameters')
+param vhubs array = []
+
+@description('Azure Firewalls parameters')
+param afws array = []
+
+@description('Azure DNS Private Resolvers parameters')
+param dnsprs array = []
+
+@description('Private Domain Name System Zones parameters')
+param pdnszs array = []
+
+@description('All Private Domain Name System Zones parameters')
+param allpdnszs array = []
+
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:89a2c1a6823732ca370e5b5ac0128416d928c064' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
@@ -45,11 +60,17 @@ module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:bbcc27711
     kvs: kvs
     redis: redis
     plans: plans
-    pdnszs: pdnszs
     logs: logs
     appis: appis
     apps: apps
     lbi: lbi
     fd: fd
+
+    vwan: vwan
+    vhubs: vhubs
+    afws: afws
+    dnsprs: dnsprs
+    pdnszs: pdnszs
+    allpdnszs: allpdnszs
   }
 }

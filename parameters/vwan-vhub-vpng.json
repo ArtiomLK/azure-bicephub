@@ -175,7 +175,7 @@
       ]
     },
 
-    "pdnszs": {
+    "allpdnszs": {
       "value": [
         {
           "rg_n": "rg-connectivity-pdnsz",
