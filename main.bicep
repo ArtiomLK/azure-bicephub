@@ -54,7 +54,7 @@ param pdnszs array = []
 @description('All Private Domain Name System Zones parameters')
 param allpdnszs array = []
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:1a48f0a04c8f4a95086ae19b727f7481ecf12e2b' = {
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:5c03e08e51f1773e8b838615ddd084e62c54cbc1' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
