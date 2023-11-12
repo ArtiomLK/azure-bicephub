@@ -42,6 +42,7 @@ az deployment sub create \
   - Azure App Services
 - Azure App Insights
 - Azure Log Analytics Workspace
+- Azure Storage Account
 
 ![inventory Architecture](./assets/architectures/inventory/inventory.png)
 
