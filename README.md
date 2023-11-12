@@ -6,36 +6,6 @@ Public IaC architectures repository
 
 ![Architectures](./assets/architectures.png)
 
-### Endeavor
-
-[![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-  - Azure App Services
-    - Virtual Network integration
-- Azure App Insights
-- Azure Log Analytics Workspace
-- Azure Virtual Networks
-- Azure Network Security Groups
-
-![Endeavor Architecture](./assets/architectures/endeavor/endeavor.png)
-
-```bash
-# download bicep template file
-curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration-appi.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name endeavor \
-  --subscription '<sub_id>' \
-  --template-file endeavor_template.bicep \
-  --parameters @endeavor_parameters.json
-```
-
 ### Envision
 
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
@@ -88,6 +58,36 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file inventory_template.bicep \
   --parameters @inventory_parameters.json
+```
+
+### Endeavor
+
+[![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Virtual Networks
+- Azure Network Security Groups
+
+![Endeavor Architecture](./assets/architectures/endeavor/endeavor.png)
+
+```bash
+# download bicep template file
+curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name endeavor \
+  --subscription '<sub_id>' \
+  --template-file endeavor_template.bicep \
+  --parameters @endeavor_parameters.json
 ```
 
 ### Heal
