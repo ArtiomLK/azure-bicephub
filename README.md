@@ -6,6 +6,61 @@ Public IaC architectures repository
 
 ![Architectures](./assets/architectures.png)
 
+### Envision
+
+[![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+- Azure App Insights
+- Azure Log Analytics Workspace
+
+![Envision Architecture](./assets/architectures/envision/envision.png)
+
+```bash
+# download bicep template file
+curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name envision \
+  --subscription '<sub_id>' \
+  --template-file envision_template.bicep \
+  --parameters @envision_parameters.json
+```
+
+### Inventory
+
+[![Inventory](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Storage Account
+
+![inventory Architecture](./assets/architectures/inventory/inventory.png)
+
+```bash
+# download bicep template file
+curl -o inventory_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o inventory_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name inventory \
+  --subscription '<sub_id>' \
+  --template-file inventory_template.bicep \
+  --parameters @inventory_parameters.json
+```
+
 ### Endeavor
 
 [![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
@@ -34,33 +89,6 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file endeavor_template.bicep \
   --parameters @endeavor_parameters.json
-```
-
-### Envision
-
-[![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-  - Azure App Services
-- Azure App Insights
-- Azure Log Analytics Workspace
-
-![Envision Architecture](./assets/architectures/envision/envision.png)
-
-```bash
-# download bicep template file
-curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name envision \
-  --subscription '<sub_id>' \
-  --template-file envision_template.bicep \
-  --parameters @envision_parameters.json
 ```
 
 ### Heal

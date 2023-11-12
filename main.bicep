@@ -15,6 +15,9 @@ param kvs array = []
 @description('Azure Cache for Redis parameters')
 param redis array = []
 
+@description('Azure Storage Account parameters')
+param st array = []
+
 @description('Log Analytics Workspaces parameters')
 param logs array = []
 
@@ -51,7 +54,7 @@ param pdnszs array = []
 @description('All Private Domain Name System Zones parameters')
 param allpdnszs array = []
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:89a2c1a6823732ca370e5b5ac0128416d928c064' = {
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:5c03e08e51f1773e8b838615ddd084e62c54cbc1' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
@@ -59,6 +62,7 @@ module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:89a2c1a68
     vnets: vnets
     kvs: kvs
     redis: redis
+    st: st
     plans: plans
     logs: logs
     appis: appis
