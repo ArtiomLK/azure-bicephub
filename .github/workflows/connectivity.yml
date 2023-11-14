@@ -3,14 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/connectivity.yml'
-      - 'parameters/vwan-vhub-vpng.json'
+      - 'parameters/vwan-vhub-vpng-bas.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
 
 env:
-  DEPLOYMENT_PARAMETERS: parameters/vwan-vhub-vpng.json
+  DEPLOYMENT_PARAMETERS: parameters/vwan-vhub-vpng-bas.json
   PROJECT_NAME: connectivity
   DEPLOYMENT_REGION: eastus
 
