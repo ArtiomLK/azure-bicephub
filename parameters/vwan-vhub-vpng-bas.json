@@ -20,23 +20,13 @@
           "sub_id": "<sub_id>",
           "location": "westus3"
         },
-        "rg-connectivity-prod-uksouth": {
-          "sub_id": "<sub_id>",
-          "location": "uksouth"
-        },
         "rg-connectivity-prod-japaneast": {
           "sub_id": "<sub_id>",
           "location": "japaneast"
         },
-
-
-        "rg-connectivity-prod-dns-eastus": {
+        "rg-connectivity-prod-uksouth": {
           "sub_id": "<sub_id>",
-          "location": "eastus"
-        },
-        "rg-connectivity-prod-pdnsz-eastus": {
-          "sub_id": "<sub_id>",
-          "location": "eastus"
+          "location": "uksouth"
         },
 
 
@@ -52,6 +42,10 @@
           "sub_id": "<sub_id>",
           "location": "japaneast"
         },
+        "rg-connectivity-bas-prod-uksouth": {
+          "sub_id": "<sub_id>",
+          "location": "uksouth"
+        },
 
 
         "rg-connectivity-spokes-prod-eastus": {
@@ -62,13 +56,23 @@
           "sub_id": "<sub_id>",
           "location": "westus3"
         },
+        "rg-connectivity-spokes-prod-japaneast": {
+          "sub_id": "<sub_id>",
+          "location": "japaneast"
+        },
         "rg-connectivity-spokes-prod-uksouth": {
           "sub_id": "<sub_id>",
           "location": "uksouth"
         },
-        "rg-connectivity-spokes-prod-japaneast": {
+
+
+        "rg-connectivity-prod-dns-eastus": {
           "sub_id": "<sub_id>",
-          "location": "japaneast"
+          "location": "eastus"
+        },
+        "rg-connectivity-prod-pdnsz-eastus": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
         }
       }
     },
@@ -108,6 +112,14 @@
           "name": "bas-connectivity-prod-japaneast",
           "vnet_n": "vnet-connectivity-bas-prod-japaneast",
           "vnet_addr": "10.104.2.0/24",
+          "env": "prod"
+        },
+        {
+          "rg_n": "rg-connectivity-bas-prod-uksouth",
+          "name": "bas-connectivity-prod-uksouth",
+          "sku": "Developer",
+          "vnet_n": "vnet-connectivity-bas-prod-uksouth",
+          "vnet_addr": "10.106.2.0/24",
           "env": "prod"
         }
       ]
