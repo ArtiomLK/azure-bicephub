@@ -125,6 +125,52 @@
       ]
     },
 
+    "kvs": {
+      "value": [
+        {
+          "rg_n": "rg-connectivity-spokes-prod-eastus",
+          "name": "kv-conn-prod-eastus",
+          "enable_rbac": "true",
+          "sku": "standard",
+          "kv_enable_public_access": true
+        },
+        {
+          "rg_n": "rg-connectivity-spokes-prod-westus3",
+          "name": "kv-conn-prod-westus3",
+          "enable_rbac": "true",
+          "sku": "standard",
+          "kv_enable_public_access": true
+        }
+      ]
+    },
+
+    "spokes": {
+      "value": [
+        {
+          "rg_n": "rg-connectivity-spokes-prod-eastus",
+          "vnet_n": "vnet-connectivity-spokes-prod-eastus",
+          "vnet_addr": "10.100.10.0/24",
+          "vm_admin_name": "artiomlk",
+          "vm_admin_pass": "TemportalPassword123!",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/Microsoft.KeyVault/vaults/kv-conn-prod-eastus",
+          "size": "Standard_B4s_v2",
+          "enable_windows_spoke": true,
+          "windows_OSVersion": "2022-datacenter-azure-edition",
+          "linux_OSVersion": "Ubuntu-2204",
+          "enable_pip": false,
+          "enable_linux_spoke": true
+        },
+        {
+          "rg_n": "rg-connectivity-spokes-prod-westus3",
+          "vnet_n": "vnet-connectivity-spokes-prod-westus3",
+          "vnet_addr": "10.102.10.0/24",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/Microsoft.KeyVault/vaults/kv-conn-prod-westus3",
+          "enable_windows_spoke": true,
+          "enable_linux_spoke": true
+        }
+      ]
+    },
+
     "logs": {
       "value": [
         {

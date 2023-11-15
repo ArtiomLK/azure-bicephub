@@ -3,14 +3,14 @@ on:
   push:
     paths:
       - '.github/workflows/connectivity.yml'
-      - 'parameters/vwan-vhub-vpng-bas.json'
+      - 'parameters/vwan-vhub-vpng-bas-spokes.json'
       - 'main.bicep'
       - '!**.md'
       - '!.gitignore'
       - '!assets/**'
 
 env:
-  DEPLOYMENT_PARAMETERS: parameters/vwan-vhub-vpng-bas.json
+  DEPLOYMENT_PARAMETERS: parameters/vwan-vhub-vpng-bas-spokes.json
   PROJECT_NAME: connectivity
   DEPLOYMENT_REGION: eastus
 
@@ -35,5 +35,5 @@ jobs:
           deploymentName: ${{env.PROJECT_NAME}}
           region: ${{ env.DEPLOYMENT_REGION }}
           template: ${{ vars.MAIN_BICEP_FILE_PATH }}
-          parameters: ${{env.DEPLOYMENT_PARAMETERS}}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}} vmAdminName=${{ secrets.VM_ADMIN_NAME }} vmAdminPass=${{ secrets.VM_ADMIN_PASS }}
           failOnStdErr: true
