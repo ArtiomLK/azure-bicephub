@@ -57,7 +57,14 @@ param allpdnszs array = []
 @description('bastion parameters')
 param bas array = []
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:08de901aa1fa73bee2c3372963ae6149b7cc73f5' = {
+@description('spokes parameters')
+param spokes array = []
+@secure()
+param vmAdminName string = ''
+@secure()
+param vmAdminPass string = ''
+
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:d86b5d01478f5379c3167ae9c3695f5e51040b66' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
@@ -80,5 +87,9 @@ module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:08de901aa
     pdnszs: pdnszs
     allpdnszs: allpdnszs
     bas: bas
+
+    spokes: spokes
+    vmAdminName: vmAdminName
+    vmAdminPass: vmAdminPass
   }
 }
