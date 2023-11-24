@@ -64,7 +64,7 @@ param vmAdminName string = ''
 @secure()
 param vmAdminPass string = ''
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:d86b5d01478f5379c3167ae9c3695f5e51040b66' = {
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:cd150251dddd8a9a01e1e43656c42686f3638c93' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
