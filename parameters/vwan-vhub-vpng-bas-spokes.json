@@ -20,13 +20,13 @@
           "sub_id": "<sub_id>",
           "location": "westus3"
         },
-        "rg-connectivity-prod-japaneast": {
-          "sub_id": "<sub_id>",
-          "location": "japaneast"
-        },
         "rg-connectivity-prod-uksouth": {
           "sub_id": "<sub_id>",
           "location": "uksouth"
+        },
+        "rg-connectivity-prod-japaneast": {
+          "sub_id": "<sub_id>",
+          "location": "japaneast"
         },
 
 
@@ -38,13 +38,13 @@
           "sub_id": "<sub_id>",
           "location": "westus3"
         },
-        "rg-connectivity-bas-prod-japaneast": {
-          "sub_id": "<sub_id>",
-          "location": "japaneast"
-        },
         "rg-connectivity-bas-prod-uksouth": {
           "sub_id": "<sub_id>",
           "location": "uksouth"
+        },
+        "rg-connectivity-bas-prod-japaneast": {
+          "sub_id": "<sub_id>",
+          "location": "japaneast"
         },
 
 
@@ -56,13 +56,13 @@
           "sub_id": "<sub_id>",
           "location": "westus3"
         },
-        "rg-connectivity-spokes-prod-japaneast": {
-          "sub_id": "<sub_id>",
-          "location": "japaneast"
-        },
         "rg-connectivity-spokes-prod-uksouth": {
           "sub_id": "<sub_id>",
           "location": "uksouth"
+        },
+        "rg-connectivity-spokes-prod-japaneast": {
+          "sub_id": "<sub_id>",
+          "location": "japaneast"
         },
 
 
@@ -108,18 +108,18 @@
           "env": "prod"
         },
         {
-          "rg_n": "rg-connectivity-bas-prod-japaneast",
-          "name": "bas-connectivity-prod-japaneast",
-          "vnet_n": "vnet-connectivity-bas-prod-japaneast",
-          "vnet_addr": "10.104.2.0/24",
+          "rg_n": "rg-connectivity-bas-prod-uksouth",
+          "name": "bas-connectivity-prod-uksouth",
+          "vnet_n": "vnet-connectivity-bas-prod-uksouth",
+          "vnet_addr": "10.106.2.0/24",
           "env": "prod"
         },
         {
-          "rg_n": "rg-connectivity-bas-prod-uksouth",
-          "name": "bas-connectivity-prod-uksouth",
+          "rg_n": "rg-connectivity-bas-prod-japaneast",
+          "name": "bas-connectivity-prod-japaneast",
+          "vnet_n": "vnet-connectivity-bas-prod-japaneast",
           "sku": "Developer",
-          "vnet_n": "vnet-connectivity-bas-prod-uksouth",
-          "vnet_addr": "10.106.2.0/24",
+          "vnet_addr": "10.104.2.0/24",
           "env": "prod"
         }
       ]
@@ -137,6 +137,13 @@
         {
           "rg_n": "rg-connectivity-spokes-prod-westus3",
           "name": "kv-conn-prod-westus3",
+          "enable_rbac": "true",
+          "sku": "standard",
+          "kv_enable_public_access": true
+        },
+        {
+          "rg_n": "rg-connectivity-spokes-prod-uksouth",
+          "name": "kv-conn-prod-uksouth",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": true
@@ -167,6 +174,13 @@
           "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/Microsoft.KeyVault/vaults/kv-conn-prod-westus3",
           "enable_windows_spoke": true,
           "enable_linux_spoke": true
+        },
+        {
+          "rg_n": "rg-connectivity-spokes-prod-uksouth",
+          "vnet_n": "vnet-connectivity-spokes-prod-uksouth",
+          "vnet_addr": "10.106.10.0/24",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-uksouth/providers/Microsoft.KeyVault/vaults/kv-conn-prod-uksouth",
+          "enable_windows_spoke": true
         }
       ]
     },
@@ -204,7 +218,17 @@
           "s2s": {
             "scale_units": 1,
             "routing_pref": "internet"
-          }
+          },
+          "vnet_connections": [
+            {
+              "name": "bas-prod-eastus",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-eastus"
+            },
+            {
+              "name": "spokes-prod-eastus",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spokes-prod-eastus"
+            }
+          ]
         },
         {
           "name": "vhub-connectivity-prod-westus3",
@@ -214,18 +238,37 @@
           "s2s": {
             "scale_units": 2,
             "routing_pref": "ms"
-          }
-        },
-        {
-          "name": "vhub-connectivity-prod-japaneast",
-          "vnet_address_prefix": "10.104.0.0/23",
-          "location": "japaneast",
-          "s2s": {}
+          },
+          "vnet_connections": [
+            {
+              "name": "bas-prod-westus3",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-westus3"
+            },
+            {
+              "name": "spokes-prod-westus3",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spokes-prod-westus3"
+            }
+          ]
         },
         {
           "name": "vhub-connectivity-prod-uksouth",
           "vnet_address_prefix": "10.106.0.0/23",
-          "location": "uksouth"
+          "location": "uksouth",
+          "vnet_connections": [
+            {
+              "name": "bas-prod-uksouth",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-uksouth"
+            },
+            {
+              "name": "spokes-prod-uksouth",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spokes-prod-uksouth"
+            }
+          ]
+        },
+        {
+          "name": "vhub-connectivity-prod-japaneast",
+          "vnet_address_prefix": "10.104.0.0/23",
+          "location": "japaneast"
         }
       ]
     },
@@ -254,11 +297,11 @@
           "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-westus3"
         },
         {
-          "rg_n": "rg-connectivity-prod-japaneast",
-          "vhub_n": "vhub-connectivity-prod-japaneast",
-          "name": "afw-vhub-connectivity-prod-japaneast",
-          "location": "japaneast",
-          "afwp_name": "afwp-vhub-connectivity-prod-japaneast"
+          "rg_n": "rg-connectivity-prod-uksouth",
+          "vhub_n": "vhub-connectivity-prod-uksouth",
+          "name": "afw-vhub-connectivity-prod-uksouth",
+          "location": "uksouth",
+          "afwp_name": "afwp-vhub-connectivity-prod-uksouth"
         }
       ]
     },
@@ -299,6 +342,5 @@
         }
       ]
     }
-
   }
 }
