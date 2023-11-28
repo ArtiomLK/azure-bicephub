@@ -155,7 +155,7 @@
       "value": [
         {
           "rg_n": "rg-connectivity-spokes-prod-eastus",
-          "vnet_n": "vnet-connectivity-spokes-prod-eastus",
+          "vnet_n": "vnet-connectivity-spoke-A-prod-eastus",
           "vnet_addr": "10.100.10.0/24",
           "vm_admin_name": "artiomlk",
           "vm_admin_pass": "TemportalPassword123!",
@@ -168,19 +168,26 @@
           "enable_linux_spoke": true
         },
         {
-          "rg_n": "rg-connectivity-spokes-prod-westus3",
-          "vnet_n": "vnet-connectivity-spokes-prod-westus3",
-          "vnet_addr": "10.102.10.0/24",
-          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/Microsoft.KeyVault/vaults/kv-conn-prod-westus3",
+          "rg_n": "rg-connectivity-spokes-prod-eastus",
+          "vnet_n": "vnet-connectivity-spoke-B-prod-eastus",
+          "vnet_addr": "10.101.10.0/24",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/Microsoft.KeyVault/vaults/kv-conn-prod-eastus",
           "enable_windows_spoke": true,
           "enable_linux_spoke": true
         },
         {
+          "rg_n": "rg-connectivity-spokes-prod-westus3",
+          "vnet_n": "vnet-connectivity-spoke-C-prod-westus3",
+          "vnet_addr": "10.102.10.0/24",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/Microsoft.KeyVault/vaults/kv-conn-prod-westus3",
+          "enable_windows_spoke": true
+        },
+        {
           "rg_n": "rg-connectivity-spokes-prod-uksouth",
-          "vnet_n": "vnet-connectivity-spokes-prod-uksouth",
+          "vnet_n": "vnet-connectivity-spoke-D-prod-uksouth",
           "vnet_addr": "10.106.10.0/24",
           "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-uksouth/providers/Microsoft.KeyVault/vaults/kv-conn-prod-uksouth",
-          "enable_windows_spoke": true
+          "enable_linux_spoke": true
         }
       ]
     },
@@ -226,7 +233,11 @@
             },
             {
               "name": "spokes-prod-eastus",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spokes-prod-eastus"
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-A-prod-eastus"
+            },
+            {
+              "name": "spokes-prod-eastus-002",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-B-prod-eastus"
             }
           ]
         },
@@ -246,7 +257,7 @@
             },
             {
               "name": "spokes-prod-westus3",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spokes-prod-westus3"
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-C-prod-westus3"
             }
           ]
         },
@@ -261,7 +272,7 @@
             },
             {
               "name": "spokes-prod-uksouth",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spokes-prod-uksouth"
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-D-prod-uksouth"
             }
           ]
         },
@@ -284,7 +295,8 @@
           "tier": "Premium",
           "pip_count": 2,
           "zones": [1,2,3],
-          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-eastus"
+          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-eastus",
+          "bas_vnet_addr": "10.100.2.0/24"
         },
         {
           "rg_n": "rg-connectivity-prod-westus3",
@@ -294,7 +306,8 @@
           "afwp_name": "afwp-vhub-connectivity-prod-westus3",
           "tier": "Premium",
           "zones": [1],
-          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-westus3"
+          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-westus3",
+          "bas_vnet_addr": "10.102.2.0/24"
         },
         {
           "rg_n": "rg-connectivity-prod-uksouth",
