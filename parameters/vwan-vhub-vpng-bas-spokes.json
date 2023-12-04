@@ -228,15 +228,19 @@
           },
           "vnet_connections": [
             {
+              "name": "dnspr-prod-eastus",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-eastus"
+            },
+            {
               "name": "bas-prod-eastus",
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-eastus"
             },
             {
-              "name": "spokes-prod-eastus",
+              "name": "spoke-A-prod-eastus",
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-A-prod-eastus"
             },
             {
-              "name": "spokes-prod-eastus-002",
+              "name": "spoke-B-prod-eastus",
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-B-prod-eastus"
             }
           ]
@@ -252,11 +256,15 @@
           },
           "vnet_connections": [
             {
+              "name": "dnspr-prod-westus3",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-westus3"
+            },
+            {
               "name": "bas-prod-westus3",
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-westus3"
             },
             {
-              "name": "spokes-prod-westus3",
+              "name": "spoke-C-prod-westus3",
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-C-prod-westus3"
             }
           ]
@@ -271,7 +279,7 @@
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-uksouth"
             },
             {
-              "name": "spokes-prod-uksouth",
+              "name": "spoke-D-prod-uksouth",
               "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-D-prod-uksouth"
             }
           ]
@@ -324,21 +332,21 @@
         {
           "rg_n": "rg-connectivity-prod-eastus",
           "name": "dnspr-connectivity-prod-eastus",
-          "vnet_name": "vnet-dnspr-connectivity-prod-eastus",
-          "vnet_addr": "10.100.2.0/23",
+          "vnet_name": "vnet-connectivity-dnspr-prod-eastus",
+          "vnet_addr": "10.100.4.0/23",
           "snet_inbound_name": "snet-dnspr-inbound",
-          "snet_inbound_addr": "10.100.2.0/24",
-          "snet_inbound_ip": "10.100.2.4",
+          "snet_inbound_addr": "10.100.4.0/24",
+          "snet_inbound_ip": "10.100.4.4",
           "location": "eastus"
         },
         {
           "rg_n": "rg-connectivity-prod-westus3",
           "name": "dnspr-connectivity-prod-westus3",
-          "vnet_name": "vnet-dnspr-connectivity-prod-westus3",
-          "vnet_addr": "10.102.2.0/23",
+          "vnet_name": "vnet-connectivity-dnspr-prod-westus3",
+          "vnet_addr": "10.102.4.0/23",
           "snet_inbound_name": "snet-dnspr-inbound",
-          "snet_inbound_addr": "10.102.2.0/24",
-          "snet_inbound_ip": "10.102.2.4",
+          "snet_inbound_addr": "10.102.4.0/24",
+          "snet_inbound_ip": "10.102.4.4",
           "location": "westus3"
         }
       ]
@@ -349,8 +357,8 @@
         {
           "rg_n": "rg-connectivity-prod-pdnsz-eastus",
           "vnet_ids": [
-            "<sub_id>/resourceGroups/rg-connectivity-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-dnspr-connectivity-prod-eastus",
-            "<sub_id>/resourceGroups/rg-connectivity-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-dnspr-connectivity-prod-westus3"
+            "<sub_id>/resourceGroups/rg-connectivity-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-eastus",
+            "<sub_id>/resourceGroups/rg-connectivity-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-westus3"
           ]
         }
       ]
