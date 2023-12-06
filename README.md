@@ -6,6 +6,29 @@ Public IaC architectures repository
 
 ![Architectures](./assets/architectures.png)
 
+### Connectivity
+
+[![Connectivity](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml)
+
+- Secured Hub and Spoke Extension Pattern Architecture
+
+![connectivity Architecture](./assets/architectures/connectivity/vhub-extention-pattern.png)
+
+```bash
+# download bicep template file
+curl -o connectivity_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/vwan-vhub-vpng-bas-spokes.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name connectivity \
+  --subscription '<sub_id>' \
+  --template-file connectivity_template.bicep \
+  --parameters @connectivity_parameters.json
+```
+
 ### Envision
 
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
