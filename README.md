@@ -47,7 +47,7 @@ curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-
 curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name imagine \
   --subscription '<sub_id>' \
   --template-file imagine_template.bicep \
@@ -74,7 +74,7 @@ curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure
 curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name envision \
   --subscription '<sub_id>' \
   --template-file envision_template.bicep \
@@ -102,7 +102,7 @@ curl -o inventory_template.bicep https://raw.githubusercontent.com/ArtiomLK/azur
 curl -o inventory_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name inventory \
   --subscription '<sub_id>' \
   --template-file inventory_template.bicep \
@@ -132,7 +132,7 @@ curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure
 curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration-appi.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name endeavor \
   --subscription '<sub_id>' \
   --template-file endeavor_template.bicep \
@@ -165,7 +165,7 @@ curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bi
 curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
 
 az deployment sub create \
-  --location northcentralus \
+  --location '<region_name>' \
   --name sight \
   --subscription '<sub_id>' \
   --template-file sight_template.bicep \
@@ -197,7 +197,7 @@ curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bic
 curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name seek \
   --subscription '<sub_id>' \
   --template-file seek_template.bicep \
@@ -228,7 +228,7 @@ curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-b
 curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name matrix \
   --subscription '<sub_id>' \
   --template-file matrix_template.bicep \
@@ -259,7 +259,7 @@ curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bic
 curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name heal \
   --subscription '<sub_id>' \
   --template-file heal_template.bicep \
@@ -292,7 +292,7 @@ curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-b
 curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name design \
   --subscription '<sub_id>' \
   --template-file design_template.bicep \
@@ -327,7 +327,7 @@ curl -o reach_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bi
 curl -o reach_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
 
 az deployment sub create \
-  --location eastus \
+  --location '<region_name>' \
   --name reach \
   --subscription '<sub_id>' \
   --template-file reach_template.bicep \
@@ -352,7 +352,7 @@ curl -o innermost_template.bicep https://raw.githubusercontent.com/ArtiomLK/azur
 curl -o innermost_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-lbi.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name innermost \
   --subscription '<sub_id>' \
   --template-file innermost_template.bicep \
@@ -375,7 +375,7 @@ curl -o connectivity_template.bicep https://raw.githubusercontent.com/ArtiomLK/a
 curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/vwan-vhub-vpng-bas-spokes.json
 
 az deployment sub create \
-  --location eastus2 \
+  --location '<region_name>' \
   --name connectivity \
   --subscription '<sub_id>' \
   --template-file connectivity_template.bicep \
