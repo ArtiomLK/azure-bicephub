@@ -1,32 +1,86 @@
 # Azure Bicephub
 
-Public IaC architectures repository
+Public IaC repository to deploy azure architectures at scale following best practices.
+
+Simultaneously deploy:
+
+- One Azure Resource (e.g. 1 key vault)
+- Multiple Azure Resources of the same type (e.g. 10 private dns zones)
+- The Combination of Multiple Azure Services (1 plan, 3 app services, 1 vnet, 1 key vault, etc. )
+
+![Deployment Examples](./assets/architectures/bicephub/bicephub-instructions.png)
 
 ## Architectures
 
-![Architectures](./assets/architectures.png)
-
-### Connectivity
-
+[![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
+[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
+[![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
+[![Inventory](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml)
+[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
+[![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
+[![Heal](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml)
+[![Design](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml)
+[![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
+[![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
 [![Connectivity](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml)
+[![Azure Landing Zones PDNSZ](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
 
-- Secured Hub and Spoke Extension Pattern Architecture
+### Sight
 
-![connectivity Architecture](./assets/architectures/connectivity/vhub-extention-pattern.png)
+[![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
+
+- Azure Key Vault
+  - Private Endpoints
+- Azure Cache for Redis
+  - Private Endpoints
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+![Sight Architecture](./assets/architectures/sight/sight.png)
 
 ```bash
 # download bicep template file
-curl -o connectivity_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/vwan-vhub-vpng-bas-spokes.json
+curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+
+az deployment sub create \
+  --location northcentralus \
+  --name sight \
+  --subscription '<sub_id>' \
+  --template-file sight_template.bicep \
+  --parameters @sight_parameters.json
+```
+
+### Imagine
+
+[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+- Azure App Services
+
+![Imagine Architecture](./assets/architectures/imagine/imagine.png)
+
+```bash
+# download bicep template file
+curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
 
 az deployment sub create \
   --location eastus2 \
-  --name connectivity \
+  --name imagine \
   --subscription '<sub_id>' \
-  --template-file connectivity_template.bicep \
-  --parameters @connectivity_parameters.json
+  --template-file imagine_template.bicep \
+  --parameters @imagine_parameters.json
 ```
 
 ### Envision
@@ -112,6 +166,69 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file endeavor_template.bicep \
   --parameters @endeavor_parameters.json
+```
+
+### Seek
+
+[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+![Seek Architecture](./assets/architectures/seek/seek.png)
+
+```bash
+# download bicep template file
+curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name seek \
+  --subscription '<sub_id>' \
+  --template-file seek_template.bicep \
+  --parameters @seek_parameters.json
+```
+
+### Matrix
+
+[![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Key Vault
+- Azure Cache for Redis
+- Azure Virtual Networks
+- Azure Network Security Groups
+
+![Matrix Architecture](./assets/architectures/matrix/matrix.png)
+
+```bash
+# download bicep template file
+curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name matrix \
+  --subscription '<sub_id>' \
+  --template-file matrix_template.bicep \
+  --parameters @matrix_parameters.json
 ```
 
 ### Heal
@@ -213,31 +330,6 @@ az deployment sub create \
   --parameters @reach_parameters.json
 ```
 
-### Imagine
-
-[![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-- Azure App Services
-
-![Imagine Architecture](./assets/architectures/imagine/imagine.png)
-
-```bash
-# download bicep template file
-curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name imagine \
-  --subscription '<sub_id>' \
-  --template-file imagine_template.bicep \
-  --parameters @imagine_parameters.json
-```
-
 ### Innermost
 
 [![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
@@ -263,100 +355,27 @@ az deployment sub create \
   --parameters @innermost_parameters.json
 ```
 
-### Matrix
+### Connectivity
 
-[![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
+[![Connectivity](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml)
 
-- Azure Front Door
-- Azure App Service Plan
-  - Azure App Services
-- Azure App Insights
-- Azure Log Analytics Workspace
-- Azure Key Vault
-- Azure Cache for Redis
-- Azure Virtual Networks
-- Azure Network Security Groups
+- Secured Hub and Spoke Extension Pattern Architecture
 
-![Matrix Architecture](./assets/architectures/matrix/matrix.png)
+![connectivity Architecture](./assets/architectures/connectivity/vhub-extention-pattern.png)
 
 ```bash
 # download bicep template file
-curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o connectivity_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download json parameters file
-curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
+curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/vwan-vhub-vpng-bas-spokes.json
 
 az deployment sub create \
   --location eastus2 \
-  --name matrix \
+  --name connectivity \
   --subscription '<sub_id>' \
-  --template-file matrix_template.bicep \
-  --parameters @matrix_parameters.json
-```
-
-### Seek
-
-[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-  - Azure App Services
-    - Virtual Network integration
-    - Private Endpoints
-- Azure App Insights
-- Azure Log Analytics Workspace
-- Azure Virtual Networks
-- Azure Network Security Groups
-- Azure Private DNS Zones
-
-![Seek Architecture](./assets/architectures/seek/seek.png)
-
-```bash
-# download bicep template file
-curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name seek \
-  --subscription '<sub_id>' \
-  --template-file seek_template.bicep \
-  --parameters @seek_parameters.json
-```
-
-### Sight
-
-[![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
-
-- Azure Key Vault
-  - Private Endpoints
-- Azure Cache for Redis
-  - Private Endpoints
-- Azure App Service Plan
-  - Azure App Services
-    - Virtual Network integration
-    - Private Endpoints
-- Azure Virtual Networks
-- Azure Network Security Groups
-- Azure Private DNS Zones
-
-![Sight Architecture](./assets/architectures/sight/sight.png)
-
-```bash
-# download bicep template file
-curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
-
-az deployment sub create \
-  --location northcentralus \
-  --name sight \
-  --subscription '<sub_id>' \
-  --template-file sight_template.bicep \
-  --parameters @sight_parameters.json
+  --template-file connectivity_template.bicep \
+  --parameters @connectivity_parameters.json
 ```
 
 ### Azure Landing Zones PDNSZ
