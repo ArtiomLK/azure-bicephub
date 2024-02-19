@@ -1,6 +1,6 @@
 # Azure Bicephub
 
-Public IaC Repository to deploy Azure Architectures at Scale following Best Practices.
+Public IaC repository to deploy azure architectures at scale following best practices.
 
 Simultaneously deploy:
 
