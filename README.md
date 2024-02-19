@@ -4,7 +4,7 @@ Public IaC repository to deploy azure architectures at scale following best prac
 
 Simultaneously deploy:
 
-- 1 Azure Resource (e.g. 1 key vault)
+- One Azure Resource (e.g. 1 key vault)
 - Multiple Azure Resources of the same type (e.g. 10 private dns zones)
 - The Combination of Multiple Azure Services (1 plan, 3 app services, 1 vnet, 1 key vault, etc. )
 
