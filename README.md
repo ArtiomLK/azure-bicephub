@@ -155,6 +155,39 @@ az deployment sub create \
   --parameters @endeavor_parameters.json
 ```
 
+
+### Seek
+
+[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+    - Virtual Network integration
+    - Private Endpoints
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+![Seek Architecture](./assets/architectures/seek/seek.png)
+
+```bash
+# download bicep template file
+curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download json parameters file
+curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
+
+az deployment sub create \
+  --location eastus2 \
+  --name seek \
+  --subscription '<sub_id>' \
+  --template-file seek_template.bicep \
+  --parameters @seek_parameters.json
+```
+
 ### Matrix
 
 [![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
@@ -308,38 +341,6 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file innermost_template.bicep \
   --parameters @innermost_parameters.json
-```
-
-### Seek
-
-[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
-
-- Azure Front Door
-- Azure App Service Plan
-  - Azure App Services
-    - Virtual Network integration
-    - Private Endpoints
-- Azure App Insights
-- Azure Log Analytics Workspace
-- Azure Virtual Networks
-- Azure Network Security Groups
-- Azure Private DNS Zones
-
-![Seek Architecture](./assets/architectures/seek/seek.png)
-
-```bash
-# download bicep template file
-curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
-
-# download json parameters file
-curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
-
-az deployment sub create \
-  --location eastus2 \
-  --name seek \
-  --subscription '<sub_id>' \
-  --template-file seek_template.bicep \
-  --parameters @seek_parameters.json
 ```
 
 ### Connectivity
