@@ -27,7 +27,7 @@ Public IaC repository to deploy secure Azure architectures at scale following be
 [![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
 [![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
 [![Connectivity](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml)
-[![Azure Landing Zones PDNSZ](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
+[![All Azure Private DNS Zones](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
 
 ### Imagine
 
@@ -40,17 +40,17 @@ Public IaC repository to deploy secure Azure architectures at scale following be
 ![Imagine Architecture](./assets/architectures/imagine/imagine.png)
 
 ```bash
-# download bicep template file
-curl -o imagine_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name imagine \
   --subscription '<sub_id>' \
-  --template-file imagine_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @imagine_parameters.json
 ```
 
@@ -67,17 +67,17 @@ az deployment sub create \
 ![Envision Architecture](./assets/architectures/envision/envision.png)
 
 ```bash
-# download bicep template file
-curl -o envision_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name envision \
   --subscription '<sub_id>' \
-  --template-file envision_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @envision_parameters.json
 ```
 
@@ -95,17 +95,17 @@ az deployment sub create \
 ![inventory Architecture](./assets/architectures/inventory/inventory.png)
 
 ```bash
-# download bicep template file
-curl -o inventory_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o inventory_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name inventory \
   --subscription '<sub_id>' \
-  --template-file inventory_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @inventory_parameters.json
 ```
 
@@ -125,17 +125,17 @@ az deployment sub create \
 ![Endeavor Architecture](./assets/architectures/endeavor/endeavor.png)
 
 ```bash
-# download bicep template file
-curl -o endeavor_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration-appi.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name endeavor \
   --subscription '<sub_id>' \
-  --template-file endeavor_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @endeavor_parameters.json
 ```
 
@@ -158,17 +158,17 @@ az deployment sub create \
 ![Sight Architecture](./assets/architectures/sight/sight.png)
 
 ```bash
-# download bicep template file
-curl -o sight_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name sight \
   --subscription '<sub_id>' \
-  --template-file sight_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @sight_parameters.json
 ```
 
@@ -190,17 +190,17 @@ az deployment sub create \
 ![Seek Architecture](./assets/architectures/seek/seek.png)
 
 ```bash
-# download bicep template file
-curl -o seek_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name seek \
   --subscription '<sub_id>' \
-  --template-file seek_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @seek_parameters.json
 ```
 
@@ -221,17 +221,17 @@ az deployment sub create \
 ![Matrix Architecture](./assets/architectures/matrix/matrix.png)
 
 ```bash
-# download bicep template file
-curl -o matrix_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name matrix \
   --subscription '<sub_id>' \
-  --template-file matrix_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @matrix_parameters.json
 ```
 
@@ -252,17 +252,17 @@ az deployment sub create \
 ![Heal Architecture](./assets/architectures/heal/heal.png)
 
 ```bash
-# download bicep template file
-curl -o heal_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name heal \
   --subscription '<sub_id>' \
-  --template-file heal_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @heal_parameters.json
 ```
 
@@ -285,17 +285,17 @@ az deployment sub create \
 ![Design Architecture](./assets/architectures/design/design.png)
 
 ```bash
-# download bicep template file
-curl -o design_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name design \
   --subscription '<sub_id>' \
-  --template-file design_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @design_parameters.json
 ```
 
@@ -320,17 +320,17 @@ az deployment sub create \
 ![Reach Architecture](./assets/architectures/reach/reach.png)
 
 ```bash
-# download bicep template file
-curl -o reach_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o reach_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name reach \
   --subscription '<sub_id>' \
-  --template-file reach_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @reach_parameters.json
 ```
 
@@ -345,17 +345,17 @@ az deployment sub create \
 ![Innermost Architecture](./assets/architectures/innermost/innermost.jpg)
 
 ```bash
-# download bicep template file
-curl -o innermost_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o innermost_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-lbi.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name innermost \
   --subscription '<sub_id>' \
-  --template-file innermost_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @innermost_parameters.json
 ```
 
@@ -368,28 +368,28 @@ az deployment sub create \
 ![connectivity Architecture](./assets/architectures/connectivity/vhub-extention-pattern.png)
 
 ```bash
-# download bicep template file
-curl -o connectivity_template.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
-# download json parameters file
+# download or create your own json parameter file
 curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/vwan-vhub-vpng-bas-spokes.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name connectivity \
   --subscription '<sub_id>' \
-  --template-file connectivity_template.bicep \
+  --template-file main_bicephub.bicep \
   --parameters @connectivity_parameters.json
 ```
 
-### Azure Landing Zones PDNSZ
+### All Azure Private DNS Zones
 
-[![Azure Landing Zones PDNSZ](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
+[![All Azure Private DNS Zones](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
 
 - Deploy all Azure Private DNS Zones
 
 ```bash
-# download bicep template file
+# download the main bicephub template file
 curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/alz-pdnsz.bicep
 
 tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
