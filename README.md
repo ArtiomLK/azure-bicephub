@@ -6,13 +6,13 @@ Public IaC repository to deploy secure Azure architectures at scale following be
 
 ### Simultaneously Deploy
 
-- To multiple environments (e.g. dev, qa, uat, pre-prod, prod)
+- To multiple environments (e.g. dev, qa, uat, staging, prod)
 - To multiple regions for BCDR (eastus and westus3 | eastus2, centralus, uksouth and japaneast, etc.)
 - One Azure Resource (e.g. 1 Front Door, 1 Internal Load Balancer, 1 Azure Cache for Redis, etc.)
 - Multiple Azure Resources of the same type (e.g. 10 Private DNS Zones, 20 App Service Plans, 30 App Services, etc.)
 - The Combination of Multiple Azure Services (1 Virtual Wan, 4 Secured Virtual Hubs, 4 Bastions, 1 Key Vault, etc.)
-
-![Deployment Examples](./assets/architectures/bicephub/bicephub-instructions.png)
+- Available Azure Services
+- ![Deployment Examples](./assets/architectures/bicephub/bicephub-instructions.png)
 
 ## Reference Architectures
 
