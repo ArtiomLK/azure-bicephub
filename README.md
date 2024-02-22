@@ -29,7 +29,7 @@ Public IaC repository to deploy secure Azure architectures at scale following be
 
 ## Reference Architectures
 
-### Imagine Architecture [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
+### _Imagine_ Architecture [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -52,9 +52,7 @@ az deployment sub create \
   --parameters @imagine_parameters.json
 ```
 
-### Envision
-
-[![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
+### _Envision_ Architecture [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -79,9 +77,7 @@ az deployment sub create \
   --parameters @envision_parameters.json
 ```
 
-### Inventory
-
-[![Inventory](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml)
+### _Inventory_ Architecture [![Inventory](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -107,9 +103,7 @@ az deployment sub create \
   --parameters @inventory_parameters.json
 ```
 
-### Endeavor
-
-[![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
+### _Endeavor_ Architecture [![Endeavor](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/endeavor.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -137,9 +131,7 @@ az deployment sub create \
   --parameters @endeavor_parameters.json
 ```
 
-### Sight
-
-[![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
+### _Sight_ Architecture [![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
 
 - Azure Key Vault
   - Private Endpoints
@@ -170,9 +162,7 @@ az deployment sub create \
   --parameters @sight_parameters.json
 ```
 
-### Seek
-
-[![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
+### _Seek_ Architecture [![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -202,9 +192,7 @@ az deployment sub create \
   --parameters @seek_parameters.json
 ```
 
-### Matrix
-
-[![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
+### _Matrix_ Architecture [![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
 
 - Azure Front Door
 - Azure App Service Plan
@@ -233,9 +221,7 @@ az deployment sub create \
   --parameters @matrix_parameters.json
 ```
 
-### Heal
-
-[![Heal](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml)
+### _Heal_ Architecture [![Heal](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml)
 
 - Azure Front Door
   - Private Links to Origins
@@ -264,9 +250,7 @@ az deployment sub create \
   --parameters @heal_parameters.json
 ```
 
-### Design
-
-[![Design](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml)
+### _Design_ Architecture [![Design](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/design.yml)
 
 - Azure Front Door
   - Private Links to Origins
@@ -297,9 +281,7 @@ az deployment sub create \
   --parameters @design_parameters.json
 ```
 
-### Reach
-
-[![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
+### _Reach_ Architecture [![Reach](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/reach.yml)
 
 - Azure Front Door
   - Private Links to Origins
@@ -332,9 +314,7 @@ az deployment sub create \
   --parameters @reach_parameters.json
 ```
 
-### Innermost
-
-[![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
+### _Innermost_ Architecture [![Innermost](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/innermost.yml)
 
 - Azure Front Door
 - Virtual Networks
@@ -357,9 +337,7 @@ az deployment sub create \
   --parameters @innermost_parameters.json
 ```
 
-### Connectivity
-
-[![Connectivity](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml)
+### _Connectivity_ Architecture [![Connectivity](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/connectivity.yml)
 
 - Secured Hub and Spoke Extension Pattern Architecture
 
@@ -380,7 +358,7 @@ az deployment sub create \
   --parameters @connectivity_parameters.json
 ```
 
-### All Azure Private DNS Zones
+### Deploy All Azure Private DNS Zones
 
 [![All Azure Private DNS Zones](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/alz-pdnsz.yml)
 
