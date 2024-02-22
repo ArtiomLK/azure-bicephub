@@ -29,7 +29,7 @@ Public IaC repository to deploy secure Azure architectures at scale following be
 
 ## Reference Architectures
 
-### _Imagine_ Architecture [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
+### **Imagine** Architecture [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
 
 - Azure Front Door
 - Azure App Service Plan
