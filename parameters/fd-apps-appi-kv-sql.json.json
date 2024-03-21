@@ -1,0 +1,175 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "fd-apps-appi-kv-sql",
+        "env": "dev"
+      }
+    },
+    "rgs": {
+      "value": {
+        "rg-ether-dev-eastus": {
+          "sub_id": "<sub_id>",
+          "location": "eastus"
+        },
+        "rg-ether-dev-westus": {
+          "sub_id": "<sub_id>",
+          "location": "westus"
+        }
+      }
+    },
+    "kvs": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "name": "kv-ether-dev-eastus",
+          "enable_rbac": "true",
+          "sku": "standard"
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "name": "kv-ether-dev-westus",
+          "enable_rbac": "true",
+          "sku": "standard"
+        }
+      ]
+    },
+    "sql": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "sql_n": "sql-ether-dev-eastus",
+          "sql_admin_n": "artiomlk",
+          "sql_admin_pass": "TemporaryPassword123!"
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "sql_n": "sql-ether-dev-westus"
+        }
+      ]
+    },
+    "sqldb": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "sql_n": "sql-ether-dev-eastus",
+          "sqldb_n": "sqldb-ether-dev-eastus",
+          "sku_name": "S3",
+          "sku_tier": "Standard",
+          "maxSizeBytes": 1099511627776
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "sql_n": "sql-ether-dev-westus",
+          "sqldb_n": "sqldb-ether-dev-westus",
+          "sku_name": "S0",
+          "sku_tier": "Standard"
+        }
+      ]
+    },
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "name": "plan-ether-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "name": "plan-ether-dev-westus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "name": "log-ether-dev-eastus"
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "name": "log-ether-dev-westus"
+        }
+      ]
+    },
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "name": "appi-ether-dev-eastus",
+          "log_id": "<sub_id>/resourcegroups/rg-ether-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-ether-dev-eastus"
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "name": "appi-ether-dev-westus",
+          "log_id": "<sub_id>/resourcegroups/rg-ether-dev-westus/providers/microsoft.operationalinsights/workspaces/log-ether-dev-westus"
+        }
+      ]
+    },
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-dev-eastus",
+          "name": "app-web-ether-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-ether-dev-eastus",
+            "name": "appi-ether-dev-eastus"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-eastus"
+        },
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-dev-eastus",
+          "name": "app-svc-ether-dev-eastus-alk",
+          "appi": {
+            "rg_n": "rg-ether-dev-eastus",
+            "name": "appi-ether-dev-eastus"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-eastus"
+        },
+
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-dev-westus",
+          "name": "app-web-ether-dev-westus-alk",
+          "appi": {
+            "rg_n": "rg-ether-dev-westus",
+            "name": "appi-ether-dev-westus"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-westus"
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-dev-westus",
+          "name": "app-svc-ether-dev-westus-alk",
+          "appi": {
+            "rg_n": "rg-ether-dev-westus",
+            "name": "appi-ether-dev-westus"
+          },
+          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-westus"
+        }
+      ]
+    },
+    "fd": {
+      "value": {
+        "rg_n": "rg-ether-dev-eastus",
+        "name": "fd-ether-dev",
+        "sku": "Standard_AzureFrontDoor",
+        "route_n": "ether-prod-route",
+        "origin_g_n": "ether-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}

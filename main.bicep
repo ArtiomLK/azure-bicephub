@@ -64,11 +64,26 @@ param vmAdminName string = ''
 @secure()
 param vmAdminPass string = ''
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:8c7f08e945f5976028d032e0f0a8253361e5514f' = {
+@description('SQL Server Names')
+param sql array = []
+@secure()
+param sqlAdminName string = ''
+@secure()
+param sqlAdminPass string = ''
+@description('SQL DB Names')
+param sqldb array = []
+
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:c7dd82d1f56a45862f1d2935f90f62cacf314b15' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
-    tags: tags
     rgs: rgs
+    tags: tags
+
+    sql: sql
+    sqldb:sqldb
+    sqlAdminName: sqlAdminName
+    sqlAdminPass: sqlAdminPass
+
     vnets: vnets
     kvs: kvs
     redis: redis

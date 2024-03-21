@@ -1,0 +1,39 @@
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - '.github/workflows/skyfort.yml'
+      - 'parameters/fdWpl-appsWpe-appi-kvWpe-sqlWpe.json'
+      - 'main.bicep'
+      - '!**.md'
+      - '!.gitignore'
+      - '!assets/**'
+
+env:
+  DEPLOYMENT_PARAMETERS: parameters/fdWpl-appsWpe-appi-kvWpe-sqlWpe.json
+  PROJECT_NAME: skyfort
+  DEPLOYMENT_REGION: eastus2
+
+name: deploy-architecture-skyfort
+jobs:
+  test_deploy_on_az:
+    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    runs-on: ${{ vars.GH_RUNNER_OS }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: login-to-az
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: deploy-architecture-to-az
+        uses: azure/arm-deploy@v1
+        with:
+          scope: subscription
+          subscriptionId: ${{ secrets.SUB_ID }}
+          deploymentName: ${{env.PROJECT_NAME}}
+          region: ${{ env.DEPLOYMENT_REGION }}
+          template: ${{ vars.MAIN_BICEP_FILE_PATH }}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}} vmAdminName=${{ secrets.VM_ADMIN_NAME }} vmAdminPass=${{ secrets.VM_ADMIN_PASS }}
+          failOnStdErr: true
