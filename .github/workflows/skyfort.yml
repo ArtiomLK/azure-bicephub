@@ -35,5 +35,5 @@ jobs:
           deploymentName: ${{env.PROJECT_NAME}}
           region: ${{ env.DEPLOYMENT_REGION }}
           template: ${{ vars.MAIN_BICEP_FILE_PATH }}
-          parameters: ${{env.DEPLOYMENT_PARAMETERS}} vmAdminName=${{ secrets.VM_ADMIN_NAME }} vmAdminPass=${{ secrets.VM_ADMIN_PASS }}
+          parameters: ${{env.DEPLOYMENT_PARAMETERS}} sqlAdminName=${{ secrets.SQL_ADMIN_NAME }} sqlAdminPass=${{ secrets.SQL_ADMIN_PASS }}
           failOnStdErr: true

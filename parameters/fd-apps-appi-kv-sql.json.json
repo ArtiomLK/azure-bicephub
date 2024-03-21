@@ -56,17 +56,33 @@
         {
           "rg_n": "rg-ether-dev-eastus",
           "sql_n": "sql-ether-dev-eastus",
-          "sqldb_n": "sqldb-ether-dev-eastus",
+          "sqldb_n": "sqldb-ether-dev-eastus-001",
           "sku_name": "S3",
           "sku_tier": "Standard",
           "maxSizeBytes": 1099511627776
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "sql_n": "sql-ether-dev-westus",
-          "sqldb_n": "sqldb-ether-dev-westus",
+          "rg_n": "rg-ether-dev-eastus",
+          "sql_n": "sql-ether-dev-eastus",
+          "sqldb_n": "sqldb-ether-dev-eastus-002",
           "sku_name": "S0",
           "sku_tier": "Standard"
+        },
+
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "sql_n": "sql-ether-dev-westus",
+          "sqldb_n": "sqldb-ether-dev-westus-001",
+          "sku_name": "S2",
+          "sku_tier": "Standard",
+          "maxSizeBytes": 268435456000
+        },
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "sql_n": "sql-ether-dev-westus",
+          "sqldb_n": "sqldb-ether-dev-westus-002",
+          "sku_name": "Basic",
+          "sku_tier": "Basic"
         }
       ]
     },
@@ -74,7 +90,24 @@
       "value": [
         {
           "rg_n": "rg-ether-dev-eastus",
-          "name": "plan-ether-dev-eastus",
+          "name": "plan-ether-web-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-ether-dev-eastus",
+          "name": "plan-ether-svc-dev-eastus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-ether-dev-westus",
+          "name": "plan-ether-web-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -82,7 +115,7 @@
         },
         {
           "rg_n": "rg-ether-dev-westus",
-          "name": "plan-ether-dev-westus",
+          "name": "plan-ether-svc-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -120,17 +153,16 @@
       "value": [
         {
           "rg_n": "rg-ether-dev-eastus",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-eastus",
           "name": "app-web-ether-dev-eastus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-eastus",
             "name": "appi-ether-dev-eastus"
-          },
-          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-eastus"
+          }
         },
         {
           "rg_n": "rg-ether-dev-eastus",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-dev-eastus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-eastus",
           "name": "app-svc-ether-dev-eastus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-eastus",
@@ -141,17 +173,16 @@
 
         {
           "rg_n": "rg-ether-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-westus",
           "name": "app-web-ether-dev-westus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-westus",
             "name": "appi-ether-dev-westus"
-          },
-          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-westus"
+          }
         },
         {
           "rg_n": "rg-ether-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-westus",
           "name": "app-svc-ether-dev-westus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-westus",
