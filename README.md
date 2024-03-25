@@ -112,6 +112,8 @@ az deployment sub create \
 - Azure App Insights
 - Azure Log Analytics Workspace
 - Azure Storage Account
+- Azure SQL Server
+- Azure SQL Database
 
 ![Ether Architecture](./assets/architectures/ether/ether.png)
 
