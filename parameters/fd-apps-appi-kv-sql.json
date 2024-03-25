@@ -81,8 +81,8 @@
           "rg_n": "rg-ether-dev-westus",
           "sql_n": "sql-ether-dev-westus",
           "sqldb_n": "sqldb-ether-dev-westus-002",
-          "sku_name": "Basic",
-          "sku_tier": "Basic"
+          "sku_name": "S1",
+          "sku_tier": "Standard"
         }
       ]
     },
