@@ -7,6 +7,7 @@ Public IaC repository to deploy secure Azure architectures at scale following be
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
 [![Inventory](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/inventory.yml)
 [![Ether](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/ether.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/ether.yml)
+[![Skyfort](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/skyfort.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/skyfort.yml)
 [![Seek](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/seek.yml)
 [![Matrix](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/matrix.yml)
 [![Heal](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/heal.yml)
@@ -111,9 +112,8 @@ az deployment sub create \
   - Azure App Services
 - Azure App Insights
 - Azure Log Analytics Workspace
-- Azure Storage Account
 - Azure SQL Server
-- Azure SQL Database
+  - Azure SQL Database
 
 ![Ether Architecture](./assets/architectures/ether/ether.png)
 
@@ -158,6 +158,39 @@ az deployment sub create \
   --subscription '<sub_id>' \
   --template-file main_bicephub.bicep \
   --parameters @endeavor_parameters.json
+```
+
+### _Skyfort_ Architecture [![Skyfort](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/skyfort.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/skyfort.yml)
+
+- Azure Front Door
+- Azure App Service Plan
+  - Azure App Services
+- Azure App Insights
+- Azure Log Analytics Workspace
+- Azure Key Vault
+  - Private Endpoints
+- Azure SQL Server
+  - Azure SQL Database
+    - Private Endpoints
+- Azure Virtual Networks
+- Azure Network Security Groups
+- Azure Private DNS Zones
+
+![Skyfort Architecture](./assets/architectures/skyfort/skyfort.png)
+
+```bash
+# download the main bicephub template file
+curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+
+# download or create your own json parameter file
+curl -o skyfort_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+az deployment sub create \
+  --location '<region_name>' \
+  --name skyfort \
+  --subscription '<sub_id>' \
+  --template-file main_bicephub.bicep \
+  --parameters @skyfort_parameters.json
 ```
 
 ### _Sight_ Architecture [![Sight](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/sight.yml)
