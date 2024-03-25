@@ -54,10 +54,10 @@ param pdnszs array = []
 @description('All Private Domain Name System Zones parameters')
 param allpdnszs array = []
 
-@description('bastion parameters')
+@description('Azure Bastion parameters')
 param bas array = []
 
-@description('spokes parameters')
+@description('Spokes parameters')
 param spokes array = []
 @secure()
 param vmAdminName string = ''
