@@ -1,0 +1,294 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "bicephub",
+        "architecture": "fdWpl-appsWpe-appi-kvWpe-sqlWpe",
+        "env": "dev"
+      }
+    },
+    "rgs": {
+      "value": {
+        "rg-skyfort-dev-eastus2": {
+          "sub_id": "<sub_id>",
+          "location": "eastus2"
+        },
+        "rg-skyfort-dev-centralus": {
+          "sub_id": "<sub_id>",
+          "location": "centralus"
+        }
+      }
+    },
+    "vnets": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "vnet-skyfort-dev-eastus2",
+          "addr": "192.167.0.0/24",
+          "snets": [
+            {
+              "type": "pe",
+              "name": "snet-pe",
+              "addr": "192.167.0.192/26"
+            }
+          ]
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "vnet-skyfort-dev-centralus",
+          "addr": "192.168.0.0/24",
+          "snets": [
+            {
+              "type": "pe",
+              "name": "snet-pe",
+              "addr": "192.168.0.192/26"
+            }
+          ]
+        }
+      ]
+    },
+    "pdnszs": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "privatelink.azurewebsites.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-eastus2",
+            "auto_registration": false
+          }
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "privatelink.azurewebsites.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-centralus",
+            "auto_registration": false
+          }
+        },
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "privatelink.vaultcore.azure.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-eastus2",
+            "auto_registration": false
+          }
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "privatelink.vaultcore.azure.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-centralus",
+            "auto_registration": false
+          }
+        },
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "privatelink.database.windows.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-eastus2",
+            "auto_registration": false
+          }
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "privatelink.database.windows.net",
+          "vnet_link": {
+            "vnet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-centralus",
+            "auto_registration": false
+          }
+        }
+      ]
+    },
+    "kvs": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "kv-skyfort-dev-eastus2",
+          "enable_rbac": "true",
+          "sku": "standard",
+          "kv_enable_public_access": false,
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-eastus2/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "kv-skyfort-dev-centralus",
+          "enable_rbac": "true",
+          "sku": "standard",
+          "kv_enable_public_access": false,
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-centralus/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+        }
+      ]
+    },
+    "sql": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "sql_n": "sql-skyfort-dev-eastus2",
+          "sql_enable_public_access": false,
+          "snet_sql_pe_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-eastus2/subnets/snet-pe",
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net"
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "sql_n": "sql-skyfort-dev-centralus",
+          "sql_admin_n": "artiomlk",
+          "sql_admin_pass": "TemporaryPassword123!",
+          "sql_enable_public_access": false,
+          "snet_sql_pe_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-centralus/subnets/snet-pe",
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.database.windows.net"
+        }
+      ]
+    },
+    "sqldb": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "sql_n": "sql-skyfort-dev-eastus2",
+          "sqldb_n": "sqldb-ether-dev-eastus2",
+          "sku_name": "Basic",
+          "sku_tier": "Basic"
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "sql_n": "sql-skyfort-dev-centralus",
+          "sqldb_n": "sqldb-ether-dev-centralus",
+          "sku_name": "Basic",
+          "sku_tier": "Basic",
+          "maxSizeBytes": 2147483648
+        }
+      ]
+    },
+    "plans": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "plan-skyfort-web-dev-eastus2",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "plan-skyfort-svc-dev-eastus2",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "plan-skyfort-web-dev-centralus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "plan-skyfort-svc-dev-centralus",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        }
+      ]
+    },
+    "logs": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "log-skyfort-dev-eastus2"
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "log-skyfort-dev-centralus"
+        }
+      ]
+    },
+    "appis": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "appi-skyfort-dev-eastus2",
+          "log_id": "<sub_id>/resourcegroups/rg-skyfort-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-skyfort-dev-eastus2"
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "name": "appi-skyfort-dev-centralus",
+          "log_id": "<sub_id>/resourcegroups/rg-skyfort-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-skyfort-dev-centralus"
+        }
+      ]
+    },
+    "apps": {
+      "value": [
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-skyfort-web-dev-eastus2",
+          "name": "app-skyfort-web-dev-eastus2-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-eastus2",
+          "appi": {
+            "rg_n": "rg-skyfort-dev-eastus2",
+            "name": "appi-skyfort-dev-eastus2"
+          },
+          "fd-pe": true
+        },
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-skyfort-svc-dev-eastus2",
+          "name": "app-skyfort-svc-dev-eastus2-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-eastus2",
+          "appi": {
+            "rg_n": "rg-skyfort-dev-eastus2",
+            "name": "appi-skyfort-dev-eastus2"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-eastus2/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          }
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Web/serverFarms/plan-skyfort-web-dev-centralus",
+          "name": "app-skyfort-web-dev-centralus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-centralus",
+          "appi": {
+            "rg_n": "rg-skyfort-dev-centralus",
+            "name": "appi-skyfort-dev-centralus"
+          },
+          "fd-pe": true
+        },
+        {
+          "rg_n": "rg-skyfort-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Web/serverFarms/plan-skyfort-svc-dev-centralus",
+          "name": "app-skyfort-svc-dev-centralus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-centralus",
+          "appi": {
+            "rg_n": "rg-skyfort-dev-centralus",
+            "name": "appi-skyfort-dev-centralus"
+          },
+          "pe": {
+            "enable_pe": true,
+            "snet_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-skyfort-dev-centralus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-skyfort-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+          }
+        }
+      ]
+    },
+    "fd": {
+      "value": {
+        "rg_n": "rg-skyfort-dev-eastus2",
+        "name": "fd-skyfort-dev",
+        "sku": "Premium_AzureFrontDoor",
+        "route_n": "skyfort-prod-route",
+        "origin_g_n": "skyfort-prod-origin-group",
+        "origin_g_health_probe_settings": "Https"
+      }
+    }
+  }
+}

@@ -54,21 +54,36 @@ param pdnszs array = []
 @description('All Private Domain Name System Zones parameters')
 param allpdnszs array = []
 
-@description('bastion parameters')
+@description('Azure Bastion parameters')
 param bas array = []
 
-@description('spokes parameters')
+@description('Spokes parameters')
 param spokes array = []
 @secure()
 param vmAdminName string = ''
 @secure()
 param vmAdminPass string = ''
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:8c7f08e945f5976028d032e0f0a8253361e5514f' = {
+@description('SQL Server parameters')
+param sql array = []
+@secure()
+param sql_admin_n_default string = ''
+@secure()
+param sql_admin_pass_default string = ''
+@description('SQL DB parameters')
+param sqldb array = []
+
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:3d98742e935929c947bbdbce06793236f28d4d36' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags
     rgs: rgs
+
+    sql: sql
+    sql_admin_n_default: sql_admin_n_default
+    sql_admin_pass_default: sql_admin_pass_default
+    sqldb: sqldb
+
     vnets: vnets
     kvs: kvs
     redis: redis
