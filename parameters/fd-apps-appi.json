@@ -9,20 +9,18 @@
         "env": "dev"
       }
     },
-
     "rgs": {
       "value": {
         "rg-envision-dev-eastus": {
           "sub_id": "<sub_id>",
           "location": "eastus"
         },
-        "rg-envision-dev-westus3": {
+        "rg-envision-dev-westus2": {
           "sub_id": "<sub_id>",
-          "location": "westus3"
+          "location": "westus2"
         }
       }
     },
-
     "logs": {
       "value": [
         {
@@ -30,12 +28,11 @@
           "name": "log-envision-dev-eastus"
         },
         {
-          "rg_n": "rg-envision-dev-westus3",
-          "name": "log-envision-dev-westus3"
+          "rg_n": "rg-envision-dev-westus2",
+          "name": "log-envision-dev-westus2"
         }
       ]
     },
-
     "appis": {
       "value": [
         {
@@ -44,13 +41,12 @@
           "log_id": "<sub_id>/resourcegroups/rg-envision-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-envision-dev-eastus"
         },
         {
-          "rg_n": "rg-envision-dev-westus3",
-          "name": "appi-envision-dev-westus3",
-          "log_id": "<sub_id>/resourcegroups/rg-envision-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-envision-dev-westus3"
+          "rg_n": "rg-envision-dev-westus2",
+          "name": "appi-envision-dev-westus2",
+          "log_id": "<sub_id>/resourcegroups/rg-envision-dev-westus2/providers/microsoft.operationalinsights/workspaces/log-envision-dev-westus2"
         }
       ]
     },
-
     "plans": {
       "value": [
         {
@@ -61,10 +57,9 @@
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
-
         {
-          "rg_n": "rg-envision-dev-westus3",
-          "name": "plan-envision-web-dev-westus3",
+          "rg_n": "rg-envision-dev-westus2",
+          "name": "plan-envision-web-dev-westus2",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -72,7 +67,6 @@
         }
       ]
     },
-
     "apps": {
       "value": [
         {
@@ -84,19 +78,17 @@
             "name": "appi-envision-dev-eastus"
           }
         },
-
         {
-          "rg_n": "rg-envision-dev-westus3",
-          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-westus3/providers/Microsoft.Web/serverFarms/plan-envision-web-dev-westus3",
-          "name": "app-envision-web-dev-westus3-alk",
+          "rg_n": "rg-envision-dev-westus2",
+          "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-westus2/providers/Microsoft.Web/serverFarms/plan-envision-web-dev-westus2",
+          "name": "app-envision-web-dev-westus2-alk",
           "appi": {
-            "rg_n": "rg-envision-dev-westus3",
-            "name": "appi-envision-dev-westus3"
+            "rg_n": "rg-envision-dev-westus2",
+            "name": "appi-envision-dev-westus2"
           }
         }
       ]
     },
-
     "fd": {
       "value": {
         "rg_n": "rg-envision-dev-eastus",

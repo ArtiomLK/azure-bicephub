@@ -9,20 +9,18 @@
         "env": "dev"
       }
     },
-
     "rgs": {
       "value": {
         "rg-innermost-dev-eastus": {
           "sub_id": "<sub_id>",
           "location": "eastus"
         },
-        "rg-innermost-dev-westus3": {
+        "rg-innermost-dev-westus2": {
           "sub_id": "<sub_id>",
-          "location": "westus3"
+          "location": "westus2"
         }
       }
     },
-
     "vnets": {
       "value": [
         {
@@ -57,8 +55,8 @@
           ]
         },
         {
-          "rg_n": "rg-innermost-dev-westus3",
-          "name": "vnet-innermost-dev-westus3",
+          "rg_n": "rg-innermost-dev-westus2",
+          "name": "vnet-innermost-dev-westus2",
           "addr": "192.168.0.0/22",
           "snets": [
             {
@@ -89,63 +87,64 @@
         }
       ]
     },
-
     "lbi": {
       "value": [
         {
-        "rg_n": "rg-innermost-dev-eastus",
-        "name": "lbi-web-dev-eastus",
-        "frontend_priv_ip": "192.167.0.228",
-        "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-eastus/subnets/snet-lb-web",
-        "frontend_ip_conf_n" : "ip-conf-web-test-endpoint",
-        "bp_name": "bp-web-test-endpoint",
-        "rule_n": "rule-web-test-endpoint"
+          "rg_n": "rg-innermost-dev-eastus",
+          "name": "lbi-web-dev-eastus",
+          "frontend_priv_ip": "192.167.0.228",
+          "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-eastus/subnets/snet-lb-web",
+          "frontend_ip_conf_n": "ip-conf-web-test-endpoint",
+          "bp_name": "bp-web-test-endpoint",
+          "rule_n": "rule-web-test-endpoint"
         },
         {
-        "rg_n": "rg-innermost-dev-westus3",
-        "name": "lbi-web-dev-westus3",
-        "frontend_priv_ip": "192.168.0.228",
-        "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-westus3/subnets/snet-lb-web",
-        "bp_name": "bp-web"
-        },
-
-        {
-        "rg_n": "rg-innermost-dev-eastus",
-        "name": "lbi-svc-dev-eastus",
-        "frontend_priv_ip": "192.167.0.196",
-        "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-eastus/subnets/snet-lb-svc",
-        "bp_name": "bp-svc",
-        "frontend_ip_conf_zones": ["1"]
+          "rg_n": "rg-innermost-dev-westus2",
+          "name": "lbi-web-dev-westus2",
+          "frontend_priv_ip": "192.168.0.228",
+          "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-westus2/subnets/snet-lb-web",
+          "bp_name": "bp-web"
         },
         {
-        "rg_n": "rg-innermost-dev-westus3",
-        "name": "lbi-svc-dev-westus3",
-        "frontend_priv_ip": "192.168.0.196",
-        "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-westus3/subnets/snet-lb-svc",
-        "bp_name": "bp-svc",
-        "frontend_ip_conf_zones": ["2"]
-        },
-
-        {
-        "rg_n": "rg-innermost-dev-eastus",
-        "name": "lbi-data-dev-eastus",
-        "frontend_priv_ip": "192.167.0.164",
-        "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-eastus/subnets/snet-lb-data",
-        "bp_name": "bp-data",
-        "frontend_ip_conf_zones": ["3"]
+          "rg_n": "rg-innermost-dev-eastus",
+          "name": "lbi-svc-dev-eastus",
+          "frontend_priv_ip": "192.167.0.196",
+          "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-eastus/subnets/snet-lb-svc",
+          "bp_name": "bp-svc",
+          "frontend_ip_conf_zones": [
+            "1"
+          ]
         },
         {
-        "rg_n": "rg-innermost-dev-westus3",
-        "name": "lbi-data-dev-westus3",
-        "frontend_priv_ip": "192.168.0.164",
-        "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-westus3/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-westus3/subnets/snet-lb-data",
-        "bp_name": "bp-data",
-        "frontend_ip_conf_zones": []
-      }
-
+          "rg_n": "rg-innermost-dev-westus2",
+          "name": "lbi-svc-dev-westus2",
+          "frontend_priv_ip": "192.168.0.196",
+          "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-westus2/subnets/snet-lb-svc",
+          "bp_name": "bp-svc",
+          "frontend_ip_conf_zones": [
+            "2"
+          ]
+        },
+        {
+          "rg_n": "rg-innermost-dev-eastus",
+          "name": "lbi-data-dev-eastus",
+          "frontend_priv_ip": "192.167.0.164",
+          "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-eastus/subnets/snet-lb-data",
+          "bp_name": "bp-data",
+          "frontend_ip_conf_zones": [
+            "3"
+          ]
+        },
+        {
+          "rg_n": "rg-innermost-dev-westus2",
+          "name": "lbi-data-dev-westus2",
+          "frontend_priv_ip": "192.168.0.164",
+          "frontend_snet_id": "<sub_id>/resourceGroups/rg-innermost-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-innermost-dev-westus2/subnets/snet-lb-data",
+          "bp_name": "bp-data",
+          "frontend_ip_conf_zones": []
+        }
       ]
     },
-
     "fd": {
       "value": {
         "rg_n": "rg-innermost-dev-eastus",
