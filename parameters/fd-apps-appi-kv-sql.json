@@ -154,7 +154,7 @@
         {
           "rg_n": "rg-ether-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-eastus",
-          "name": "app-web-ether-dev-eastus-alk",
+          "name": "app-ether-web-dev-eastus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-eastus",
             "name": "appi-ether-dev-eastus"
@@ -163,7 +163,7 @@
         {
           "rg_n": "rg-ether-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-eastus",
-          "name": "app-svc-ether-dev-eastus-alk",
+          "name": "app-ether-svc-dev-eastus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-eastus",
             "name": "appi-ether-dev-eastus"
@@ -174,7 +174,7 @@
         {
           "rg_n": "rg-ether-dev-westus",
           "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-westus",
-          "name": "app-web-ether-dev-westus-alk",
+          "name": "app-ether-web-dev-westus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-westus",
             "name": "appi-ether-dev-westus"
@@ -183,7 +183,7 @@
         {
           "rg_n": "rg-ether-dev-westus",
           "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-westus",
-          "name": "app-svc-ether-dev-westus-alk",
+          "name": "app-ether-svc-dev-westus-alk",
           "appi": {
             "rg_n": "rg-ether-dev-westus",
             "name": "appi-ether-dev-westus"

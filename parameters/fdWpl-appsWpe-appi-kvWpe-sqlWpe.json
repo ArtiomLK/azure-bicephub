@@ -177,7 +177,24 @@
       "value": [
         {
           "rg_n": "rg-skyfort-dev-eastus2",
-          "name": "plan-skyfort-dev-eastus2",
+          "name": "plan-skyfort-web-dev-eastus2",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+        {
+          "rg_n": "rg-skyfort-dev-eastus2",
+          "name": "plan-skyfort-svc-dev-eastus2",
+          "sku_code": "B1",
+          "sku_tier": "Basic",
+          "os_kind": "windows",
+          "enable_zone_redundancy": false
+        },
+
+        {
+          "rg_n": "rg-skyfort-dev-westus",
+          "name": "plan-skyfort-web-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -185,7 +202,7 @@
         },
         {
           "rg_n": "rg-skyfort-dev-westus",
-          "name": "plan-skyfort-dev-westus",
+          "name": "plan-skyfort-svc-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -226,8 +243,8 @@
       "value": [
         {
           "rg_n": "rg-skyfort-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-skyfort-dev-eastus2",
-          "name": "app-web-skyfort-dev-eastus2-alk",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-skyfort-web-dev-eastus2",
+          "name": "app-skyfort-web-dev-eastus2-alk",
           "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-eastus2",
           "appi": {
             "rg_n": "rg-skyfort-dev-eastus2",
@@ -237,8 +254,8 @@
         },
         {
           "rg_n": "rg-skyfort-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-skyfort-dev-eastus2",
-          "name": "app-svc-skyfort-dev-eastus2-alk",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-skyfort-svc-dev-eastus2",
+          "name": "app-skyfort-svc-dev-eastus2-alk",
           "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-eastus2",
           "appi": {
             "rg_n": "rg-skyfort-dev-eastus2",
@@ -253,8 +270,8 @@
 
         {
           "rg_n": "rg-skyfort-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-westus/providers/Microsoft.Web/serverFarms/plan-skyfort-dev-westus",
-          "name": "app-web-skyfort-dev-westus-alk",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-westus/providers/Microsoft.Web/serverFarms/plan-skyfort-web-dev-westus",
+          "name": "app-skyfort-web-dev-westus-alk",
           "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-westus/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-westus",
           "appi": {
             "rg_n": "rg-skyfort-dev-westus",
@@ -264,8 +281,8 @@
         },
         {
           "rg_n": "rg-skyfort-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-westus/providers/Microsoft.Web/serverFarms/plan-skyfort-dev-westus",
-          "name": "app-svc-skyfort-dev-westus-alk",
+          "plan_id": "<sub_id>/resourceGroups/rg-skyfort-dev-westus/providers/Microsoft.Web/serverFarms/plan-skyfort-svc-dev-westus",
+          "name": "app-skyfort-svc-dev-westus-alk",
           "kv_id": "<sub_id>/resourceGroups/rg-skyfort-dev-westus/providers/Microsoft.KeyVault/vaults/kv-skyfort-dev-westus",
           "appi": {
             "rg_n": "rg-skyfort-dev-westus",
