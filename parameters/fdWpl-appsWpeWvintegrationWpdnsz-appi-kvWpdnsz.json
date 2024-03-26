@@ -15,9 +15,9 @@
           "sub_id": "<sub_id>",
           "location": "eastus"
         },
-        "rg-design-dev-westus": {
+        "rg-design-dev-centralus": {
           "sub_id": "<sub_id>",
-          "location": "westus"
+          "location": "centralus"
         }
       }
     },
@@ -46,8 +46,8 @@
           ]
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "name": "vnet-design-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
+          "name": "vnet-design-dev-centralus",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -80,10 +80,10 @@
           }
         },
         {
-          "rg_n": "rg-design-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
           "name": "privatelink.azurewebsites.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus",
+            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus",
             "auto_registration": false
           }
         },
@@ -96,10 +96,10 @@
           }
         },
         {
-          "rg_n": "rg-design-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
           "name": "privatelink.vaultcore.azure.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus",
+            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus",
             "auto_registration": false
           }
         }
@@ -117,13 +117,13 @@
           "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "name": "design-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
+          "name": "design-dev-centralus",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
       ]
     },
@@ -134,8 +134,8 @@
           "name": "log-design-dev-eastus"
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "name": "log-design-dev-westus"
+          "rg_n": "rg-design-dev-centralus",
+          "name": "log-design-dev-centralus"
         }
       ]
     },
@@ -147,9 +147,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-design-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-design-dev-eastus"
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "name": "appi-design-dev-westus",
-          "log_id": "<sub_id>/resourcegroups/rg-design-dev-westus/providers/microsoft.operationalinsights/workspaces/log-design-dev-westus"
+          "rg_n": "rg-design-dev-centralus",
+          "name": "appi-design-dev-centralus",
+          "log_id": "<sub_id>/resourcegroups/rg-design-dev-centralus/providers/microsoft.operationalinsights/workspaces/log-design-dev-centralus"
         }
       ]
     },
@@ -172,16 +172,16 @@
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "name": "plan-design-web-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
+          "name": "plan-design-web-dev-centralus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "name": "plan-design-svc-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
+          "name": "plan-design-svc-dev-centralus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -244,56 +244,56 @@
           }
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Web/serverFarms/plan-design-web-dev-westus",
-          "name": "app-design-web-dev-westus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.KeyVault/vaults/design-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/serverFarms/plan-design-web-dev-centralus",
+          "name": "app-design-web-dev-centralus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.KeyVault/vaults/design-dev-centralus",
           "appi": {
-            "rg_n": "rg-design-dev-westus",
-            "name": "appi-design-dev-westus"
+            "rg_n": "rg-design-dev-centralus",
+            "name": "appi-design-dev-centralus"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-plan-web-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-westus",
-          "name": "app-design-svc-1-dev-westus-alk",
+          "rg_n": "rg-design-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-centralus",
+          "name": "app-design-svc-1-dev-centralus-alk",
           "appi": {
-            "rg_n": "rg-design-dev-westus",
-            "name": "appi-design-dev-westus"
+            "rg_n": "rg-design-dev-centralus",
+            "name": "appi-design-dev-centralus"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-plan-svc-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-design-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-westus",
-          "name": "app-design-svc-2-dev-westus-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.KeyVault/vaults/design-dev-westus",
+          "rg_n": "rg-design-dev-centralus",
+          "plan_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-centralus",
+          "name": "app-design-svc-2-dev-centralus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.KeyVault/vaults/design-dev-centralus",
           "appi": {
-            "rg_n": "rg-design-dev-westus",
-            "name": "appi-design-dev-westus"
+            "rg_n": "rg-design-dev-centralus",
+            "name": "appi-design-dev-centralus"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-westus/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus/subnets/snet-plan-svc-vnet-integration"
           }
         }
       ]
@@ -308,11 +308,11 @@
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
           "app-design-web-dev-eastus-alk.azurewebsites.net",
-          "app-design-web-dev-westus-alk.azurewebsites.net"
+          "app-design-web-dev-centralus-alk.azurewebsites.net"
         ],
         "pl_origins_res_ids": [
           "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/sites/app-design-web-dev-eastus-alk",
-          "<sub_id>/resourceGroups/rg-design-dev-westus/providers/Microsoft.Web/sites/app-design-web-dev-westus-alk"
+          "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/sites/app-design-web-dev-centralus-alk"
         ],
         "pl_res_types": [
           "sites",
@@ -320,7 +320,7 @@
         ],
         "pl_l": [
           "eastus",
-          "westus"
+          "centralus"
         ]
       }
     }
