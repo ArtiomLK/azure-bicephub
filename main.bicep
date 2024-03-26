@@ -73,7 +73,7 @@ param sqlAdminPass string = ''
 @description('SQL DB Names')
 param sqldb array = []
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:742a60bf91278e2bec7aa6e8df1c12b119db1dfb' = {
+module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:26a3b59a8ce82740cbce934ebb90e0ce262c940f' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     rgs: rgs
