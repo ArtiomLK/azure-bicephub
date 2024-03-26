@@ -15,9 +15,9 @@
           "sub_id": "<sub_id>",
           "location": "uksouth"
         },
-        "rg-matrix-dev-westus2": {
+        "rg-matrix-dev-westus": {
           "sub_id": "<sub_id>",
-          "location": "westus2"
+          "location": "westus"
         }
       }
     },
@@ -41,8 +41,8 @@
           ]
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "vnet-matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "vnet-matrix-dev-westus",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -69,8 +69,8 @@
           "kv_enable_public_access": true
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "matrix-dev-westus",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": true
@@ -93,8 +93,8 @@
           ]
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "redis-matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "redis-matrix-dev-westus",
           "redis_sku_tier": "Premium",
           "redis_sku_capacity": 1,
           "enable_nonSSL_port": true,
@@ -114,8 +114,8 @@
           "name": "log-matrix-dev-uksouth"
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "log-matrix-dev-westus2"
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "log-matrix-dev-westus"
         }
       ]
     },
@@ -127,9 +127,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-uksouth/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-uksouth"
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "appi-matrix-dev-westus2",
-          "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-westus2/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-westus2"
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "appi-matrix-dev-westus",
+          "log_id": "<sub_id>/resourcegroups/rg-matrix-dev-westus/providers/microsoft.operationalinsights/workspaces/log-matrix-dev-westus"
         }
       ]
     },
@@ -152,16 +152,16 @@
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "plan-matrix-web-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "plan-matrix-web-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "name": "plan-matrix-svc-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "name": "plan-matrix-svc-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -227,62 +227,62 @@
           }
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.Web/serverFarms/plan-matrix-web-dev-westus2",
-          "name": "app-matrix-web-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.KeyVault/vaults/matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.Web/serverFarms/plan-matrix-web-dev-westus",
+          "name": "app-matrix-web-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.KeyVault/vaults/matrix-dev-westus",
           "appi": {
-            "rg_n": "rg-matrix-dev-westus2",
-            "name": "appi-matrix-dev-westus2"
+            "rg_n": "rg-matrix-dev-westus",
+            "name": "appi-matrix-dev-westus"
           }
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus2",
-          "name": "app-matrix-svc-1-dev-westus2-alk",
+          "rg_n": "rg-matrix-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus",
+          "name": "app-matrix-svc-1-dev-westus-alk",
           "appi": {
-            "rg_n": "rg-matrix-dev-westus2",
-            "name": "appi-matrix-dev-westus2"
+            "rg_n": "rg-matrix-dev-westus",
+            "name": "appi-matrix-dev-westus"
           }
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus2",
-          "name": "app-matrix-svc-2-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.KeyVault/vaults/matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus",
+          "name": "app-matrix-svc-2-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.KeyVault/vaults/matrix-dev-westus",
           "appi": {
-            "rg_n": "rg-matrix-dev-westus2",
-            "name": "appi-matrix-dev-westus2"
+            "rg_n": "rg-matrix-dev-westus",
+            "name": "appi-matrix-dev-westus"
           }
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus2",
-          "name": "app-matrix-svc-3-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.KeyVault/vaults/matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus",
+          "name": "app-matrix-svc-3-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.KeyVault/vaults/matrix-dev-westus",
           "appi": {
-            "rg_n": "rg-matrix-dev-westus2",
-            "name": "appi-matrix-dev-westus2"
+            "rg_n": "rg-matrix-dev-westus",
+            "name": "appi-matrix-dev-westus"
           }
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus2",
-          "name": "app-matrix-svc-4-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.KeyVault/vaults/matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus",
+          "name": "app-matrix-svc-4-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.KeyVault/vaults/matrix-dev-westus",
           "appi": {
-            "rg_n": "rg-matrix-dev-westus2",
-            "name": "appi-matrix-dev-westus2"
+            "rg_n": "rg-matrix-dev-westus",
+            "name": "appi-matrix-dev-westus"
           }
         },
         {
-          "rg_n": "rg-matrix-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus2",
-          "name": "app-matrix-svc-n-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus2/providers/Microsoft.KeyVault/vaults/matrix-dev-westus2",
+          "rg_n": "rg-matrix-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-westus",
+          "name": "app-matrix-svc-n-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-westus/providers/Microsoft.KeyVault/vaults/matrix-dev-westus",
           "appi": {
-            "rg_n": "rg-matrix-dev-westus2",
-            "name": "appi-matrix-dev-westus2"
+            "rg_n": "rg-matrix-dev-westus",
+            "name": "appi-matrix-dev-westus"
           }
         }
       ]
@@ -297,7 +297,7 @@
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
           "app-matrix-web-dev-uksouth-alk.azurewebsites.net",
-          "app-matrix-web-dev-westus2-alk.azurewebsites.net"
+          "app-matrix-web-dev-westus-alk.azurewebsites.net"
         ]
       }
     }

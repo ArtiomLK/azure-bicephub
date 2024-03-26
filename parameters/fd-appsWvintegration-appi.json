@@ -15,9 +15,9 @@
           "sub_id": "<sub_id>",
           "location": "eastus"
         },
-        "rg-endeavor-dev-westus2": {
+        "rg-endeavor-dev-westus": {
           "sub_id": "<sub_id>",
-          "location": "westus2"
+          "location": "westus"
         }
       }
     },
@@ -41,8 +41,8 @@
           ]
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "name": "vnet-endeavor-dev-westus2",
+          "rg_n": "rg-endeavor-dev-westus",
+          "name": "vnet-endeavor-dev-westus",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -66,8 +66,8 @@
           "name": "log-endeavor-dev-eastus"
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "name": "log-endeavor-dev-westus2"
+          "rg_n": "rg-endeavor-dev-westus",
+          "name": "log-endeavor-dev-westus"
         }
       ]
     },
@@ -79,9 +79,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-eastus/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-eastus"
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "name": "appi-endeavor-dev-westus2",
-          "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-westus2/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-westus2"
+          "rg_n": "rg-endeavor-dev-westus",
+          "name": "appi-endeavor-dev-westus",
+          "log_id": "<sub_id>/resourcegroups/rg-endeavor-dev-westus/providers/microsoft.operationalinsights/workspaces/log-endeavor-dev-westus"
         }
       ]
     },
@@ -104,16 +104,16 @@
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "name": "plan-endeavor-web-dev-westus2",
+          "rg_n": "rg-endeavor-dev-westus",
+          "name": "plan-endeavor-web-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "name": "plan-endeavor-svc-dev-westus2",
+          "rg_n": "rg-endeavor-dev-westus",
+          "name": "plan-endeavor-svc-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -160,39 +160,39 @@
           }
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus2/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-westus2",
-          "name": "app-endeavor-web-dev-westus2-alk",
+          "rg_n": "rg-endeavor-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus/providers/Microsoft.Web/serverFarms/plan-endeavor-web-dev-westus",
+          "name": "app-endeavor-web-dev-westus-alk",
           "appi": {
-            "rg_n": "rg-endeavor-dev-westus2",
-            "name": "appi-endeavor-dev-westus2"
+            "rg_n": "rg-endeavor-dev-westus",
+            "name": "appi-endeavor-dev-westus"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus2/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus/subnets/snet-plan-web-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus2/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus2",
-          "name": "app-endeavor-svc-1-dev-westus2-alk",
+          "rg_n": "rg-endeavor-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus",
+          "name": "app-endeavor-svc-1-dev-westus-alk",
           "appi": {
-            "rg_n": "rg-endeavor-dev-westus2",
-            "name": "appi-endeavor-dev-westus2"
+            "rg_n": "rg-endeavor-dev-westus",
+            "name": "appi-endeavor-dev-westus"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus2/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus/subnets/snet-plan-svc-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-endeavor-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus2/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus2",
-          "name": "app-endeavor-svc-2-dev-westus2-alk",
+          "rg_n": "rg-endeavor-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus/providers/Microsoft.Web/serverFarms/plan-endeavor-svc-dev-westus",
+          "name": "app-endeavor-svc-2-dev-westus-alk",
           "appi": {
-            "rg_n": "rg-endeavor-dev-westus2",
-            "name": "appi-endeavor-dev-westus2"
+            "rg_n": "rg-endeavor-dev-westus",
+            "name": "appi-endeavor-dev-westus"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus2/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-endeavor-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-endeavor-dev-westus/subnets/snet-plan-svc-vnet-integration"
           }
         }
       ]
@@ -207,7 +207,7 @@
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
           "app-endeavor-web-dev-eastus-alk.azurewebsites.net",
-          "app-endeavor-web-dev-westus2-alk.azurewebsites.net"
+          "app-endeavor-web-dev-westus-alk.azurewebsites.net"
         ]
       }
     }

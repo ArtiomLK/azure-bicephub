@@ -15,9 +15,9 @@
           "sub_id": "<sub_id>",
           "location": "uksouth"
         },
-        "rg-reach-dev-westus2": {
+        "rg-reach-dev-westus": {
           "sub_id": "<sub_id>",
-          "location": "westus2"
+          "location": "westus"
         }
       }
     },
@@ -46,8 +46,8 @@
           ]
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "vnet-reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "name": "vnet-reach-dev-westus",
           "addr": "192.168.0.0/24",
           "snets": [
             {
@@ -80,10 +80,10 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
           "name": "privatelink.azurewebsites.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2",
+            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus",
             "auto_registration": false
           }
         },
@@ -96,10 +96,10 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
           "name": "privatelink.vaultcore.azure.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2",
+            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus",
             "auto_registration": false
           }
         },
@@ -112,10 +112,10 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
           "name": "privatelink.redis.cache.windows.net",
           "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2",
+            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus",
             "auto_registration": false
           }
         }
@@ -133,13 +133,13 @@
           "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "name": "reach-dev-westus",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": false,
-          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-pe",
-          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+          "snet_kv_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-pe",
+          "pdnsz_kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
         }
       ]
     },
@@ -161,13 +161,13 @@
           ]
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "redis-reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "name": "redis-reach-dev-westus",
           "redis_sku_tier": "Premium",
           "redis_sku_capacity": 1,
           "enable_nonSSL_port": true,
-          "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
-          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-pe",
+          "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.redis.cache.windows.net",
+          "snet_redis_pe_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-pe",
           "redis_replicas": 3,
           "zones": [
             "1",
@@ -184,8 +184,8 @@
           "name": "log-reach-dev-uksouth"
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "log-reach-dev-westus2"
+          "rg_n": "rg-reach-dev-westus",
+          "name": "log-reach-dev-westus"
         }
       ]
     },
@@ -197,9 +197,9 @@
           "log_id": "<sub_id>/resourcegroups/rg-reach-dev-uksouth/providers/microsoft.operationalinsights/workspaces/log-reach-dev-uksouth"
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "appi-reach-dev-westus2",
-          "log_id": "<sub_id>/resourcegroups/rg-reach-dev-westus2/providers/microsoft.operationalinsights/workspaces/log-reach-dev-westus2"
+          "rg_n": "rg-reach-dev-westus",
+          "name": "appi-reach-dev-westus",
+          "log_id": "<sub_id>/resourcegroups/rg-reach-dev-westus/providers/microsoft.operationalinsights/workspaces/log-reach-dev-westus"
         }
       ]
     },
@@ -222,16 +222,16 @@
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "plan-reach-web-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "name": "plan-reach-web-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "name": "plan-reach-svc-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "name": "plan-reach-svc-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -294,56 +294,56 @@
           }
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Web/serverFarms/plan-reach-web-dev-westus2",
-          "name": "app-reach-web-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.KeyVault/vaults/reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Web/serverFarms/plan-reach-web-dev-westus",
+          "name": "app-reach-web-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.KeyVault/vaults/reach-dev-westus",
           "appi": {
-            "rg_n": "rg-reach-dev-westus2",
-            "name": "appi-reach-dev-westus2"
+            "rg_n": "rg-reach-dev-westus",
+            "name": "appi-reach-dev-westus"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-plan-web-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-plan-web-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-westus2",
-          "name": "app-reach-svc-1-dev-westus2-alk",
+          "rg_n": "rg-reach-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-westus",
+          "name": "app-reach-svc-1-dev-westus-alk",
           "appi": {
-            "rg_n": "rg-reach-dev-westus2",
-            "name": "appi-reach-dev-westus2"
+            "rg_n": "rg-reach-dev-westus",
+            "name": "appi-reach-dev-westus"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-plan-svc-vnet-integration"
           }
         },
         {
-          "rg_n": "rg-reach-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-westus2",
-          "name": "app-reach-svc-2-dev-westus2-alk",
-          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.KeyVault/vaults/reach-dev-westus2",
+          "rg_n": "rg-reach-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-westus",
+          "name": "app-reach-svc-2-dev-westus-alk",
+          "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.KeyVault/vaults/reach-dev-westus",
           "appi": {
-            "rg_n": "rg-reach-dev-westus2",
-            "name": "appi-reach-dev-westus2"
+            "rg_n": "rg-reach-dev-westus",
+            "name": "appi-reach-dev-westus"
           },
           "pe": {
             "enable_pe": true,
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-pe",
-            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-pe",
+            "pdnsz_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
           },
           "vnet_integration": {
-            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus2/subnets/snet-plan-svc-vnet-integration"
+            "snet_id": "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-westus/subnets/snet-plan-svc-vnet-integration"
           }
         }
       ]
@@ -358,11 +358,11 @@
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
           "app-reach-web-dev-uksouth-alk.azurewebsites.net",
-          "app-reach-web-dev-westus2-alk.azurewebsites.net"
+          "app-reach-web-dev-westus-alk.azurewebsites.net"
         ],
         "pl_origins_res_ids": [
           "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/sites/app-reach-web-dev-uksouth-alk",
-          "<sub_id>/resourceGroups/rg-reach-dev-westus2/providers/Microsoft.Web/sites/app-reach-web-dev-westus2-alk"
+          "<sub_id>/resourceGroups/rg-reach-dev-westus/providers/Microsoft.Web/sites/app-reach-web-dev-westus-alk"
         ],
         "pl_res_types": [
           "sites",
@@ -370,7 +370,7 @@
         ],
         "pl_l": [
           "uksouth",
-          "westus2"
+          "westus"
         ]
       }
     }

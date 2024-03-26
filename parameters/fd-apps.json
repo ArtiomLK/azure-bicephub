@@ -15,9 +15,9 @@
           "sub_id": "<sub_id>",
           "location": "eastus"
         },
-        "rg-imagine-dev-westus2": {
+        "rg-imagine-dev-westus": {
           "sub_id": "<sub_id>",
-          "location": "westus2"
+          "location": "westus"
         }
       }
     },
@@ -32,8 +32,8 @@
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-imagine-dev-westus2",
-          "name": "plan-imagine-web-dev-westus2",
+          "rg_n": "rg-imagine-dev-westus",
+          "name": "plan-imagine-web-dev-westus",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -49,9 +49,9 @@
           "name": "app-imagine-web-dev-eastus-alk"
         },
         {
-          "rg_n": "rg-imagine-dev-westus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-westus2/providers/Microsoft.Web/serverFarms/plan-imagine-web-dev-westus2",
-          "name": "app-imagine-web-dev-westus2-alk"
+          "rg_n": "rg-imagine-dev-westus",
+          "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-westus/providers/Microsoft.Web/serverFarms/plan-imagine-web-dev-westus",
+          "name": "app-imagine-web-dev-westus-alk"
         }
       ]
     },
