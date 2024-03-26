@@ -64,13 +64,13 @@ param vmAdminName string = ''
 @secure()
 param vmAdminPass string = ''
 
-@description('SQL Server Names')
+@description('SQL Server parameters')
 param sql array = []
 @secure()
 param sqlAdminName string = ''
 @secure()
 param sqlAdminPass string = ''
-@description('SQL DB Names')
+@description('SQL DB parameters')
 param sqldb array = []
 
 module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:26a3b59a8ce82740cbce934ebb90e0ce262c940f' = {
