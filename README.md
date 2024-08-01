@@ -241,7 +241,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name endeavor \
+  --name 'endeavor' \
   --template-file main.bicep \
   --parameters @endeavor_parameters.json
 ```
@@ -291,7 +291,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name skyfort \
+  --name 'skyfort' \
   --template-file main.bicep \
   --parameters @skyfort_parameters.json
 ```
@@ -339,7 +339,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name sight \
+  --name 'sight' \
   --template-file main.bicep \
   --parameters @sight_parameters.json
 ```
@@ -386,7 +386,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name seek \
+  --name 'seek' \
   --template-file main.bicep \
   --parameters @seek_parameters.json
 ```
@@ -432,7 +432,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name matrix \
+  --name 'matrix' \
   --template-file main.bicep \
   --parameters @matrix_parameters.json
 ```
@@ -478,7 +478,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name heal \
+  --name 'heal' \
   --template-file main.bicep \
   --parameters @heal_parameters.json
 ```
@@ -526,7 +526,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name design \
+  --name 'design' \
   --template-file main.bicep \
   --parameters @design_parameters.json
 ```
@@ -576,7 +576,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name reach \
+  --name 'reach' \
   --template-file main.bicep \
   --parameters @reach_parameters.json
 ```
@@ -616,7 +616,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name innermost \
+  --name 'innermost' \
   --template-file main.bicep \
   --parameters @innermost_parameters.json
 ```
@@ -654,7 +654,7 @@ az deployment sub what-if \
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name connectivity \
+  --name 'connectivity' \
   --template-file main.bicep \
   --parameters @connectivity_parameters.json
 ```
