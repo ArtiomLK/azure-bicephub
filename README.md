@@ -1,4 +1,4 @@
-imagine@# Azure Bicephub
+# Azure Bicephub
 
 Public IaC orchestrator to deploy secure Azure architectures at scale following best practices.
 
