@@ -42,16 +42,33 @@ Public IaC orchestrator to deploy secure Azure architectures at scale following 
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o imagine_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps.json
 
-az deployment sub create \
-  --location '<region_name>' \
-  --name imagine \
+# Validate Deployment
+az deployment sub validate \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
+
+# Deploy IaC
+az deployment sub create \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
   --parameters @imagine_parameters.json
 ```
 
@@ -67,16 +84,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name envision \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @envision_parameters.json
 ```
 
@@ -93,16 +126,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o inventory_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name inventory \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @inventory_parameters.json
 ```
 
@@ -120,16 +169,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o ether_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name ether \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @ether_parameters.json
 ```
 
@@ -148,16 +213,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWvintegration-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name endeavor \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @endeavor_parameters.json
 ```
 
@@ -181,16 +262,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o skyfort_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name skyfort \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @skyfort_parameters.json
 ```
 
@@ -212,16 +309,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name sight \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @sight_parameters.json
 ```
 
@@ -242,16 +355,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-appsWpeWvintegrationWpdnsz-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name seek \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @seek_parameters.json
 ```
 
@@ -271,16 +400,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fd-apps-appi-kv-redis.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name matrix \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @matrix_parameters.json
 ```
 
@@ -300,16 +445,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name heal \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @heal_parameters.json
 ```
 
@@ -331,16 +492,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name design \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @design_parameters.json
 ```
 
@@ -364,16 +541,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o reach_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-appsWpeWvintegrationWpdnsz-appi-kvWpdnsz-redisWpdnsz.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name reach \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @reach_parameters.json
 ```
 
@@ -387,16 +580,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o innermost_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/fdWpl-lbi.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name innermost \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @innermost_parameters.json
 ```
 
@@ -408,16 +617,32 @@ az deployment sub create \
 
 ```bash
 # download the main bicephub template file
-curl -o main_bicephub.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
+curl -o main.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/main.bicep
 
 # download or create your own json parameter file
 curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/vwan-vhub-vpng-bas-spokes.json
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment sub create \
   --location '<region_name>' \
   --name connectivity \
   --subscription '<sub_id>' \
-  --template-file main_bicephub.bicep \
+  --template-file main.bicep \
   --parameters @connectivity_parameters.json
 ```
 
@@ -432,6 +657,22 @@ az deployment sub create \
 curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/alz-pdnsz.bicep
 
 tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
+
+# Validate Deployment
+az deployment sub validate \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters @imagine_parameters.json
+
+# Display delta changes to be applied
+az deployment sub what-if \
+  --subscription '<sub_id>' \
+  --location '<region_name>' \
+  --name 'imagine' \
+  --template-file main.bicep \
+  --parameters imagine_parameters.json
 
 az deployment group create \
   --name 'alz-pdnsz-deployment' \
