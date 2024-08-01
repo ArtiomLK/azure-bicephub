@@ -105,10 +105,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name envision \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @envision_parameters.json
 ```
@@ -147,10 +148,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name inventory \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @inventory_parameters.json
 ```
@@ -190,10 +192,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name ether \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @ether_parameters.json
 ```
@@ -234,10 +237,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name endeavor \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @endeavor_parameters.json
 ```
@@ -283,10 +287,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name skyfort \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @skyfort_parameters.json
 ```
@@ -330,10 +335,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name sight \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @sight_parameters.json
 ```
@@ -376,10 +382,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name seek \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @seek_parameters.json
 ```
@@ -421,10 +428,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name matrix \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @matrix_parameters.json
 ```
@@ -466,10 +474,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name heal \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @heal_parameters.json
 ```
@@ -513,10 +522,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name design \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @design_parameters.json
 ```
@@ -562,10 +572,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name reach \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @reach_parameters.json
 ```
@@ -601,10 +612,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name innermost \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @innermost_parameters.json
 ```
@@ -638,10 +650,11 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment sub create \
+  --subscription '<sub_id>' \
   --location '<region_name>' \
   --name connectivity \
-  --subscription '<sub_id>' \
   --template-file main.bicep \
   --parameters @connectivity_parameters.json
 ```
@@ -674,6 +687,7 @@ az deployment sub what-if \
   --template-file main.bicep \
   --parameters imagine_parameters.json
 
+# Deploy IaC
 az deployment group create \
   --name 'alz-pdnsz-deployment' \
   --resource-group 'rg-dns' \
