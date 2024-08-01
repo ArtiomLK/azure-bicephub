@@ -1,6 +1,6 @@
 # Azure Bicephub
 
-Public IaC repository to deploy secure Azure architectures at scale following best practices.
+Public IaC orchestrator to deploy secure Azure architectures at scale following best practices.
 
 [![Imagine](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/imagine.yml)
 [![Envision](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml/badge.svg?branch=main&event=push)](https://github.com/ArtiomLK/azure-bicephub/actions/workflows/envision.yml)
