@@ -1,4 +1,4 @@
-# Azure Bicephub
+imagine@# Azure Bicephub
 
 Public IaC orchestrator to deploy secure Azure architectures at scale following best practices.
 
@@ -61,7 +61,7 @@ az deployment sub what-if \
   --location '<region_name>' \
   --name 'imagine' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @imagine_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -93,23 +93,23 @@ curl -o envision_parameters.json https://raw.githubusercontent.com/ArtiomLK/azur
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'envision' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @envision_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'envision' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @envision_parameters.json
 
 # Deploy IaC
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name envision \
+  --name 'envision' \
   --template-file main.bicep \
   --parameters @envision_parameters.json
 ```
@@ -136,23 +136,23 @@ curl -o inventory_parameters.json https://raw.githubusercontent.com/ArtiomLK/azu
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'inventory' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @inventory_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'inventory' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @inventory_parameters.json
 
 # Deploy IaC
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name inventory \
+  --name 'inventory' \
   --template-file main.bicep \
   --parameters @inventory_parameters.json
 ```
@@ -180,23 +180,23 @@ curl -o ether_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-b
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'ether' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @ether_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'ether' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @ether_parameters.json
 
 # Deploy IaC
 az deployment sub create \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name ether \
+  --name 'ether' \
   --template-file main.bicep \
   --parameters @ether_parameters.json
 ```
@@ -225,17 +225,17 @@ curl -o endeavor_parameters.json https://raw.githubusercontent.com/ArtiomLK/azur
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'endeavor' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @endeavor_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'endeavor' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @endeavor_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -275,17 +275,17 @@ curl -o skyfort_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'skyfort' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @skyfort_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'skyfort' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @skyfort_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -323,17 +323,17 @@ curl -o sight_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-b
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'sight' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @sight_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'sight' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @sight_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -370,17 +370,17 @@ curl -o seek_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bi
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'seek' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @seek_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'seek' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @seek_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -416,17 +416,17 @@ curl -o matrix_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'matrix' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @matrix_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'matrix' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @matrix_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -462,17 +462,17 @@ curl -o heal_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bi
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'heal' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @heal_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'heal' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @heal_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -510,17 +510,17 @@ curl -o design_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'design' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @design_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'design' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @design_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -560,17 +560,17 @@ curl -o reach_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-b
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'reach' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @reach_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'reach' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @reach_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -600,17 +600,17 @@ curl -o innermost_parameters.json https://raw.githubusercontent.com/ArtiomLK/azu
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'innermost' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @innermost_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'innermost' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @innermost_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -638,17 +638,17 @@ curl -o connectivity_parameters.json https://raw.githubusercontent.com/ArtiomLK/
 az deployment sub validate \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'connectivity' \
   --template-file main.bicep \
-  --parameters @imagine_parameters.json
+  --parameters @connectivity_parameters.json
 
 # Display delta changes to be applied
 az deployment sub what-if \
   --subscription '<sub_id>' \
   --location '<region_name>' \
-  --name 'imagine' \
+  --name 'connectivity' \
   --template-file main.bicep \
-  --parameters imagine_parameters.json
+  --parameters @connectivity_parameters.json
 
 # Deploy IaC
 az deployment sub create \
@@ -671,26 +671,10 @@ curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephu
 
 tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
 
-# Validate Deployment
-az deployment sub validate \
-  --subscription '<sub_id>' \
-  --location '<region_name>' \
-  --name 'imagine' \
-  --template-file main.bicep \
-  --parameters @imagine_parameters.json
-
-# Display delta changes to be applied
-az deployment sub what-if \
-  --subscription '<sub_id>' \
-  --location '<region_name>' \
-  --name 'imagine' \
-  --template-file main.bicep \
-  --parameters imagine_parameters.json
-
 # Deploy IaC
 az deployment group create \
-  --name 'alz-pdnsz-deployment' \
   --resource-group 'rg-dns' \
+  --name 'alz-pdnsz-deployment' \
   --template-file alz-pdnsz.bicep \
   --parameters vnet_id="/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>" tags="$tags"
 ```
