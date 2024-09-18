@@ -74,34 +74,42 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "name": "privatelink.azurewebsites.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-design-dev-centralus",
           "name": "privatelink.azurewebsites.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-design-dev-eastus",
           "name": "privatelink.vaultcore.azure.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-eastus",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-design-dev-centralus",
           "name": "privatelink.vaultcore.azure.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-design-dev-centralus",
+              "auto_registration": false
+            }
+          ]
         }
       ]
     },
@@ -194,7 +202,7 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-web-dev-eastus",
-          "name": "app-design-web-dev-eastus-alk",
+          "name": "app-design-web-dev-eastus",
           "kv_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.KeyVault/vaults/design-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
@@ -212,7 +220,7 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-eastus",
-          "name": "app-design-svc-1-dev-eastus-alk",
+          "name": "app-design-svc-1-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
             "name": "appi-design-dev-eastus"
@@ -229,7 +237,7 @@
         {
           "rg_n": "rg-design-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-eastus",
-          "name": "app-design-svc-2-dev-eastus-alk",
+          "name": "app-design-svc-2-dev-eastus",
           "appi": {
             "rg_n": "rg-design-dev-eastus",
             "name": "appi-design-dev-eastus"
@@ -246,7 +254,7 @@
         {
           "rg_n": "rg-design-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/serverFarms/plan-design-web-dev-centralus",
-          "name": "app-design-web-dev-centralus-alk",
+          "name": "app-design-web-dev-centralus",
           "kv_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.KeyVault/vaults/design-dev-centralus",
           "appi": {
             "rg_n": "rg-design-dev-centralus",
@@ -264,7 +272,7 @@
         {
           "rg_n": "rg-design-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-centralus",
-          "name": "app-design-svc-1-dev-centralus-alk",
+          "name": "app-design-svc-1-dev-centralus",
           "appi": {
             "rg_n": "rg-design-dev-centralus",
             "name": "appi-design-dev-centralus"
@@ -281,7 +289,7 @@
         {
           "rg_n": "rg-design-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/serverFarms/plan-design-svc-dev-centralus",
-          "name": "app-design-svc-2-dev-centralus-alk",
+          "name": "app-design-svc-2-dev-centralus",
           "kv_id": "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.KeyVault/vaults/design-dev-centralus",
           "appi": {
             "rg_n": "rg-design-dev-centralus",
@@ -307,12 +315,12 @@
         "origin_g_n": "design-dev-origin-group",
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
-          "app-design-web-dev-eastus-alk.azurewebsites.net",
-          "app-design-web-dev-centralus-alk.azurewebsites.net"
+          "app-design-web-dev-eastus.azurewebsites.net",
+          "app-design-web-dev-centralus.azurewebsites.net"
         ],
         "pl_origins_res_ids": [
-          "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/sites/app-design-web-dev-eastus-alk",
-          "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/sites/app-design-web-dev-centralus-alk"
+          "<sub_id>/resourceGroups/rg-design-dev-eastus/providers/Microsoft.Web/sites/app-design-web-dev-eastus",
+          "<sub_id>/resourceGroups/rg-design-dev-centralus/providers/Microsoft.Web/sites/app-design-web-dev-centralus"
         ],
         "pl_res_types": [
           "sites",

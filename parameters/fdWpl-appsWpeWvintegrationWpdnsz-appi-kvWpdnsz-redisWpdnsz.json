@@ -74,50 +74,62 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "name": "privatelink.azurewebsites.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-reach-dev-centralus",
           "name": "privatelink.azurewebsites.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-centralus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-centralus",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-reach-dev-uksouth",
           "name": "privatelink.vaultcore.azure.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-reach-dev-centralus",
           "name": "privatelink.vaultcore.azure.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-centralus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-centralus",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-reach-dev-uksouth",
           "name": "privatelink.redis.cache.windows.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-uksouth",
+              "auto_registration": false
+            }
+          ]
         },
         {
           "rg_n": "rg-reach-dev-centralus",
           "name": "privatelink.redis.cache.windows.net",
-          "vnet_link": {
-            "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-centralus",
-            "auto_registration": false
-          }
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-reach-dev-centralus",
+              "auto_registration": false
+            }
+          ]
         }
       ]
     },
@@ -244,7 +256,7 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-web-dev-uksouth",
-          "name": "app-reach-web-dev-uksouth-alk",
+          "name": "app-reach-web-dev-uksouth",
           "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.KeyVault/vaults/reach-dev-uksouth",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
@@ -262,7 +274,7 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-uksouth",
-          "name": "app-reach-svc-1-dev-uksouth-alk",
+          "name": "app-reach-svc-1-dev-uksouth",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
             "name": "appi-reach-dev-uksouth"
@@ -279,7 +291,7 @@
         {
           "rg_n": "rg-reach-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-uksouth",
-          "name": "app-reach-svc-2-dev-uksouth-alk",
+          "name": "app-reach-svc-2-dev-uksouth",
           "appi": {
             "rg_n": "rg-reach-dev-uksouth",
             "name": "appi-reach-dev-uksouth"
@@ -296,7 +308,7 @@
         {
           "rg_n": "rg-reach-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Web/serverFarms/plan-reach-web-dev-centralus",
-          "name": "app-reach-web-dev-centralus-alk",
+          "name": "app-reach-web-dev-centralus",
           "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.KeyVault/vaults/reach-dev-centralus",
           "appi": {
             "rg_n": "rg-reach-dev-centralus",
@@ -314,7 +326,7 @@
         {
           "rg_n": "rg-reach-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-centralus",
-          "name": "app-reach-svc-1-dev-centralus-alk",
+          "name": "app-reach-svc-1-dev-centralus",
           "appi": {
             "rg_n": "rg-reach-dev-centralus",
             "name": "appi-reach-dev-centralus"
@@ -331,7 +343,7 @@
         {
           "rg_n": "rg-reach-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Web/serverFarms/plan-reach-svc-dev-centralus",
-          "name": "app-reach-svc-2-dev-centralus-alk",
+          "name": "app-reach-svc-2-dev-centralus",
           "kv_id": "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.KeyVault/vaults/reach-dev-centralus",
           "appi": {
             "rg_n": "rg-reach-dev-centralus",
@@ -357,12 +369,12 @@
         "origin_g_n": "reach-prod-origin-group",
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
-          "app-reach-web-dev-uksouth-alk.azurewebsites.net",
-          "app-reach-web-dev-centralus-alk.azurewebsites.net"
+          "app-reach-web-dev-uksouth.azurewebsites.net",
+          "app-reach-web-dev-centralus.azurewebsites.net"
         ],
         "pl_origins_res_ids": [
-          "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/sites/app-reach-web-dev-uksouth-alk",
-          "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Web/sites/app-reach-web-dev-centralus-alk"
+          "<sub_id>/resourceGroups/rg-reach-dev-uksouth/providers/Microsoft.Web/sites/app-reach-web-dev-uksouth",
+          "<sub_id>/resourceGroups/rg-reach-dev-centralus/providers/Microsoft.Web/sites/app-reach-web-dev-centralus"
         ],
         "pl_res_types": [
           "sites",

@@ -174,7 +174,7 @@
         {
           "rg_n": "rg-matrix-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-web-dev-uksouth",
-          "name": "app-matrix-web-dev-uksouth-alk",
+          "name": "app-matrix-web-dev-uksouth",
           "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.KeyVault/vaults/matrix-dev-uksouth",
           "appi": {
             "rg_n": "rg-matrix-dev-uksouth",
@@ -184,7 +184,7 @@
         {
           "rg_n": "rg-matrix-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
-          "name": "app-matrix-svc-1-dev-uksouth-alk",
+          "name": "app-matrix-svc-1-dev-uksouth",
           "appi": {
             "rg_n": "rg-matrix-dev-uksouth",
             "name": "appi-matrix-dev-uksouth"
@@ -193,7 +193,7 @@
         {
           "rg_n": "rg-matrix-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
-          "name": "app-matrix-svc-2-dev-uksouth-alk",
+          "name": "app-matrix-svc-2-dev-uksouth",
           "appi": {
             "rg_n": "rg-matrix-dev-uksouth",
             "name": "appi-matrix-dev-uksouth"
@@ -202,7 +202,7 @@
         {
           "rg_n": "rg-matrix-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
-          "name": "app-matrix-svc-3-dev-uksouth-alk",
+          "name": "app-matrix-svc-3-dev-uksouth",
           "appi": {
             "rg_n": "rg-matrix-dev-uksouth",
             "name": "appi-matrix-dev-uksouth"
@@ -211,7 +211,7 @@
         {
           "rg_n": "rg-matrix-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
-          "name": "app-matrix-svc-4-dev-uksouth-alk",
+          "name": "app-matrix-svc-4-dev-uksouth",
           "appi": {
             "rg_n": "rg-matrix-dev-uksouth",
             "name": "appi-matrix-dev-uksouth"
@@ -220,7 +220,7 @@
         {
           "rg_n": "rg-matrix-dev-uksouth",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-uksouth/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-uksouth",
-          "name": "app-matrix-svc-n-dev-uksouth-alk",
+          "name": "app-matrix-svc-n-dev-uksouth",
           "appi": {
             "rg_n": "rg-matrix-dev-uksouth",
             "name": "appi-matrix-dev-uksouth"
@@ -229,7 +229,7 @@
         {
           "rg_n": "rg-matrix-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.Web/serverFarms/plan-matrix-web-dev-eastus",
-          "name": "app-matrix-web-dev-eastus-alk",
+          "name": "app-matrix-web-dev-eastus",
           "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.KeyVault/vaults/matrix-dev-eastus",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus",
@@ -239,7 +239,7 @@
         {
           "rg_n": "rg-matrix-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-eastus",
-          "name": "app-matrix-svc-1-dev-eastus-alk",
+          "name": "app-matrix-svc-1-dev-eastus",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus",
             "name": "appi-matrix-dev-eastus"
@@ -248,7 +248,7 @@
         {
           "rg_n": "rg-matrix-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-eastus",
-          "name": "app-matrix-svc-2-dev-eastus-alk",
+          "name": "app-matrix-svc-2-dev-eastus",
           "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.KeyVault/vaults/matrix-dev-eastus",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus",
@@ -258,7 +258,7 @@
         {
           "rg_n": "rg-matrix-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-eastus",
-          "name": "app-matrix-svc-3-dev-eastus-alk",
+          "name": "app-matrix-svc-3-dev-eastus",
           "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.KeyVault/vaults/matrix-dev-eastus",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus",
@@ -268,7 +268,7 @@
         {
           "rg_n": "rg-matrix-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-eastus",
-          "name": "app-matrix-svc-4-dev-eastus-alk",
+          "name": "app-matrix-svc-4-dev-eastus",
           "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.KeyVault/vaults/matrix-dev-eastus",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus",
@@ -278,7 +278,7 @@
         {
           "rg_n": "rg-matrix-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.Web/serverFarms/plan-matrix-svc-dev-eastus",
-          "name": "app-matrix-svc-n-dev-eastus-alk",
+          "name": "app-matrix-svc-n-dev-eastus",
           "kv_id": "<sub_id>/resourceGroups/rg-matrix-dev-eastus/providers/Microsoft.KeyVault/vaults/matrix-dev-eastus",
           "appi": {
             "rg_n": "rg-matrix-dev-eastus",
@@ -296,8 +296,8 @@
         "origin_g_n": "matrix-prod-origin-group",
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
-          "app-matrix-web-dev-uksouth-alk.azurewebsites.net",
-          "app-matrix-web-dev-eastus-alk.azurewebsites.net"
+          "app-matrix-web-dev-uksouth.azurewebsites.net",
+          "app-matrix-web-dev-eastus.azurewebsites.net"
         ]
       }
     }

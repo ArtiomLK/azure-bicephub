@@ -74,18 +74,22 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "name": "privatelink.azurewebsites.net",
-          "vnet_link": {
+          "vnet_links": [
+            {
             "vnet_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-eastus",
             "auto_registration": false
-          }
+            }
+          ]
         },
         {
           "rg_n": "rg-heal-dev-centralus",
           "name": "privatelink.azurewebsites.net",
-          "vnet_link": {
+          "vnet_links": [
+            {
             "vnet_id": "<sub_id>/resourceGroups/rg-heal-dev-centralus/providers/Microsoft.Network/virtualNetworks/vnet-heal-dev-centralus",
             "auto_registration": false
-          }
+            }
+          ]
         }
       ]
     },
@@ -156,7 +160,7 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/serverFarms/plan-heal-web-dev-eastus",
-          "name": "app-heal-web-dev-eastus-alk",
+          "name": "app-heal-web-dev-eastus",
           "appi": {
             "rg_n": "rg-heal-dev-eastus",
             "name": "appi-heal-dev-eastus"
@@ -173,7 +177,7 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/serverFarms/plan-heal-svc-dev-eastus",
-          "name": "app-heal-svc-1-dev-eastus-alk",
+          "name": "app-heal-svc-1-dev-eastus",
           "appi": {
             "rg_n": "rg-heal-dev-eastus",
             "name": "appi-heal-dev-eastus"
@@ -190,7 +194,7 @@
         {
           "rg_n": "rg-heal-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/serverFarms/plan-heal-svc-dev-eastus",
-          "name": "app-heal-svc-2-dev-eastus-alk",
+          "name": "app-heal-svc-2-dev-eastus",
           "appi": {
             "rg_n": "rg-heal-dev-eastus",
             "name": "appi-heal-dev-eastus"
@@ -207,7 +211,7 @@
         {
           "rg_n": "rg-heal-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-centralus/providers/Microsoft.Web/serverFarms/plan-heal-web-dev-centralus",
-          "name": "app-heal-web-dev-centralus-alk",
+          "name": "app-heal-web-dev-centralus",
           "appi": {
             "rg_n": "rg-heal-dev-centralus",
             "name": "appi-heal-dev-centralus"
@@ -224,7 +228,7 @@
         {
           "rg_n": "rg-heal-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-centralus/providers/Microsoft.Web/serverFarms/plan-heal-svc-dev-centralus",
-          "name": "app-heal-svc-1-dev-centralus-alk",
+          "name": "app-heal-svc-1-dev-centralus",
           "appi": {
             "rg_n": "rg-heal-dev-centralus",
             "name": "appi-heal-dev-centralus"
@@ -241,7 +245,7 @@
         {
           "rg_n": "rg-heal-dev-centralus",
           "plan_id": "<sub_id>/resourceGroups/rg-heal-dev-centralus/providers/Microsoft.Web/serverFarms/plan-heal-svc-dev-centralus",
-          "name": "app-heal-svc-2-dev-centralus-alk",
+          "name": "app-heal-svc-2-dev-centralus",
           "appi": {
             "rg_n": "rg-heal-dev-centralus",
             "name": "appi-heal-dev-centralus"
@@ -266,12 +270,12 @@
         "origin_g_n": "heal-dev-origin-group",
         "origin_g_health_probe_settings": "Https",
         "origin_host_names": [
-          "app-heal-web-dev-eastus-alk.azurewebsites.net",
-          "app-heal-web-dev-centralus-alk.azurewebsites.net"
+          "app-heal-web-dev-eastus.azurewebsites.net",
+          "app-heal-web-dev-centralus.azurewebsites.net"
         ],
         "pl_origins_res_ids": [
-          "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/sites/app-heal-web-dev-eastus-alk",
-          "<sub_id>/resourceGroups/rg-heal-dev-centralus/providers/Microsoft.Web/sites/app-heal-web-dev-centralus-alk"
+          "<sub_id>/resourceGroups/rg-heal-dev-eastus/providers/Microsoft.Web/sites/app-heal-web-dev-eastus",
+          "<sub_id>/resourceGroups/rg-heal-dev-centralus/providers/Microsoft.Web/sites/app-heal-web-dev-centralus"
         ],
         "pl_res_types": [
           "sites",
