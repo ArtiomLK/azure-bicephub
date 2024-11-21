@@ -72,7 +72,7 @@
         {
           "rg_n": "rg-envision-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-eastus/providers/Microsoft.Web/serverFarms/plan-envision-web-dev-eastus",
-          "name": "app-envision-web-dev-eastus-alk",
+          "name": "app-envision-web-dev-eastus",
           "appi": {
             "rg_n": "rg-envision-dev-eastus",
             "name": "appi-envision-dev-eastus"
@@ -81,7 +81,7 @@
         {
           "rg_n": "rg-envision-dev-westus",
           "plan_id": "<sub_id>/resourceGroups/rg-envision-dev-westus/providers/Microsoft.Web/serverFarms/plan-envision-web-dev-westus",
-          "name": "app-envision-web-dev-westus-alk",
+          "name": "app-envision-web-dev-westus",
           "appi": {
             "rg_n": "rg-envision-dev-westus",
             "name": "appi-envision-dev-westus"

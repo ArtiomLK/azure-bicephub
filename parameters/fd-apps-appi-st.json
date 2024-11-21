@@ -9,7 +9,6 @@
         "env": "dev"
       }
     },
-
     "rgs": {
       "value": {
         "rg-inventory-dev-eastus": {
@@ -22,21 +21,19 @@
         }
       }
     },
-
     "st": {
       "value": [
         {
           "rg_n": "rg-inventory-dev-eastus",
-          "name": "stinventorydeveastus",
+          "name": "stinventorydeveastuslk",
           "sku": "Standard_ZRS"
         },
         {
           "rg_n": "rg-inventory-dev-japaneast",
-          "name": "stinventorydevjapaneast"
+          "name": "stinventorydevjapeastlk"
         }
       ]
     },
-
     "logs": {
       "value": [
         {
@@ -49,7 +46,6 @@
         }
       ]
     },
-
     "appis": {
       "value": [
         {
@@ -64,7 +60,6 @@
         }
       ]
     },
-
     "plans": {
       "value": [
         {
@@ -75,7 +70,6 @@
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
-
         {
           "rg_n": "rg-inventory-dev-japaneast",
           "name": "plan-inventory-web-dev-japaneast",
@@ -86,23 +80,21 @@
         }
       ]
     },
-
     "apps": {
       "value": [
         {
           "rg_n": "rg-inventory-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-inventory-dev-eastus/providers/Microsoft.Web/serverFarms/plan-inventory-web-dev-eastus",
-          "name": "app-inventory-web-dev-eastus-alk",
+          "name": "app-inventory-web-dev-eastus",
           "appi": {
             "rg_n": "rg-inventory-dev-eastus",
             "name": "appi-inventory-dev-eastus"
           }
         },
-
         {
           "rg_n": "rg-inventory-dev-japaneast",
           "plan_id": "<sub_id>/resourceGroups/rg-inventory-dev-japaneast/providers/Microsoft.Web/serverFarms/plan-inventory-web-dev-japaneast",
-          "name": "app-inventory-web-dev-japaneast-alk",
+          "name": "app-inventory-web-dev-japaneast",
           "appi": {
             "rg_n": "rg-inventory-dev-japaneast",
             "name": "appi-inventory-dev-japaneast"
@@ -110,7 +102,6 @@
         }
       ]
     },
-
     "fd": {
       "value": {
         "rg_n": "rg-inventory-dev-eastus",

@@ -12,13 +12,13 @@
 
     "rgs": {
       "value": {
-        "rg-connectivity-prod-eastus": {
+        "rg-connectivity-prod-eastus2": {
           "sub_id": "<sub_id>",
-          "location": "eastus"
+          "location": "eastus2"
         },
-        "rg-connectivity-prod-westus3": {
+        "rg-connectivity-prod-mexicocentral": {
           "sub_id": "<sub_id>",
-          "location": "westus3"
+          "location": "mexicocentral"
         },
         "rg-connectivity-prod-uksouth": {
           "sub_id": "<sub_id>",
@@ -30,13 +30,13 @@
         },
 
 
-        "rg-connectivity-bas-prod-eastus": {
+        "rg-connectivity-bas-prod-eastus2": {
           "sub_id": "<sub_id>",
-          "location": "eastus"
+          "location": "eastus2"
         },
-        "rg-connectivity-bas-prod-westus3": {
+        "rg-connectivity-bas-prod-mexicocentral": {
           "sub_id": "<sub_id>",
-          "location": "westus3"
+          "location": "mexicocentral"
         },
         "rg-connectivity-bas-prod-uksouth": {
           "sub_id": "<sub_id>",
@@ -48,13 +48,13 @@
         },
 
 
-        "rg-connectivity-spokes-prod-eastus": {
+        "rg-connectivity-spokes-prod-eastus2": {
           "sub_id": "<sub_id>",
-          "location": "eastus"
+          "location": "eastus2"
         },
-        "rg-connectivity-spokes-prod-westus3": {
+        "rg-connectivity-spokes-prod-mexicocentral": {
           "sub_id": "<sub_id>",
-          "location": "westus3"
+          "location": "mexicocentral"
         },
         "rg-connectivity-spokes-prod-uksouth": {
           "sub_id": "<sub_id>",
@@ -66,13 +66,13 @@
         },
 
 
-        "rg-connectivity-prod-dns-eastus": {
+        "rg-connectivity-prod-dns-eastus2": {
           "sub_id": "<sub_id>",
-          "location": "eastus"
+          "location": "eastus2"
         },
-        "rg-connectivity-prod-pdnsz-eastus": {
+        "rg-connectivity-prod-pdnsz-eastus2": {
           "sub_id": "<sub_id>",
-          "location": "eastus"
+          "location": "eastus2"
         }
       }
     },
@@ -80,31 +80,31 @@
     "bas": {
       "value": [
         {
-          "rg_n": "rg-connectivity-bas-prod-eastus",
-          "name": "bas-connectivity-prod-eastus",
+          "rg_n": "rg-connectivity-bas-prod-eastus2",
+          "name": "bas-connectivity-prod-eastus2",
           "sku": "Standard",
           "enableIpConnect": true,
           "bas_enableKerberos": false,
           "enableShareableLink": true,
           "enableTunneling": true,
-          "vnet_n": "vnet-connectivity-bas-prod-eastus",
+          "vnet_n": "vnet-connectivity-bas-prod-eastus2",
           "vnet_addr": "10.100.2.0/24",
-          "ngs_bas_n": "nsg-bas-connectivity-prod-eastus",
-          "pip_bas_n": "pip-bas-connectivity-prod-eastus",
+          "ngs_bas_n": "nsg-bas-connectivity-prod-eastus2",
+          "pip_bas_n": "pip-bas-connectivity-prod-eastus2",
           "env": "prod"
         },
         {
-          "rg_n": "rg-connectivity-bas-prod-westus3",
-          "name": "bas-connectivity-prod-westus3",
+          "rg_n": "rg-connectivity-bas-prod-mexicocentral",
+          "name": "bas-connectivity-prod-mexicocentral",
           "sku": "Standard",
           "enableIpConnect": true,
           "bas_enableKerberos": false,
           "enableShareableLink": true,
           "enableTunneling": true,
-          "vnet_n": "vnet-connectivity-bas-prod-westus3",
+          "vnet_n": "vnet-connectivity-bas-prod-mexicocentral",
           "vnet_addr": "10.102.2.0/24",
-          "ngs_bas_n": "nsg-bas-connectivity-prod-westus3",
-          "pip_bas_n": "pip-bas-connectivity-prod-westus3",
+          "ngs_bas_n": "nsg-bas-connectivity-prod-mexicocentral",
+          "pip_bas_n": "pip-bas-connectivity-prod-mexicocentral",
           "env": "prod"
         },
         {
@@ -128,15 +128,15 @@
     "kvs": {
       "value": [
         {
-          "rg_n": "rg-connectivity-spokes-prod-eastus",
-          "name": "kv-conn-prod-eastus",
+          "rg_n": "rg-connectivity-spokes-prod-eastus2",
+          "name": "kv-conn-prod-eastus2",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": true
         },
         {
-          "rg_n": "rg-connectivity-spokes-prod-westus3",
-          "name": "kv-conn-prod-westus3",
+          "rg_n": "rg-connectivity-spokes-prod-mexicocentral",
+          "name": "kv-conn-prod-mexcentral",
           "enable_rbac": "true",
           "sku": "standard",
           "kv_enable_public_access": true
@@ -154,12 +154,12 @@
     "spokes": {
       "value": [
         {
-          "rg_n": "rg-connectivity-spokes-prod-eastus",
-          "vnet_n": "vnet-connectivity-spoke-A-prod-eastus",
+          "rg_n": "rg-connectivity-spokes-prod-eastus2",
+          "vnet_n": "vnet-connectivity-spoke-A-prod-eastus2",
           "vnet_addr": "10.100.10.0/24",
           "vm_admin_name": "artiomlk",
           "vm_admin_pass": "TemportalPassword123!",
-          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/Microsoft.KeyVault/vaults/kv-conn-prod-eastus",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus2/providers/Microsoft.KeyVault/vaults/kv-conn-prod-eastus2",
           "size": "Standard_B4s_v2",
           "enable_windows_spoke": true,
           "windows_OSVersion": "2022-datacenter-azure-edition",
@@ -168,18 +168,18 @@
           "enable_linux_spoke": true
         },
         {
-          "rg_n": "rg-connectivity-spokes-prod-eastus",
-          "vnet_n": "vnet-connectivity-spoke-B-prod-eastus",
+          "rg_n": "rg-connectivity-spokes-prod-eastus2",
+          "vnet_n": "vnet-connectivity-spoke-B-prod-eastus2",
           "vnet_addr": "10.101.10.0/24",
-          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/Microsoft.KeyVault/vaults/kv-conn-prod-eastus",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus2/providers/Microsoft.KeyVault/vaults/kv-conn-prod-eastus2",
           "enable_windows_spoke": true,
           "enable_linux_spoke": true
         },
         {
-          "rg_n": "rg-connectivity-spokes-prod-westus3",
-          "vnet_n": "vnet-connectivity-spoke-C-prod-westus3",
+          "rg_n": "rg-connectivity-spokes-prod-mexicocentral",
+          "vnet_n": "vnet-connectivity-spoke-C-prod-mexicocentral",
           "vnet_addr": "10.102.10.0/24",
-          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/Microsoft.KeyVault/vaults/kv-conn-prod-westus3",
+          "kv_id": "<sub_id>/resourcegroups/rg-connectivity-prod-mexicocentral/providers/Microsoft.KeyVault/vaults/kv-conn-prod-mexcentral",
           "enable_windows_spoke": true
         },
         {
@@ -195,22 +195,22 @@
     "logs": {
       "value": [
         {
-          "rg_n": "rg-connectivity-prod-eastus",
-          "name": "log-connectivity-prod-eastus"
+          "rg_n": "rg-connectivity-prod-eastus2",
+          "name": "log-connectivity-prod-eastus2"
         },
         {
-          "rg_n": "rg-connectivity-prod-westus3",
-          "name": "log-connectivity-prod-westus3"
+          "rg_n": "rg-connectivity-prod-uksouth",
+          "name": "log-connectivity-prod-uksouth"
         }
       ]
     },
 
     "vwan": {
       "value": {
-        "rg_n": "rg-connectivity-prod-eastus",
+        "rg_n": "rg-connectivity-prod-eastus2",
         "name": "vwan-connectivity-prod",
         "sub_id": "<sub_id>",
-        "location": "eastus",
+        "location": "eastus2",
         "sku": "Standard"
       }
     },
@@ -218,9 +218,9 @@
     "vhubs": {
       "value": [
         {
-          "name": "vhub-connectivity-prod-eastus",
+          "name": "vhub-connectivity-prod-eastus2",
           "vnet_address_prefix": "10.100.0.0/23",
-          "location": "eastus",
+          "location": "eastus2",
           "min_capacity": "2",
           "s2s": {
             "scale_units": 1,
@@ -228,27 +228,27 @@
           },
           "vnet_connections": [
             {
-              "name": "dnspr-prod-eastus",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-eastus"
+              "name": "dnspr-prod-eastus2",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-eastus2"
             },
             {
-              "name": "bas-prod-eastus",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-eastus"
+              "name": "bas-prod-eastus2",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-eastus2"
             },
             {
-              "name": "spoke-A-prod-eastus",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-A-prod-eastus"
+              "name": "spoke-A-prod-eastus2",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-A-prod-eastus2"
             },
             {
-              "name": "spoke-B-prod-eastus",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-B-prod-eastus"
+              "name": "spoke-B-prod-eastus2",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-B-prod-eastus2"
             }
           ]
         },
         {
-          "name": "vhub-connectivity-prod-westus3",
+          "name": "vhub-connectivity-prod-mexicocentral",
           "vnet_address_prefix": "10.102.0.0/23",
-          "location": "westus3",
+          "location": "mexicocentral",
           "min_capacity": "3",
           "s2s": {
             "scale_units": 2,
@@ -256,16 +256,16 @@
           },
           "vnet_connections": [
             {
-              "name": "dnspr-prod-westus3",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-westus3"
+              "name": "dnspr-prod-mexicocentral",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-mexicocentral/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-mexicocentral"
             },
             {
-              "name": "bas-prod-westus3",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-westus3"
+              "name": "bas-prod-mexicocentral",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-bas-prod-mexicocentral/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-bas-prod-mexicocentral"
             },
             {
-              "name": "spoke-C-prod-westus3",
-              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-C-prod-westus3"
+              "name": "spoke-C-prod-mexicocentral",
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-spokes-prod-mexicocentral/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-spoke-C-prod-mexicocentral"
             }
           ]
         },
@@ -295,26 +295,25 @@
     "afws": {
       "value": [
         {
-          "rg_n": "rg-connectivity-prod-eastus",
-          "vhub_n": "vhub-connectivity-prod-eastus",
-          "name": "afw-vhub-connectivity-prod-eastus",
-          "location": "eastus",
-          "afwp_name": "afwp-vhub-connectivity-prod-eastus",
+          "rg_n": "rg-connectivity-prod-eastus2",
+          "vhub_n": "vhub-connectivity-prod-eastus2",
+          "name": "afw-vhub-connectivity-prod-eastus2",
+          "location": "eastus2",
+          "afwp_name": "afwp-vhub-connectivity-prod-eastus2",
           "tier": "Premium",
           "pip_count": 2,
           "zones": [1,2,3],
-          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-eastus",
+          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-eastus2/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-eastus2",
           "bas_vnet_addr": "10.100.2.0/24"
         },
         {
-          "rg_n": "rg-connectivity-prod-westus3",
-          "vhub_n": "vhub-connectivity-prod-westus3",
-          "name": "afw-vhub-connectivity-prod-westus3",
-          "location": "westus3",
-          "afwp_name": "afwp-vhub-connectivity-prod-westus3",
+          "rg_n": "rg-connectivity-prod-mexicocentral",
+          "vhub_n": "vhub-connectivity-prod-mexicocentral",
+          "name": "afw-vhub-connectivity-prod-mexicocentral",
+          "location": "mexicocentral",
+          "afwp_name": "afwp-vhub-connectivity-prod-mexicocentral",
           "tier": "Premium",
           "zones": [1],
-          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-westus3/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-westus3",
           "bas_vnet_addr": "10.102.2.0/24"
         },
         {
@@ -322,6 +321,7 @@
           "vhub_n": "vhub-connectivity-prod-uksouth",
           "name": "afw-vhub-connectivity-prod-uksouth",
           "location": "uksouth",
+          "log_id": "<sub_id>/resourcegroups/rg-connectivity-prod-uksouth/providers/microsoft.operationalinsights/workspaces/log-connectivity-prod-uksouth",
           "afwp_name": "afwp-vhub-connectivity-prod-uksouth"
         }
       ]
@@ -330,24 +330,24 @@
     "dnsprs": {
       "value": [
         {
-          "rg_n": "rg-connectivity-prod-eastus",
-          "name": "dnspr-connectivity-prod-eastus",
-          "vnet_name": "vnet-connectivity-dnspr-prod-eastus",
+          "rg_n": "rg-connectivity-prod-eastus2",
+          "name": "dnspr-connectivity-prod-eastus2",
+          "vnet_name": "vnet-connectivity-dnspr-prod-eastus2",
           "vnet_addr": "10.100.4.0/23",
           "snet_inbound_name": "snet-dnspr-inbound",
           "snet_inbound_addr": "10.100.4.0/24",
           "snet_inbound_ip": "10.100.4.4",
-          "location": "eastus"
+          "location": "eastus2"
         },
         {
-          "rg_n": "rg-connectivity-prod-westus3",
-          "name": "dnspr-connectivity-prod-westus3",
-          "vnet_name": "vnet-connectivity-dnspr-prod-westus3",
+          "rg_n": "rg-connectivity-prod-mexicocentral",
+          "name": "dnspr-connectivity-prod-mexicocentral",
+          "vnet_name": "vnet-connectivity-dnspr-prod-mexicocentral",
           "vnet_addr": "10.102.4.0/23",
           "snet_inbound_name": "snet-dnspr-inbound",
           "snet_inbound_addr": "10.102.4.0/24",
           "snet_inbound_ip": "10.102.4.4",
-          "location": "westus3"
+          "location": "mexicocentral"
         }
       ]
     },
@@ -355,10 +355,16 @@
     "allpdnszs": {
       "value": [
         {
-          "rg_n": "rg-connectivity-prod-pdnsz-eastus",
-          "vnet_ids": [
-            "<sub_id>/resourceGroups/rg-connectivity-prod-eastus/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-eastus",
-            "<sub_id>/resourceGroups/rg-connectivity-prod-westus3/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-westus3"
+          "rg_n": "rg-connectivity-prod-pdnsz-eastus2",
+          "vnet_links": [
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-eastus2/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-eastus2",
+              "auto_registration": false
+            },
+            {
+              "vnet_id": "<sub_id>/resourceGroups/rg-connectivity-prod-mexicocentral/providers/Microsoft.Network/virtualNetworks/vnet-connectivity-dnspr-prod-mexicocentral",
+              "auto_registration": false
+            }
           ]
         }
       ]

@@ -73,7 +73,7 @@ param sql_admin_pass_default string = ''
 @description('SQL DB parameters')
 param sqldb array = []
 
-module architecture 'br:bicephub.azurecr.io/bicep/modules/orchestrator:3d98742e935929c947bbdbce06793236f28d4d36' = {
+module architecture 'br:bicephubdev.azurecr.io/bicep/modules/orchestrator:be0fb987bcd2f8d418dab8db56b54f6cb28c5747' = {
   name: take('architecture-${guid(subscription().id, string(rgs))}', 64)
   params: {
     tags: tags

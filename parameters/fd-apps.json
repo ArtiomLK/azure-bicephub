@@ -46,12 +46,12 @@
         {
           "rg_n": "rg-imagine-dev-eastus",
           "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-eastus/providers/Microsoft.Web/serverFarms/plan-imagine-web-dev-eastus",
-          "name": "app-imagine-web-dev-eastus-alk"
+          "name": "app-imagine-web-dev-eastus"
         },
         {
           "rg_n": "rg-imagine-dev-westus",
           "plan_id": "<sub_id>/resourceGroups/rg-imagine-dev-westus/providers/Microsoft.Web/serverFarms/plan-imagine-web-dev-westus",
-          "name": "app-imagine-web-dev-westus-alk"
+          "name": "app-imagine-web-dev-westus"
         }
       ]
     },
