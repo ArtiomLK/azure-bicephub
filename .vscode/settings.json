@@ -1,5 +1,22 @@
 {
-  "cSpell.words": [
-    "Bicephub"
-  ]
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": "always"
+  },
+  "[markdown]": {
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "files.trimTrailingWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  }
 }
