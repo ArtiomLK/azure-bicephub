@@ -12,7 +12,7 @@ param vnet_id string = ''
 @description('Multiple Virtual Network IDs')
 param vnet_ids array = []
 
-module pdnsz 'br:bicephubdev.azurecr.io/bicep/modules/pdnsz:31fc3cb3c0eb3a081e9253946d8508602b4de7ce' = {
+module pdnsz 'br:bicephubdev.azurecr.io/bicep/modules/pdnsz:c039dbf1273c083d5d7b85b1b035c4e88a12f7db' = {
   name: 'pdnsz-deployment'
   params: {
     deploy_all_pdnszs: deploy_all_pdnszs
