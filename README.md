@@ -669,12 +669,39 @@ az deployment sub create \
 # download the main bicephub template file
 curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/alz-pdnsz.bicep
 
+# download or create your own json parameter file
+curl -o pdnsz_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/all_pdnsz_w_vmet_links.json
+
 tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
 
-# Deploy IaC
-az deployment group create \
-  --resource-group 'rg-dns' \
+sub_id='########-####-####-####-############';                          echo $sub_id
+rg_n="rg-dns_name";                                                     echo $rg_n
+
+az login --tenant "########-####-####-####-############"
+az account set --subscription $sub_id
+az account show --query "{Name:name, Sub_Name:name, Sub_Id:id, SubscriptionId:subscriptionId, TenantId:tenantId}" -o table
+
+# Validate Deployment
+az deployment group validate \
+  --subscription $sub_id \
+  --resource-group $rg_n \
   --name 'alz-pdnsz-deployment' \
   --template-file alz-pdnsz.bicep \
-  --parameters vnet_id="/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>" tags="$tags"
+  --parameters @pdnsz_parameters.json
+
+# Display delta changes to be applied
+az deployment group what-if \
+  --subscription $sub_id \
+  --resource-group $rg_n \
+  --name 'alz-pdnsz-deployment' \
+  --template-file alz-pdnsz.bicep \
+  --parameters @pdnsz_parameters.json
+
+az deployment group create \
+  --subscription $sub_id \
+  --resource-group $rg_n \
+  --mode 'Incremental' \
+  --name 'alz-pdnsz-deployment' \
+  --template-file alz-pdnsz.bicep \
+  --parameters @pdnsz_parameters.json
 ```
