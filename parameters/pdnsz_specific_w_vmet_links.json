@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tags": {
+      "value": {
+        "project": "dns",
+        "env": "dev"
+      }
+    },
+    "vnet_id": {
+      "value": ""
+    },
+    "vnet_ids": {
+      "value": [
+        {
+          "id": "/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>",
+          "auto_registration": false
+        },
+        {
+          "id": "/subscriptions/########-####-####-####-############/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name-2>",
+          "auto_registration": false
+        }
+      ]
+    },
+    "deploy_all_pdnszs": {
+      "value": false
+    },
+    "pdnszs": {
+      "value": [
+        "privatelink.azurewebsites.net",
+        "privatelink.vaultcore.azure.net"
+      ]
+    }
+  }
+}

@@ -670,7 +670,7 @@ az deployment sub create \
 curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/alz-pdnsz.bicep
 
 # download or create your own json parameter file
-curl -o pdnsz_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/all_pdnsz_w_vmet_links.json
+curl -o pdnsz_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/pdnsz_all_w_vmet_links.json
 
 tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
 
