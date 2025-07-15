@@ -2,8 +2,19 @@
 
 ## Troubleshooting
 
+<details>
+<summary>
+
 ```bash
-az deployment group validate... returns:
+az deployment group validate...
+returns:
 The content for this response was already consumed
-# check if the resource group exists
 ```
+
+<span style="float;">💡 Solution</span>
+
+</summary>
+
+> Make sure the resource group exists before running the deployment validation.
+
+</details>
