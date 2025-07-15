@@ -672,8 +672,6 @@ curl -o alz-pdnsz.bicep https://raw.githubusercontent.com/ArtiomLK/azure-bicephu
 # download or create your own json parameter file
 curl -o pdnsz_parameters.json https://raw.githubusercontent.com/ArtiomLK/azure-bicephub/main/parameters/pdnsz_all_w_vmet_links.json
 
-tags='{"env":"dev", "project":"bicephub", "architecture":"alz-pdnsz"}'; echo $tags
-
 sub_id='########-####-####-####-############';                          echo $sub_id
 rg_n="rg-dns_name";                                                     echo $rg_n
 
@@ -687,7 +685,7 @@ az deployment group validate \
   --resource-group $rg_n \
   --name 'alz-pdnsz-deployment' \
   --template-file alz-pdnsz.bicep \
-  --parameters @pdnsz_parameters.json
+  --parameters @pdnsz_parameters.json | tee deployment_validation.json
 
 # Display delta changes to be applied
 az deployment group what-if \
@@ -695,7 +693,7 @@ az deployment group what-if \
   --resource-group $rg_n \
   --name 'alz-pdnsz-deployment' \
   --template-file alz-pdnsz.bicep \
-  --parameters @pdnsz_parameters.json
+  --parameters @pdnsz_parameters.json | tee deployment_delta.json
 
 az deployment group create \
   --subscription $sub_id \
@@ -703,5 +701,5 @@ az deployment group create \
   --mode 'Incremental' \
   --name 'alz-pdnsz-deployment' \
   --template-file alz-pdnsz.bicep \
-  --parameters @pdnsz_parameters.json
+  --parameters @pdnsz_parameters.json | tee deployment_output.json
 ```
