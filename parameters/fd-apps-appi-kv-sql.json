@@ -11,27 +11,27 @@
     },
     "rgs": {
       "value": {
-        "rg-ether-dev-eastus2": {
+        "rg-ether-dev-mexicocentral": {
           "sub_id": "<sub_id>",
-          "location": "eastus2"
+          "location": "mexicocentral"
         },
-        "rg-ether-dev-westus": {
+        "rg-ether-dev-westus3": {
           "sub_id": "<sub_id>",
-          "location": "westus"
+          "location": "westus3"
         }
       }
     },
     "kvs": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "name": "kv-ether-dev-eastus2",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "name": "kv-ether-dev-mexicocentral",
           "enable_rbac": "true",
           "sku": "standard"
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "name": "kv-ether-dev-westus",
+          "rg_n": "rg-ether-dev-westus3",
+          "name": "kv-ether-dev-westus3",
           "enable_rbac": "true",
           "sku": "standard"
         }
@@ -40,46 +40,46 @@
     "sql": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "sql_n": "sql-ether-dev-eastus2",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "sql_n": "sql-ether-dev-mexicocentral",
           "sql_admin_n": "artiomlk",
           "sql_admin_pass": "TemporaryPassword123!"
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "sql_n": "sql-ether-dev-westus"
+          "rg_n": "rg-ether-dev-westus3",
+          "sql_n": "sql-ether-dev-westus3"
         }
       ]
     },
     "sqldb": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "sql_n": "sql-ether-dev-eastus2",
-          "sqldb_n": "sqldb-ether-dev-eastus2-001",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "sql_n": "sql-ether-dev-mexicocentral",
+          "sqldb_n": "sqldb-ether-dev-mexicocentral-001",
           "sku_name": "S3",
           "sku_tier": "Standard",
           "maxSizeBytes": 1099511627776
         },
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "sql_n": "sql-ether-dev-eastus2",
-          "sqldb_n": "sqldb-ether-dev-eastus2-002",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "sql_n": "sql-ether-dev-mexicocentral",
+          "sqldb_n": "sqldb-ether-dev-mexicocentral-002",
           "sku_name": "S0",
           "sku_tier": "Standard"
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "sql_n": "sql-ether-dev-westus",
-          "sqldb_n": "sqldb-ether-dev-westus-001",
+          "rg_n": "rg-ether-dev-westus3",
+          "sql_n": "sql-ether-dev-westus3",
+          "sqldb_n": "sqldb-ether-dev-westus3-001",
           "sku_name": "S2",
           "sku_tier": "Standard",
           "maxSizeBytes": 268435456000
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "sql_n": "sql-ether-dev-westus",
-          "sqldb_n": "sqldb-ether-dev-westus-002",
+          "rg_n": "rg-ether-dev-westus3",
+          "sql_n": "sql-ether-dev-westus3",
+          "sqldb_n": "sqldb-ether-dev-westus3-002",
           "sku_name": "S1",
           "sku_tier": "Standard"
         }
@@ -88,32 +88,32 @@
     "plans": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "name": "plan-ether-web-dev-eastus2",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "name": "plan-ether-web-dev-mexicocentral",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "name": "plan-ether-svc-dev-eastus2",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "name": "plan-ether-svc-dev-mexicocentral",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "name": "plan-ether-web-dev-westus",
+          "rg_n": "rg-ether-dev-westus3",
+          "name": "plan-ether-web-dev-westus3",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
           "enable_zone_redundancy": false
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "name": "plan-ether-svc-dev-westus",
+          "rg_n": "rg-ether-dev-westus3",
+          "name": "plan-ether-svc-dev-westus3",
           "sku_code": "B1",
           "sku_tier": "Basic",
           "os_kind": "windows",
@@ -124,74 +124,74 @@
     "logs": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "name": "log-ether-dev-eastus2"
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "name": "log-ether-dev-mexicocentral"
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "name": "log-ether-dev-westus"
+          "rg_n": "rg-ether-dev-westus3",
+          "name": "log-ether-dev-westus3"
         }
       ]
     },
     "appis": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "name": "appi-ether-dev-eastus2",
-          "log_id": "<sub_id>/resourcegroups/rg-ether-dev-eastus2/providers/microsoft.operationalinsights/workspaces/log-ether-dev-eastus2"
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "name": "appi-ether-dev-mexicocentral",
+          "log_id": "<sub_id>/resourcegroups/rg-ether-dev-mexicocentral/providers/microsoft.operationalinsights/workspaces/log-ether-dev-mexicocentral"
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "name": "appi-ether-dev-westus",
-          "log_id": "<sub_id>/resourcegroups/rg-ether-dev-westus/providers/microsoft.operationalinsights/workspaces/log-ether-dev-westus"
+          "rg_n": "rg-ether-dev-westus3",
+          "name": "appi-ether-dev-westus3",
+          "log_id": "<sub_id>/resourcegroups/rg-ether-dev-westus3/providers/microsoft.operationalinsights/workspaces/log-ether-dev-westus3"
         }
       ]
     },
     "apps": {
       "value": [
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-eastus2",
-          "name": "app-ether-web-dev-eastus2",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-mexicocentral/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-mexicocentral",
+          "name": "app-ether-web-dev-mexicocentral",
           "appi": {
-            "rg_n": "rg-ether-dev-eastus2",
-            "name": "appi-ether-dev-eastus2"
+            "rg_n": "rg-ether-dev-mexicocentral",
+            "name": "appi-ether-dev-mexicocentral"
           }
         },
         {
-          "rg_n": "rg-ether-dev-eastus2",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus2/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-eastus2",
-          "name": "app-ether-svc-dev-eastus2",
+          "rg_n": "rg-ether-dev-mexicocentral",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-mexicocentral/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-mexicocentral",
+          "name": "app-ether-svc-dev-mexicocentral",
           "appi": {
-            "rg_n": "rg-ether-dev-eastus2",
-            "name": "appi-ether-dev-eastus2"
+            "rg_n": "rg-ether-dev-mexicocentral",
+            "name": "appi-ether-dev-mexicocentral"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-eastus2/providers/Microsoft.KeyVault/vaults/kv-ether-dev-eastus2"
+          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-mexicocentral/providers/Microsoft.KeyVault/vaults/kv-ether-dev-mexicocentral"
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-westus",
-          "name": "app-ether-web-dev-westus",
+          "rg_n": "rg-ether-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus3/providers/Microsoft.Web/serverFarms/plan-ether-web-dev-westus3",
+          "name": "app-ether-web-dev-westus3",
           "appi": {
-            "rg_n": "rg-ether-dev-westus",
-            "name": "appi-ether-dev-westus"
+            "rg_n": "rg-ether-dev-westus3",
+            "name": "appi-ether-dev-westus3"
           }
         },
         {
-          "rg_n": "rg-ether-dev-westus",
-          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-westus",
-          "name": "app-ether-svc-dev-westus",
+          "rg_n": "rg-ether-dev-westus3",
+          "plan_id": "<sub_id>/resourceGroups/rg-ether-dev-westus3/providers/Microsoft.Web/serverFarms/plan-ether-svc-dev-westus3",
+          "name": "app-ether-svc-dev-westus3",
           "appi": {
-            "rg_n": "rg-ether-dev-westus",
-            "name": "appi-ether-dev-westus"
+            "rg_n": "rg-ether-dev-westus3",
+            "name": "appi-ether-dev-westus3"
           },
-          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-westus/providers/Microsoft.KeyVault/vaults/kv-ether-dev-westus"
+          "kv_id": "<sub_id>/resourceGroups/rg-ether-dev-westus3/providers/Microsoft.KeyVault/vaults/kv-ether-dev-westus3"
         }
       ]
     },
     "fd": {
       "value": {
-        "rg_n": "rg-ether-dev-eastus2",
+        "rg_n": "rg-ether-dev-mexicocentral",
         "name": "fd-ether-dev",
         "sku": "Standard_AzureFrontDoor",
         "route_n": "ether-prod-route",

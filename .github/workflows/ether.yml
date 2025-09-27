@@ -12,7 +12,7 @@ on:
 env:
   DEPLOYMENT_PARAMETERS: parameters/fd-apps-appi-kv-sql.json
   PROJECT_NAME: ether
-  DEPLOYMENT_REGION: eastus
+  DEPLOYMENT_REGION: mexicocentral
 
 name: deploy-architecture-ether
 jobs:
